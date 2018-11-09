@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">BloodBank</string>
+
+    <array name="names">
+        <item>Country</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ahmed</item>
+        <item>ahmed</item>
+        <item>ahmed</item>
+        <item>ahmed</item>
+    </array>
+    <array name="names1">
+        <item>City</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ahmed</item>
+        <item>ahmed</item>
+        <item>ahmed</item>
+        <item>ahmed</item>
+    </array>
+    <array name="names2">
+        <item>blood type</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ramadan</item>
+        <item>ahmed</item>
+        <item>ahmed</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -13,22 +13,29 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import net.rimoto.intlphoneinput.IntlPhoneInput;
 
 public class SinUpFragment extends Fragment {
     View view;
     Button btn_sinUp, btn_24h;
-    TextView tv_24h, tv_time_to, tv_time_from;
+    TextView tv_24h, tv_time_to,tv_time_to2, tv_time_from,tv_time_from2;
     TextView sat, mon, tue, wed, thu,fri,sun;
     int Hour, Minute, index_btn = 1,index_time = 1;
     int index_colorTV1 = 1,index_colorTV2 = 1,index_colorTV3 = 1,index_colorTV4 = 1,index_colorTV5 = 1,index_colorTV6 = 1,index_colorTV7 = 1;
     String AmPm = "Am";
-    LinearLayout linear_time;
+    LinearLayout linear_time ;
+    String myInternationalNumber;
+    IntlPhoneInput phoneInputView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_sinup, container, false);
-
+        //get Phone Number
+        phoneInputView =view.findViewById(R.id.my_phone_input);
+        myInternationalNumber = phoneInputView.getText();
         findViewById();
         btn_24();
         getTime();
@@ -44,7 +51,9 @@ public class SinUpFragment extends Fragment {
         tv_24h = view.findViewById(R.id.tv__24h);
         //get Time
         tv_time_to = view.findViewById(R.id.time_to);
+        tv_time_to2 = view.findViewById(R.id.time_to2);
         tv_time_from = view.findViewById(R.id.time_from);
+        tv_time_from2 = view.findViewById(R.id.time_from2);
         linear_time = view.findViewById(R.id.linear_time);
 
         //for Days
@@ -65,7 +74,7 @@ public class SinUpFragment extends Fragment {
         builder.show();
 
         TimePicker timePicker = dialogShow.findViewById(R.id.timePicker);
-        Button btn_ok = dialogShow.findViewById(R.id.btn_ok);
+         Button btn_ok = dialogShow.findViewById(R.id.btn_ok);
         Button btn_cancel = dialogShow.findViewById(R.id.btn_cancel);
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
@@ -225,10 +234,24 @@ public class SinUpFragment extends Fragment {
                 index_time = 1;
             }
         });
+        tv_time_to2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTimePicker();
+                index_time = 1;
+            }
+        });
         tv_time_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               getTimePicker();
+                getTimePicker();
+                index_time = 2;
+            }
+        });
+        tv_time_from2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTimePicker();
                 index_time = 2;
             }
         });

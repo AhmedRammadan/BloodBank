@@ -30,7 +30,7 @@ public class Adaper_Recy extends RecyclerView.Adapter<ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
         holder.name.setText(items.get(i).getName());
         holder.data.setText(items.get(i).getDate());
-        holder.number.setText(items.get(i).getNumber());
+        holder.days.setText(items.get(i).getDays());
     }
 
     @Override

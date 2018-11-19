@@ -2,38 +2,30 @@ package bloodbank.com;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import java.lang.reflect.Array;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout linear1,LinearLayout1;
     TextView textBloodBank;
-    Spinner spinner,spinner1,spinner2;
-    ArrayAdapter adapter,adapter1,adapter2;
-    String [] names,names1,names2;
+    Spinner spinner_country,spinner_cities,spinner_bloodType;
+    ArrayAdapter adapter_country,adapter_cities,adapter_bloodType;
+    String [] country,cities,bloodType;
     Handler handler = new Handler();
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
             LinearLayout1.setGravity(0);
             LinearLayout1.setPadding(13,13,13,0);
-            textBloodBank.setGravity(0);
-            textBloodBank.setPadding(13,13,13,20);
             textBloodBank.setTextSize(30f);
+            textBloodBank.setGravity(0);
+            textBloodBank.setPadding(20,0,20,30);
             linear1.setVisibility(View.VISIBLE);
-
         }
     };
     @Override
@@ -41,14 +33,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         linear1 = findViewById(R.id.linear1);
-        spinner = findViewById(R.id.spinner);
-        spinner1 = findViewById(R.id.spinner1);
-        spinner2 = findViewById(R.id.spinner2);
+        spinner_country = findViewById(R.id.spinner_country);
+        spinner_cities = findViewById(R.id.spinner_cities);
+        spinner_bloodType = findViewById(R.id.spinner_bloodType);
         LinearLayout1 = findViewById(R.id.LinearLayout1);
         textBloodBank = findViewById(R.id.textBloodBank);
         handler.postDelayed(runnable,2000);
         setSpinner();
-
     }
 
     @Override
@@ -79,17 +70,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setSpinner(){
-        names = getResources().getStringArray(R.array.names);
-        adapter = new ArrayAdapter(MainActivity.this,R.layout.spinner,names);
-        spinner.setAdapter(adapter);
+        country = getResources().getStringArray(R.array.country);
+        adapter_country = new ArrayAdapter(MainActivity.this,R.layout.spinner,country);
+        spinner_country.setAdapter(adapter_country);
 
-        names1 = getResources().getStringArray(R.array.names1);
-        adapter1 = new ArrayAdapter(MainActivity.this,R.layout.spinner,names1);
-        spinner1.setAdapter(adapter1);
+        cities = getResources().getStringArray(R.array.Egypt);
+        adapter_cities = new ArrayAdapter(MainActivity.this,R.layout.spinner,cities);
+        spinner_cities.setAdapter(adapter_cities);
 
-        names2 = getResources().getStringArray(R.array.names2);
-        adapter2 = new ArrayAdapter(MainActivity.this,R.layout.spinner,names2);
-        spinner2.setAdapter(adapter2);
+        bloodType = getResources().getStringArray(R.array.bloodType);
+        adapter_bloodType = new ArrayAdapter(MainActivity.this,R.layout.spinner,bloodType);
+        spinner_bloodType.setAdapter(adapter_bloodType);
     }
 
 }

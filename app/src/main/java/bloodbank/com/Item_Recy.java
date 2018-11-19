@@ -1,12 +1,12 @@
 package bloodbank.com;
 
 public class Item_Recy {
-    private String name , date ,Number;
+    private String name , date ,days;
 
-    public Item_Recy(String name, String date, String number) {
+    public Item_Recy(String name, String date, String days) {
         this.name = name;
         this.date = date;
-        Number = number;
+        this.days = days;
     }
 
     public String getName() {
@@ -17,7 +17,9 @@ public class Item_Recy {
         return date;
     }
 
-    public String getNumber() {
-        return Number;
+    public String getDays() {
+        return days;
     }
+
+
 }

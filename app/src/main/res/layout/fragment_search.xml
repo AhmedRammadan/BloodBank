@@ -18,21 +18,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:entries="@array/names"
+            android:entries="@array/country"
             android:background="@drawable/custom_spinner"
             android:layout_margin="5dp"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:entries="@array/names1"
+            android:entries="@array/Egypt"
             android:background="@drawable/custom_spinner"
             android:layout_margin="5dp"/>
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:entries="@array/names2"
+            android:entries="@array/bloodType"
             android:background="@drawable/custom_spinner"
             android:layout_margin="5dp"/>
         <ImageView

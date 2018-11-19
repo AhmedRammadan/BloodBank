@@ -1,42 +1,355 @@
 <resources>
     <string name="app_name">BloodBank</string>
 
-    <array name="names">
-        <item>Country</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ahmed</item>
-        <item>ahmed</item>
-        <item>ahmed</item>
-        <item>ahmed</item>
+    <array name="country">
+        <item>Egypt</item>
+        <item>Jordan</item>
+        <item>Emirates</item>
+        <!--<item>Bahrain</item>
+        <item>Algeria</item>
+        <item>Saudi Arabia</item>
+        <item>Sudan</item>
+        <item>Somalia</item>
+        <item>Iraq</item>
+        <item>Kuwait</item>
+        <item>Morocco</item>
+        <item>Yemen</item>
+        <item>Turkey</item>
+        <item>Tunisia</item>
+        <item>Comoros</item>
+        <item>South Sudan</item>
+        <item>Djibouti</item>
+        <item>Syria</item>
+        <item>Oman</item>
+        <item>Palestine</item>
+        <item>Qatar</item>
+        <item>Lebanon</item>
+        <item>Libya</item>
+        <item>Mauritania</item>-->
     </array>
-    <array name="names1">
-        <item>City</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ahmed</item>
-        <item>ahmed</item>
-        <item>ahmed</item>
-        <item>ahmed</item>
+
+    <array name="Egypt">
+        <item>Cairo</item>
+        <item>Giza</item>
+        <item>6 October</item>
+        <item>Cheikh Zayed</item>
+        <item>Hawamdiyah</item>
+        <item>Class</item>
+        <item>Athef</item>
+        <item>Al Ayat</item>
+        <item>Al-Bawaiti</item>
+        <item>Al-Qanater Establishment</item>
+        <item>Mansourieh</item>
+        <item>Oaseem</item>
+        <item>Kafr Hakim</item>
+        <item>Zat Kom</item>
+        <item>Nakla</item>
+        <item>Io Ghaleb</item>
+        <item>Ezbet Abdul Samad</item>
+        <item>Abu Rawash</item>
+        <item>Kerdasa</item>
+        <item>Abu Nomros</item>
+        <item>Banha</item>
+        <item>Qalyub</item>
+        <item>Shubra Al Khaimah</item>
+        <item>Al Qanater Charity</item>
+        <item>Khanka</item>
+        <item>Kafr Shukr</item>
+        <item>Tukh</item>
+        <item>Qaha</item>
+        <item>Transit</item>
+        <item>In particular</item>
+        <item>Shibin Spans</item>
+        <item>Alexandria</item>
+        <item>Burj Al Arab</item>
+        <item>New Burj Al Arab</item>
+        <item>Damanhour</item>
+        <item>Kafr El Dawar</item>
+        <item>Rashid</item>
+        <item>Edco</item>
+        <item>Abu al-Matamir</item>
+        <item>Abu Homs</item>
+        <item>Delengat</item>
+        <item>Mahmoudiyah</item>
+        <item>Rahmaniyah</item>
+        <item>Itai Baroud</item>
+        <item>Housh Eissa</item>
+        <item>Shubrakhit</item>
+        <item>Com Hamada</item>
+        <item>Badr</item>
+        <item>Wadi Natrun</item>
+        <item>New Nubaria</item>
+        <item>Marsa Matrouh</item>
+        <item>The bathroom</item>
+        <item>Alamein</item>
+        <item>Dabaa</item>
+        <item>Najila</item>
+        <item>Sir Brani</item>
+        <item>Salloum</item>
+        <item>Siwa</item>
+        <item>Damietta</item>
+        <item>New Damietta</item>
+        <item>Cape of righteousness</item>
+        <item>Faraskour</item>
+        <item>Kafr Saad</item>
+        <item>Zarqa</item>
+        <item>Cypress</item>
+        <item>Kindergarten</item>
+        <item>Kafr El - Batikh</item>
+        <item>Manor Tower</item>
+        <item>Meet Abu Ghaleb</item>
+        <item>Mansoura University</item>
+        <item>Talkha</item>
+        <item>Mitt Ghamr</item>
+        <item>Dekernes</item>
+        <item>Aga</item>
+        <item>Menia of victory</item>
+        <item>Sinbillawin</item>
+        <item>The Kurdish</item>
+        <item>Bani Ubaid</item>
+        <item>Status</item>
+        <item>Longitudinal lengthening</item>
+        <item>The aesthetic</item>
+        <item>Sherbin</item>
+        <item>Rainy</item>
+        <item>Belkas</item>
+        <item>Meet Salsil</item>
+        <item>Download</item>
+        <item>The locality of Damnah</item>
+        <item>Nabrooh</item>
+        <item>Kafr El Sheikh</item>
+        <item>Desouq</item>
+        <item>Fooh</item>
+        <item>Metobas</item>
+        <item>The resort of Baltim</item>
+        <item>Hamol</item>
+        <item>Bella</item>
+        <item>Riyadh</item>
+        <item>Sir Salm</item>
+        <item>Kellen</item>
+        <item>Sir Ghazi</item>
+        <item>Burullus Tower</item>
+        <item>Tanta</item>
+        <item>Al Mahalla Al Kobra</item>
+        <item>Kafr El Zayat</item>
+        <item>I was lying</item>
+        <item>The Santa</item>
+        <item>Kutour</item>
+        <item>Basion</item>
+        <item>Samannoud</item>
+        <item>Shbeen El Koom</item>
+        <item>Sadat City</item>
+        <item>Menouf</item>
+        <item>Sars El-Layan</item>
+        <item>Ashmon</item>
+        <item>Pagors</item>
+        <item>Quesna</item>
+        <item>Pool of the Seven</item>
+        <item>Read out</item>
+        <item>Martyrs</item>
+        <item>Zagazig</item>
+        <item>Tenth of Ramadan</item>
+        <item>Wheat flour</item>
+        <item>Belbeis</item>
+        <item>Mashtoul market</item>
+        <item>Tunnels</item>
+        <item>Abu Hammad</item>
+        <item>The Qurain</item>
+        <item>Hehia</item>
+        <item>Abu Kabir</item>
+        <item>Vaccus</item>
+        <item>New Salihia</item>
+        <item>Ibrahimiyah</item>
+        <item>Derb Negm</item>
+        <item>Kafr Saqr</item>
+        <item>Sons of Saqr</item>
+        <item>Husseiniya</item>
+        <item>Sun stone tribal</item>
+        <item>Abu Omar facility</item>
+        <item>Port Said</item>
+        <item>Port Fouad</item>
+        <item>Ismailia</item>
+        <item>Fayed</item>
+        <item>Qantara East</item>
+        <item>West Qantara</item>
+        <item>The Great Hill</item>
+        <item>Abu Sawir Al Mahatta</item>
+        <item>New cutters</item>
+        <item>Suez</item>
+        <item>Arish</item>
+        <item>To Sheikh Zwaid</item>
+        <item>Rafah</item>
+        <item>Bir al-Abed</item>
+        <item>Goodness</item>
+        <item>Sift</item>
+        <item>Phase</item>
+        <item>Sharm El-Shaikh</item>
+        <item>Dahab</item>
+        <item>Nuweiba</item>
+        <item>Taba</item>
+        <item>Saint Catherine</item>
+        <item>Abu Redis</item>
+        <item>Abu Zenaima</item>
+        <item>Ras Sidr</item>
+        <item>Bani Sweif</item>
+        <item>New Beni Suef</item>
+        <item>Al Wasta</item>
+        <item>Naser</item>
+        <item>Forget it</item>
+        <item>BBA</item>
+        <item>Somasta</item>
+        <item>Fashn</item>
+        <item>Fayoum</item>
+        <item>New Fayoum</item>
+        <item>Tamiya</item>
+        <item>Snores</item>
+        <item>A touch</item>
+        <item>Ibshway</item>
+        <item>Prophet Yusuf</item>
+        <item>Menia</item>
+        <item>New Minya</item>
+        <item>The enemy</item>
+        <item>Magagha</item>
+        <item>Bani Mazar</item>
+        <item>Mattay</item>
+        <item>Samalut</item>
+        <item>The intellectual city</item>
+        <item>Meloy</item>
+        <item>Deir Mawas</item>
+        <item>Asyut</item>
+        <item>New Assiut</item>
+        <item>Dayrout</item>
+        <item>Manfalut</item>
+        <item>Qusiya</item>
+        <item>Abnoub</item>
+        <item>Abu Tig</item>
+        <item>The Ghanaim</item>
+        <item>Sound Coast</item>
+        <item>Badari</item>
+        <item>Sidfa</item>
+        <item>Outbound</item>
+        <item>Paris</item>
+        <item>Mout</item>
+        <item>Farafra</item>
+        <item>Tiles</item>
+        <item>Hurghada</item>
+        <item>Ras Ghareb</item>
+        <item>Safaga</item>
+        <item>Short</item>
+        <item>Marsa Alam</item>
+        <item>Shalatin</item>
+        <item>Halaib</item>
+        <item>Sohag</item>
+        <item>New Sohag</item>
+        <item>Akhmim</item>
+        <item>New Akhmim</item>
+        <item>Albina</item>
+        <item>El Maragha</item>
+        <item>Enterprise</item>
+        <item>Dar AISalaam</item>
+        <item>Gerga</item>
+        <item>West Juhayna</item>
+        <item>Saqlata</item>
+        <item>Tama</item>
+        <item>Tahta</item>
+        <item>Qena</item>
+        <item>New Qena</item>
+        <item>Abu Tesht</item>
+        <item>Nag Hammadi</item>
+        <item>Deshna</item>
+        <item>Endowment</item>
+        <item>Quit</item>
+        <item>Naqada</item>
+        <item>Qus</item>
+        <item>Farshout</item>
+        <item>the shortest</item>
+        <item>New Luxor</item>
+        <item>New good</item>
+        <item>Zine</item>
+        <item>Al Bayadiya</item>
+        <item>Qurna</item>
+        <item>Armant</item>
+        <item>The Tud</item>
+        <item>Esna</item>
+        <item>Aswan</item>
+        <item>New Aswan</item>
+        <item>Drau</item>
+        <item>Kom Ombo</item>
+        <item>Nasr Nubia</item>
+        <item>Kalabsha</item>
+        <item>Edfu</item>
+        <item>Al-Radisiyah</item>
+        <item>Fusillia</item>
+        <item>Sevenfold</item>
+        <item>Abu Simbel tourist</item>
     </array>
-    <array name="names2">
-        <item>blood type</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ramadan</item>
-        <item>ahmed</item>
-        <item>ahmed</item>
+    <array name="Jordan">
+        <item>Amman</item>
+        <item>Zarqa</item>
+        <item>Irbid</item>
+        <item>ar-Rusaifa</item>
+        <item>al-Quwaisima</item>
+        <item>Wadi as-Sir</item>
+        <item>Tila al-Ali</item>
+        <item>Churaibat as-Suq</item>
+        <item>Aqaba</item>
+        <item>as-Salt</item>
+        <item>ar-Ramtha</item>
+        <item>Madaba</item>
+        <item>al-Dschubaiha</item>
+        <item>Baqaa refugee camp</item>
+        <item>Suwailih</item>
+        <item>al-Mafraq	</item>
+        <item>Sahab</item>
+        <item>Muchayyam Hetten</item>
+        <item>Ain al-Bascha	</item>
+        <item>Ain al-Bascha	</item>
+        <item>Jerash</item>
+        <item>Mardsch al-Hamam	</item>
+        <item>ad-Dulail</item>
+        <item>Maan</item>
+        <item>al-Hasimiya</item>
+        <item>Askan Abu Nusair</item>
+        <item>at-Tafila	</item>
+        <item>Kufrindscha	</item>
+        <item>al-Husun	</item>
+        <item>al-Karak	</item>
+        <item>as-Sarih	</item>
+        <item>Aidun	</item>
+        <item>al-Maschariqa	</item>
+        <item>Bait Ras	</item>
+        <item>Andschara	</item>
+        <item>Gawr asch-Schafi	</item>
+        <item>Azmi al-Mufti	</item>
+        <item>Kurayyima	</item>
+        <item>Naur	</item>
+        <item>Schafa Badran	</item>
+        <item>Sakib	</item>
+    </array>
+    <array name="Emirates">
+        <item>Dubai</item>
+        <item>Abu Dhabi</item>
+        <item>Sharjah</item>
+        <item>Eye</item>
+        <item>Ras Al Khaimah</item>
+        <item>Ajman</item>
+        <item>Fujairah</item>
+        <item>Umm Al Quwain</item>
+        <item>Khorfakkan</item>
+        <item>Dibba Al Hosn</item>
+    </array>
+
+
+
+    <array name="bloodType">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
     </array>
 
     <!-- TODO: Remove or change this placeholder text -->

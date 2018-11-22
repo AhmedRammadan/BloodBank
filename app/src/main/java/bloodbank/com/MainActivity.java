@@ -1,6 +1,9 @@
 package bloodbank.com;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,9 +12,12 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    boolean connected = false;
     ArrayList<String> numbers;
     LinearLayout linear1,LinearLayout1;
     TextView textBloodBank;
@@ -63,14 +69,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Search(View view) {
-        Intent intent =new Intent(MainActivity.this,MainActivity2.class);
-        intent.putExtra("key",0);
-        startActivity(intent);
+        if (connected()) {
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            intent.putExtra("key", 0);
+            startActivity(intent);
+        }else {
+            Toast.makeText(MainActivity.this, "check your internet connection", Toast.LENGTH_SHORT).show();
+        }
     }
     public void sinUp(View view) {
-        Intent intent =new Intent(MainActivity.this,MainActivity2.class);
-        intent.putExtra("key",1);
-        startActivity(intent);
+        if (connected()) {
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            intent.putExtra("key", 1);
+            startActivity(intent);
+        }else {
+            Toast.makeText(MainActivity.this, "check your internet connection", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void setSpinner(){
@@ -85,6 +99,18 @@ public class MainActivity extends AppCompatActivity {
         bloodType = getResources().getStringArray(R.array.bloodType);
         adapter_bloodType = new ArrayAdapter(MainActivity.this,R.layout.spinner,bloodType);
         spinner_bloodType.setAdapter(adapter_bloodType);
+    }
+    private boolean connected(){
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            //we are connected to a network
+            connected = true;
+        }
+        else{
+            connected = false;
+        }
+        return connected;
     }
 
 }

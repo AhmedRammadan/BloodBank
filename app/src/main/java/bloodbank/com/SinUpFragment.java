@@ -1,12 +1,14 @@
 package bloodbank.com;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,29 +22,27 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
+import net.rimoto.intlphoneinput.IntlPhoneInput;
 import java.util.ArrayList;
-
-import static android.content.ContentValues.TAG;
 
 
 public class SinUpFragment extends Fragment {
+
     DatabaseReference myreference ;
     String name;
-    boolean chick;
     String number;
     ArrayList<String> numbers;
     String phoneNumber;
     String nameOfCountry;
     String nameOfCities;
     String nameOfBloodType;
-    EditText et_nameDonor , et_phoneNumber;
+    EditText et_nameDonor ;
+    IntlPhoneInput inputphoneNumber;
     View view;
     Button btn_sinUp, btn_24h;
     TextView tv_24h, tv_time_to,tv_time_to2, tv_time_from,tv_time_from2;
@@ -55,6 +55,7 @@ public class SinUpFragment extends Fragment {
     ArrayAdapter adapter_country,adapter_cities,adapter_bloodType;
     String [] country,cities,bloodType;
     String selectsat="", selectmon="", selecttue="", selectwed="", selectthu="",selectfri="",selectsun="";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -80,7 +81,7 @@ public class SinUpFragment extends Fragment {
                 getNumbers();
             }
         });
-        et_phoneNumber.setOnClickListener(new View.OnClickListener() {
+        inputphoneNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getNumbers();
@@ -96,10 +97,11 @@ public class SinUpFragment extends Fragment {
         return view;
     }
     public void findViewById(){
+       try {
         //SimUp
         btn_sinUp = view.findViewById(R.id.btn_sinUp);
         et_nameDonor = view.findViewById(R.id.et_nameDonor);
-        et_phoneNumber = view.findViewById(R.id.et_phoneNumber);
+        inputphoneNumber = view.findViewById(R.id.inputphoneNumber);
         //click for get Time
         btn_24h = view.findViewById(R.id.btn_24h);
         tv_24h = view.findViewById(R.id.tv__24h);
@@ -124,10 +126,13 @@ public class SinUpFragment extends Fragment {
         cities = getResources().getStringArray(R.array.Egypt);
         spinner_cities = view.findViewById(R.id.city);
         spinner_bloodType = view.findViewById(R.id.bloodType);
+    }catch (Exception e){
 
+    }
 
     }
     public void getTimePicker() {
+        try {
         final AlertDialog builder = new AlertDialog.Builder(getActivity()).create();
         final View dialogShow = getLayoutInflater().inflate(R.layout.time_picker, null);
         builder.setView(dialogShow);
@@ -180,7 +185,7 @@ public class SinUpFragment extends Fragment {
                     }
                     builder.dismiss();
                 }else {
-                    Toast.makeText(getActivity(), "pleas choose time", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "please choose time", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -190,8 +195,12 @@ public class SinUpFragment extends Fragment {
                 builder.dismiss();
             }
         });
+    }catch (Exception e){
+
+    }
     }
     public void changeColorTV() {
+        try {
         final int color = getResources().getColor(R.color.colorText);
         final int color1 = getResources().getColor(R.color.colorText1);
         sat.setOnClickListener(new View.OnClickListener() {
@@ -292,8 +301,12 @@ public class SinUpFragment extends Fragment {
                 }
             }
         });
+    }catch (Exception e){
+
+    }
     }
     public void btn_24() {
+        try {
         final Drawable getbtn1 = getResources().getDrawable(R.drawable.btn_24h_1);
         final Drawable getbtn2 = getResources().getDrawable(R.drawable.btn_24h_2);
         tv_24h.setOnClickListener(new View.OnClickListener() {
@@ -332,39 +345,47 @@ public class SinUpFragment extends Fragment {
                 }
             }
         });
-    }
-    public void getTime(){
-        tv_time_from.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTimePicker();
-                index_time = 1;
-            }
-        });
-        tv_time_from2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTimePicker();
-                index_time = 1;
-            }
-        });
-        tv_time_to.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTimePicker();
-                index_time = 2;
-            }
-        });
-        tv_time_to2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTimePicker();
-                index_time = 2;
-            }
-        });
+    }catch (Exception e){
 
     }
+    }
+    public void getTime(){
+
+        try {
+            tv_time_from.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTimePicker();
+                index_time = 1;
+            }
+            });
+            tv_time_from2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTimePicker();
+                index_time = 1;
+            }
+            });
+            tv_time_to.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTimePicker();
+                index_time = 2;
+            }
+            });
+            tv_time_to2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTimePicker();
+                index_time = 2;
+            }
+        });
+    }catch (Exception e){
+
+    }
+    }
     public void setSpinnerCountry(){
+        try {
         country = getResources().getStringArray(R.array.country);
         adapter_country = new ArrayAdapter(getActivity(),R.layout.spinner,country);
         spinner_country.setAdapter(adapter_country);
@@ -393,9 +414,12 @@ public class SinUpFragment extends Fragment {
 
             }
         });
+    }catch (Exception e){
+
+    }
     }
     public void setSpinnerCities(){
-
+    try {
         adapter_cities = new ArrayAdapter(getActivity(),R.layout.spinner,cities);
         spinner_cities.setAdapter(adapter_cities);
         spinner_cities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -411,8 +435,12 @@ public class SinUpFragment extends Fragment {
             }
         });
     }
-    public void setSpinnerBloodType(){
+    catch (Exception e){
 
+    }
+    }
+    public void setSpinnerBloodType(){
+    try {
         bloodType = getResources().getStringArray(R.array.bloodType);
         adapter_bloodType = new ArrayAdapter(getActivity(),R.layout.spinner,bloodType);
         spinner_bloodType.setAdapter(adapter_bloodType);
@@ -428,105 +456,121 @@ public class SinUpFragment extends Fragment {
 
             }
         });
+    }catch (Exception e){
 
+    }
     }
     public void sinUpDonor(){
-        myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-        final AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
-        name        = et_nameDonor.getText().toString();
-        phoneNumber = et_phoneNumber.getText().toString();
-        if (!name.equals("") && !phoneNumber.equals("")){
-            if (chickNumberPhone()) {
-                if (availableTime == 2) {
-                    //here available all time
-                    alertDialog.setMessage(name + "\n" + phoneNumber + "\n" + nameOfCountry + "\n" + nameOfCities + "\n" + nameOfBloodType + "\n" + "all Time");
-                    Donor donor = new Donor(name, phoneNumber, "all time");
-                    myreference.push().setValue(donor);
-                    alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber() + "\n" + donor.getAvailableTime());
-
-                } else if (availableTime == 1) {
-
-                    String fromTime = tv_time_from.getText().toString();
-                    String toTime = tv_time_to.getText().toString();
-                    if (selectsat == "sat " || selectmon == "mon " || selecttue == "tue " || selectwed == "wed " ||
-                            selectthu == "thu " || selectfri == "fri " || selectsun == "sun ") {
-
-                        if (fromTime.length() > 5 && toTime.length() > 5) {
-
-                            DonorAvailableTime donor = new DonorAvailableTime(name, phoneNumber, fromTime, toTime, selectsat, selectmon,
-                                    selecttue, selectwed, selectthu, selectfri, selectsun);
+        try {
+            myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+            final AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+            name = et_nameDonor.getText().toString();
+            if (inputphoneNumber.isValid()) {
+                phoneNumber = inputphoneNumber.getNumber();
+                if (!name.equals("") && !phoneNumber.equals("")) {
+                    if (chickNumberPhone()) {
+                        if (availableTime == 2) {
+                            alertDialog.setMessage(name + "\n" + phoneNumber + "\n" + nameOfCountry + "\n" + nameOfCities + "\n" + nameOfBloodType + "\n" + "all Time");
+                            Donor donor = new Donor(name, phoneNumber, "all time");
                             myreference.push().setValue(donor);
-                            alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber() + "\n" + donor.getFromTime() + "\n" + donor.getToTime() + "\n" +
-                                    donor.getSat() + donor.getMon() + donor.getTue() + donor.getWed() + donor.getThu() + donor.getFri() + donor.getSun());
-                        } else {
+                            alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber() + "\n" + donor.getAvailableTime());
 
-                            alertDialog.setMessage("pleas choose time");
+                        } else if (availableTime == 1) {
+
+                            String fromTime = tv_time_from.getText().toString();
+                            String toTime = tv_time_to.getText().toString();
+                            if (selectsat == "sat " || selectmon == "mon " || selecttue == "tue " || selectwed == "wed " ||
+                                    selectthu == "thu " || selectfri == "fri " || selectsun == "sun ") {
+
+                                if (fromTime.length() > 5 && toTime.length() > 5) {
+
+                                    DonorAvailableTime donor = new DonorAvailableTime(name, phoneNumber, fromTime, toTime, selectsat, selectmon,
+                                            selecttue, selectwed, selectthu, selectfri, selectsun);
+                                    myreference.push().setValue(donor);
+                                    alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber() + "\n" + donor.getFromTime() + "\n" + donor.getToTime() + "\n" +
+                                            donor.getSat() + donor.getMon() + donor.getTue() + donor.getWed() + donor.getThu() + donor.getFri() + donor.getSun());
+                                } else {
+
+                                    alertDialog.setMessage("pleas choose time");
+                                }
+                            } else {
+                                alertDialog.setMessage("pleas choose days");
+                            }
                         }
                     } else {
-                        alertDialog.setMessage("pleas choose days");
+                        alertDialog.setMessage("This number already exists");
                     }
+                } else {
+                    alertDialog.setMessage("Enter Your Name and phoneNumber");
                 }
-            }else {
-                alertDialog.setMessage("This number already exists");
+            } else {
+                alertDialog.setMessage("Please check the phone number");
             }
-        }else {
-            alertDialog.setMessage("Enter Your Name and phoneNumber");
-        }
 
-        alertDialog.show();
+            alertDialog.show();
+        }catch (Exception e){
+        }
     }
     public boolean chickNumberPhone(){
-        getNumbers();
         try {
+        getNumbers();
+
             for (String number : numbers) {
-                int num1 = Integer.parseInt(number);
-                int num2 = Integer.parseInt(phoneNumber);
+                long num1 = Long.parseLong(number);
+                long num2 = Long.parseLong(phoneNumber);
                 if (num1 == num2) {
                     return false;
                 }
 
             }
-        }catch (Exception e ){
+        }catch (Exception e){
+            return false;
         }
         return true;
     }
     private void  getNumbers(){
-        Toast.makeText(getActivity(), "getNumbers", Toast.LENGTH_SHORT).show();
-        myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-        myreference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                numbers.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    number = snapshot.child("phoneNumber").getValue(String.class);
-                    numbers.add(number);
+      try {
+          myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+          myreference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    numbers.clear();
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                        number = snapshot.child("phoneNumber").getValue(String.class);
+                        numbers.add(number);
+
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            });
+      }catch (Exception e){
 
-            }
-        });
+      }
     }
     private void  getNumbersForSpinner(String nameOfCountry ,String nameOfCities,String nameOfBloodType){
-        Toast.makeText(getActivity(), "getNumbersForSpinner", Toast.LENGTH_SHORT).show();
-        myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-        myreference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                numbers.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    number = snapshot.child("phoneNumber").getValue(String.class);
-                    numbers.add(number);
+      try {
+            myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+            myreference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    numbers.clear();
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                        number = snapshot.child("phoneNumber").getValue(String.class);
+                        numbers.add(number);
+
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            });
+      }catch (Exception e){
 
-            }
-        });
+      }
     }
 
 }

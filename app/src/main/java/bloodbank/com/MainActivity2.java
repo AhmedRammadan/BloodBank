@@ -1,6 +1,9 @@
 package bloodbank.com;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -31,10 +34,11 @@ public class MainActivity2 extends AppCompatActivity {
                 break;
             default:
                 Toast.makeText(this, "Toast", Toast.LENGTH_SHORT).show();
-
-
         }
+
+
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -61,5 +65,6 @@ public class MainActivity2 extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment,fragment);
         fragmentTransaction.commit();
     }
+
 
 }

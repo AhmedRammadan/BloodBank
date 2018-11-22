@@ -299,32 +299,32 @@
         <item>al-Dschubaiha</item>
         <item>Baqaa refugee camp</item>
         <item>Suwailih</item>
-        <item>al-Mafraq	</item>
+        <item>al-Mafraq</item>
         <item>Sahab</item>
         <item>Muchayyam Hetten</item>
-        <item>Ain al-Bascha	</item>
-        <item>Ain al-Bascha	</item>
+        <item>Ain al-Bascha</item>
+        <item>Ain al-Bascha</item>
         <item>Jerash</item>
-        <item>Mardsch al-Hamam	</item>
+        <item>Mardsch al-Hamam</item>
         <item>ad-Dulail</item>
         <item>Maan</item>
         <item>al-Hasimiya</item>
         <item>Askan Abu Nusair</item>
-        <item>at-Tafila	</item>
-        <item>Kufrindscha	</item>
-        <item>al-Husun	</item>
-        <item>al-Karak	</item>
-        <item>as-Sarih	</item>
-        <item>Aidun	</item>
-        <item>al-Maschariqa	</item>
-        <item>Bait Ras	</item>
-        <item>Andschara	</item>
-        <item>Gawr asch-Schafi	</item>
-        <item>Azmi al-Mufti	</item>
-        <item>Kurayyima	</item>
-        <item>Naur	</item>
-        <item>Schafa Badran	</item>
-        <item>Sakib	</item>
+        <item>at-Tafila</item>
+        <item>Kufrindscha</item>
+        <item>al-Husun</item>
+        <item>al-Karak</item>
+        <item>as-Sarih</item>
+        <item>Aidun</item>
+        <item>al-Maschariqa</item>
+        <item>Bait Ras</item>
+        <item>Andschara</item>
+        <item>Gawr asch-Schafi</item>
+        <item>Azmi al-Mufti</item>
+        <item>Kurayyima</item>
+        <item>Naur</item>
+        <item>Schafa Badran</item>
+        <item>Sakib</item>
     </array>
     <array name="Emirates">
         <item>Dubai</item>
@@ -338,7 +338,6 @@
         <item>Khorfakkan</item>
         <item>Dibba Al Hosn</item>
     </array>
-
 
 
     <array name="bloodType">

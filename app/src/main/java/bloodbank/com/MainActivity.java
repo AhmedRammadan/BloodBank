@@ -9,8 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    ArrayList<String> numbers;
     LinearLayout linear1,LinearLayout1;
     TextView textBloodBank;
     Spinner spinner_country,spinner_cities,spinner_bloodType;
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         textBloodBank = findViewById(R.id.textBloodBank);
         handler.postDelayed(runnable,2000);
         setSpinner();
+
+         numbers = new ArrayList();
     }
 
     @Override

@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -26,12 +27,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 import static android.content.ContentValues.TAG;
 
 
 public class SinUpFragment extends Fragment {
     DatabaseReference myreference ;
     String name;
+    boolean chick;
+    String number;
+    ArrayList<String> numbers;
     String phoneNumber;
     String nameOfCountry;
     String nameOfCities;
@@ -53,7 +59,7 @@ public class SinUpFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_sinup, container, false);
-
+        numbers = new ArrayList<>();
         findViewById();
         btn_24();
         getTime();
@@ -61,6 +67,26 @@ public class SinUpFragment extends Fragment {
         setSpinnerCountry();
         setSpinnerCities();
         setSpinnerBloodType();
+        et_nameDonor.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                getNumbers();
+                return false;
+            }
+        });
+        et_nameDonor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getNumbers();
+            }
+        });
+        et_phoneNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getNumbers();
+            }
+        });
+
         btn_sinUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +135,7 @@ public class SinUpFragment extends Fragment {
         builder.show();
 
         TimePicker timePicker = dialogShow.findViewById(R.id.timePicker);
-         Button btn_ok = dialogShow.findViewById(R.id.btn_ok);
+        Button btn_ok = dialogShow.findViewById(R.id.btn_ok);
         Button btn_cancel = dialogShow.findViewById(R.id.btn_cancel);
         Hour = 0;
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
@@ -278,11 +304,13 @@ public class SinUpFragment extends Fragment {
                     btn_24h.setBackground(getbtn2);
                     linear_time.setVisibility(View.VISIBLE);
                     index_btn++;
+                    getNumbers();
                 } else if (index_btn == 2) {
                     availableTime = 2;
                     btn_24h.setBackground(getbtn1);
                     linear_time.setVisibility(View.GONE);
                     index_btn--;
+                    getNumbers();
                 }
             }
         });
@@ -294,11 +322,13 @@ public class SinUpFragment extends Fragment {
                     btn_24h.setBackground(getbtn2);
                     linear_time.setVisibility(View.VISIBLE);
                     index_btn++;
+                    getNumbers();
                 } else if (index_btn == 2) {
                     availableTime = 2;
                     btn_24h.setBackground(getbtn1);
                     linear_time.setVisibility(View.GONE);
                     index_btn--;
+                    getNumbers();
                 }
             }
         });
@@ -342,15 +372,19 @@ public class SinUpFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 nameOfCountry = country[position];
+
                 if (nameOfCountry == country[0]){
                     cities = getResources().getStringArray(R.array.Egypt);
                     setSpinnerCities();
+                    getNumbersForSpinner(nameOfCountry,"Cairo","A+");
                 }else if (nameOfCountry == country[1]){
                     cities = getResources().getStringArray(R.array.Jordan);
                     setSpinnerCities();
+                    getNumbersForSpinner(nameOfCountry,"Amman","A+");
                 }else if (nameOfCountry == country[2]){
                     cities = getResources().getStringArray(R.array.Emirates);
                     setSpinnerCities();
+                    getNumbersForSpinner(nameOfCountry,"Dubai","A+");
                 }
             }
 
@@ -368,6 +402,7 @@ public class SinUpFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 nameOfCities = cities[position];
+                getNumbersForSpinner(nameOfCountry,nameOfCities,"A+");
             }
 
             @Override
@@ -385,6 +420,7 @@ public class SinUpFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 nameOfBloodType = bloodType[position];
+                getNumbersForSpinner(nameOfCountry,nameOfCities,nameOfBloodType);
             }
 
             @Override
@@ -392,6 +428,7 @@ public class SinUpFragment extends Fragment {
 
             }
         });
+
     }
     public void sinUpDonor(){
         myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
@@ -399,42 +436,97 @@ public class SinUpFragment extends Fragment {
         name        = et_nameDonor.getText().toString();
         phoneNumber = et_phoneNumber.getText().toString();
         if (!name.equals("") && !phoneNumber.equals("")){
-            if (availableTime == 2){
+            if (chickNumberPhone()) {
+                if (availableTime == 2) {
                     //here available all time
-                    alertDialog.setMessage(name +"\n"+ phoneNumber +"\n"+ nameOfCountry +"\n"+ nameOfCities +"\n"+nameOfBloodType + "\n"+ "all Time");
-                    Donor donor = new Donor(name,phoneNumber,"all time");
+                    alertDialog.setMessage(name + "\n" + phoneNumber + "\n" + nameOfCountry + "\n" + nameOfCities + "\n" + nameOfBloodType + "\n" + "all Time");
+                    Donor donor = new Donor(name, phoneNumber, "all time");
                     myreference.push().setValue(donor);
-                    alertDialog.setMessage(donor.getName() +"\n"+ donor.getPhoneNumber()+ "\n"+ donor.getAvailableTime());
-            }else if (availableTime == 1) {
+                    alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber() + "\n" + donor.getAvailableTime());
 
-                String fromTime = tv_time_from.getText().toString();
-                String toTime = tv_time_to.getText().toString();
-                if (selectsat=="sat "|| selectmon=="mon "|| selecttue=="tue "|| selectwed=="wed "||
-                        selectthu=="thu "||selectfri=="fri "||selectsun =="sun ") {
+                } else if (availableTime == 1) {
 
-                    if (fromTime.length() > 5 && toTime.length() > 5) {
+                    String fromTime = tv_time_from.getText().toString();
+                    String toTime = tv_time_to.getText().toString();
+                    if (selectsat == "sat " || selectmon == "mon " || selecttue == "tue " || selectwed == "wed " ||
+                            selectthu == "thu " || selectfri == "fri " || selectsun == "sun ") {
 
-                        Donor donor = new Donor(name, phoneNumber, fromTime, toTime, selectsat, selectmon,
-                                selecttue, selectwed, selectthu, selectfri, selectsun);
-                        myreference.push().setValue(donor);
-                        alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber()+ "\n" + donor.getFromTime() + "\n" + donor.getToTime() + "\n" +
-                                donor.getSat() + donor.getMon() + donor.getTue() + donor.getWed() + donor.getThu() + donor.getFri() + donor.getSun());
+                        if (fromTime.length() > 5 && toTime.length() > 5) {
+
+                            DonorAvailableTime donor = new DonorAvailableTime(name, phoneNumber, fromTime, toTime, selectsat, selectmon,
+                                    selecttue, selectwed, selectthu, selectfri, selectsun);
+                            myreference.push().setValue(donor);
+                            alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber() + "\n" + donor.getFromTime() + "\n" + donor.getToTime() + "\n" +
+                                    donor.getSat() + donor.getMon() + donor.getTue() + donor.getWed() + donor.getThu() + donor.getFri() + donor.getSun());
+                        } else {
+
+                            alertDialog.setMessage("pleas choose time");
+                        }
                     } else {
-
-                        alertDialog.setMessage("pleas choose time");
+                        alertDialog.setMessage("pleas choose days");
                     }
-                }else {
-                    alertDialog.setMessage("pleas choose days");
                 }
+            }else {
+                alertDialog.setMessage("This number already exists");
             }
         }else {
             alertDialog.setMessage("Enter Your Name and phoneNumber");
         }
 
-       alertDialog.show();
+        alertDialog.show();
+    }
+    public boolean chickNumberPhone(){
+        getNumbers();
+        try {
+            for (String number : numbers) {
+                int num1 = Integer.parseInt(number);
+                int num2 = Integer.parseInt(phoneNumber);
+                if (num1 == num2) {
+                    return false;
+                }
+
+            }
+        }catch (Exception e ){
+        }
+        return true;
+    }
+    private void  getNumbers(){
+        Toast.makeText(getActivity(), "getNumbers", Toast.LENGTH_SHORT).show();
+        myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+        myreference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                numbers.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    number = snapshot.child("phoneNumber").getValue(String.class);
+                    numbers.add(number);
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+    private void  getNumbersForSpinner(String nameOfCountry ,String nameOfCities,String nameOfBloodType){
+        Toast.makeText(getActivity(), "getNumbersForSpinner", Toast.LENGTH_SHORT).show();
+        myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+        myreference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                numbers.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    number = snapshot.child("phoneNumber").getValue(String.class);
+                    numbers.add(number);
+
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
-
 }
-
-

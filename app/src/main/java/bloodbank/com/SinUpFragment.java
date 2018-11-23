@@ -2,6 +2,7 @@ package bloodbank.com;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -97,368 +98,376 @@ public class SinUpFragment extends Fragment {
         return view;
     }
     public void findViewById(){
-       try {
-        //SimUp
-        btn_sinUp = view.findViewById(R.id.btn_sinUp);
-        et_nameDonor = view.findViewById(R.id.et_nameDonor);
-        inputphoneNumber = view.findViewById(R.id.inputphoneNumber);
-        //click for get Time
-        btn_24h = view.findViewById(R.id.btn_24h);
-        tv_24h = view.findViewById(R.id.tv__24h);
-        //get Time
-        tv_time_to = view.findViewById(R.id.time_to);
-        tv_time_to2 = view.findViewById(R.id.time_to2);
-        tv_time_from = view.findViewById(R.id.time_from);
-        tv_time_from2 = view.findViewById(R.id.time_from2);
-        linear_time = view.findViewById(R.id.linear_time);
+        try {
+            //SimUp
+            btn_sinUp = view.findViewById(R.id.btn_sinUp);
+            et_nameDonor = view.findViewById(R.id.et_nameDonor);
+            inputphoneNumber = view.findViewById(R.id.inputphoneNumber);
+            //click for get Time
+            btn_24h = view.findViewById(R.id.btn_24h);
+            tv_24h = view.findViewById(R.id.tv__24h);
+            //get Time
+            tv_time_to = view.findViewById(R.id.time_to);
+            tv_time_to2 = view.findViewById(R.id.time_to2);
+            tv_time_from = view.findViewById(R.id.time_from);
+            tv_time_from2 = view.findViewById(R.id.time_from2);
+            linear_time = view.findViewById(R.id.linear_time);
 
-        //for Days
-        sat = view.findViewById(R.id.sat);
-        mon = view.findViewById(R.id.mon);
-        tue = view.findViewById(R.id.tue);
-        wed = view.findViewById(R.id.wed);
-        thu = view.findViewById(R.id.thu);
-        fri = view.findViewById(R.id.fri);
-        sun = view.findViewById(R.id.sun);
+            //for Days
+            sat = view.findViewById(R.id.sat);
+            mon = view.findViewById(R.id.mon);
+            tue = view.findViewById(R.id.tue);
+            wed = view.findViewById(R.id.wed);
+            thu = view.findViewById(R.id.thu);
+            fri = view.findViewById(R.id.fri);
+            sun = view.findViewById(R.id.sun);
 
-        //Spinner
-        spinner_country = view.findViewById(R.id.country);
-        cities = getResources().getStringArray(R.array.Egypt);
-        spinner_cities = view.findViewById(R.id.city);
-        spinner_bloodType = view.findViewById(R.id.bloodType);
-    }catch (Exception e){
+            //Spinner
+            spinner_country = view.findViewById(R.id.country);
+            cities = getResources().getStringArray(R.array.Egypt);
+            spinner_cities = view.findViewById(R.id.city);
+            spinner_bloodType = view.findViewById(R.id.bloodType);
+        }catch (Exception e){
 
-    }
+            Toast.makeText(getActivity(), "Error11", Toast.LENGTH_SHORT).show();
+        }
 
     }
     public void getTimePicker() {
         try {
-        final AlertDialog builder = new AlertDialog.Builder(getActivity()).create();
-        final View dialogShow = getLayoutInflater().inflate(R.layout.time_picker, null);
-        builder.setView(dialogShow);
+            final AlertDialog builder = new AlertDialog.Builder(getActivity()).create();
+            final View dialogShow = getLayoutInflater().inflate(R.layout.time_picker, null);
+            builder.setView(dialogShow);
 
-        builder.show();
+            builder.show();
 
-        TimePicker timePicker = dialogShow.findViewById(R.id.timePicker);
-        Button btn_ok = dialogShow.findViewById(R.id.btn_ok);
-        Button btn_cancel = dialogShow.findViewById(R.id.btn_cancel);
-        Hour = 0;
-        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                if (hourOfDay >= 12) {
-                    AmPm = "Pm";
-                } else if (hourOfDay < 12) {
-                    AmPm = "Am";
+            TimePicker timePicker = dialogShow.findViewById(R.id.timePicker);
+            Button btn_ok = dialogShow.findViewById(R.id.btn_ok);
+            Button btn_cancel = dialogShow.findViewById(R.id.btn_cancel);
+            Hour = 0;
+            timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+                @Override
+                public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                    if (hourOfDay >= 12) {
+                        AmPm = "Pm";
+                    } else if (hourOfDay < 12) {
+                        AmPm = "Am";
+                    }
+                    Hour = hourOfDay;
+                    Minute = minute;
                 }
-                Hour = hourOfDay;
-                Minute = minute;
-            }
-        });
-        btn_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Hour!=0) {
-                    if (index_time == 1){
-                        if (AmPm == "Pm"){
-                            if (Hour != 12) {
-                                Hour -= 12;
+            });
+            btn_ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (Hour!=0) {
+                        if (index_time == 1){
+                            if (AmPm == "Pm"){
+                                if (Hour != 12) {
+                                    Hour -= 12;
+                                    tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
+                                }
                                 tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
                             }
-                            tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
-                        }
-                        else {
-                            tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
-                        }
+                            else {
+                                tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
+                            }
 
-                    }else  if (index_time == 2) {
-                        if (AmPm == "Pm"){
-                            if (Hour !=12){
-                                Hour -=12;
+                        }else  if (index_time == 2) {
+                            if (AmPm == "Pm"){
+                                if (Hour !=12){
+                                    Hour -=12;
+                                    tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
+                                }
                                 tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
                             }
-                            tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
+                            else {
+                                tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
+                            }
                         }
-                        else {
-                            tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
-                        }
+                        builder.dismiss();
+                    }else {
+                        Toast.makeText(getActivity(), "please choose time", Toast.LENGTH_SHORT).show();
                     }
-                    builder.dismiss();
-                }else {
-                    Toast.makeText(getActivity(), "please choose time", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                builder.dismiss();
-            }
-        });
-    }catch (Exception e){
+            });
+            btn_cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    builder.dismiss();
+                }
+            });
+        }catch (Exception e){
 
-    }
+            Toast.makeText(getActivity(), "Error10", Toast.LENGTH_SHORT).show();
+        }
     }
     public void changeColorTV() {
         try {
-        final int color = getResources().getColor(R.color.colorText);
-        final int color1 = getResources().getColor(R.color.colorText1);
-        sat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_colorTV1 == 1) {
-                    selectsat="sat ";
-                    sat.setTextColor(color);
-                    index_colorTV1++;
-                } else if (index_colorTV1 == 2) {
-                    selectsat="";
-                    sat.setTextColor(color1);
-                    index_colorTV1--;
+            final int color = getResources().getColor(R.color.colorText);
+            final int color1 = getResources().getColor(R.color.colorText1);
+            sat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_colorTV1 == 1) {
+                        selectsat="sat ";
+                        sat.setTextColor(color);
+                        index_colorTV1++;
+                    } else if (index_colorTV1 == 2) {
+                        selectsat="";
+                        sat.setTextColor(color1);
+                        index_colorTV1--;
+                    }
                 }
-            }
-        });
-        mon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_colorTV2 == 1) {
-                    selectmon="mon ";
-                    mon.setTextColor(color);
-                    index_colorTV2++;
-                } else if (index_colorTV2 == 2) {
-                    selectmon="";
-                    mon.setTextColor(color1);
-                    index_colorTV2--;
+            });
+            mon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_colorTV2 == 1) {
+                        selectmon="mon ";
+                        mon.setTextColor(color);
+                        index_colorTV2++;
+                    } else if (index_colorTV2 == 2) {
+                        selectmon="";
+                        mon.setTextColor(color1);
+                        index_colorTV2--;
+                    }
                 }
-            }
-        });
-        tue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_colorTV3 == 1) {
-                    selecttue="tue ";
-                    tue.setTextColor(color);
-                    index_colorTV3++;
-                } else if (index_colorTV3 == 2) {
-                    selecttue="";
-                    tue.setTextColor(color1);
-                    index_colorTV3--;
+            });
+            tue.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_colorTV3 == 1) {
+                        selecttue="tue ";
+                        tue.setTextColor(color);
+                        index_colorTV3++;
+                    } else if (index_colorTV3 == 2) {
+                        selecttue="";
+                        tue.setTextColor(color1);
+                        index_colorTV3--;
+                    }
                 }
-            }
-        });
-        wed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_colorTV4 == 1) {
-                    selectwed="wed ";
-                    wed.setTextColor(color);
-                    index_colorTV4++;
-                } else if (index_colorTV4 == 2) {
-                    selectwed= "";
-                    wed.setTextColor(color1);
-                    index_colorTV4--;
+            });
+            wed.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_colorTV4 == 1) {
+                        selectwed="wed ";
+                        wed.setTextColor(color);
+                        index_colorTV4++;
+                    } else if (index_colorTV4 == 2) {
+                        selectwed= "";
+                        wed.setTextColor(color1);
+                        index_colorTV4--;
+                    }
                 }
-            }
-        });
-        thu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_colorTV5 == 1) {
-                    selectthu="thu ";
-                    thu.setTextColor(color);
-                    index_colorTV5++;
-                } else if (index_colorTV5 == 2) {
-                    selectthu="";
-                    thu.setTextColor(color1);
-                    index_colorTV5--;
+            });
+            thu.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_colorTV5 == 1) {
+                        selectthu="thu ";
+                        thu.setTextColor(color);
+                        index_colorTV5++;
+                    } else if (index_colorTV5 == 2) {
+                        selectthu="";
+                        thu.setTextColor(color1);
+                        index_colorTV5--;
+                    }
                 }
-            }
-        });
-        fri.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_colorTV6 == 1) {
-                    selectfri = "fri ";
-                    fri.setTextColor(color);
-                    index_colorTV6++;
-                } else if (index_colorTV6 == 2) {
-                    selectfri = "";
-                    fri.setTextColor(color1);
-                    index_colorTV6--;
+            });
+            fri.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_colorTV6 == 1) {
+                        selectfri = "fri ";
+                        fri.setTextColor(color);
+                        index_colorTV6++;
+                    } else if (index_colorTV6 == 2) {
+                        selectfri = "";
+                        fri.setTextColor(color1);
+                        index_colorTV6--;
+                    }
                 }
-            }
-        });
-        sun.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_colorTV7 == 1) {
-                    selectsun = "sun ";
-                    sun.setTextColor(color);
-                    index_colorTV7++;
-                } else if (index_colorTV7 == 2) {
-                    selectsun = "";
-                    sun.setTextColor(color1);
-                    index_colorTV7--;
+            });
+            sun.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_colorTV7 == 1) {
+                        selectsun = "sun ";
+                        sun.setTextColor(color);
+                        index_colorTV7++;
+                    } else if (index_colorTV7 == 2) {
+                        selectsun = "";
+                        sun.setTextColor(color1);
+                        index_colorTV7--;
+                    }
                 }
-            }
-        });
-    }catch (Exception e){
+            });
+        }catch (Exception e){
 
-    }
+            Toast.makeText(getActivity(), "Error9", Toast.LENGTH_SHORT).show();
+        }
     }
     public void btn_24() {
         try {
-        final Drawable getbtn1 = getResources().getDrawable(R.drawable.btn_24h_1);
-        final Drawable getbtn2 = getResources().getDrawable(R.drawable.btn_24h_2);
-        tv_24h.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_btn == 1) {
-                    availableTime = 1;
-                    btn_24h.setBackground(getbtn2);
-                    linear_time.setVisibility(View.VISIBLE);
-                    index_btn++;
-                    getNumbers();
-                } else if (index_btn == 2) {
-                    availableTime = 2;
-                    btn_24h.setBackground(getbtn1);
-                    linear_time.setVisibility(View.GONE);
-                    index_btn--;
-                    getNumbers();
+            final Drawable getbtn1 = getResources().getDrawable(R.drawable.btn_24h_1);
+            final Drawable getbtn2 = getResources().getDrawable(R.drawable.btn_24h_2);
+            tv_24h.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_btn == 1) {
+                        availableTime = 1;
+                        btn_24h.setBackground(getbtn2);
+                        linear_time.setVisibility(View.VISIBLE);
+                        index_btn++;
+                        getNumbers();
+                    } else if (index_btn == 2) {
+                        availableTime = 2;
+                        btn_24h.setBackground(getbtn1);
+                        linear_time.setVisibility(View.GONE);
+                        index_btn--;
+                        getNumbers();
+                    }
                 }
-            }
-        });
-        btn_24h.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index_btn == 1) {
-                    availableTime = 1;
-                    btn_24h.setBackground(getbtn2);
-                    linear_time.setVisibility(View.VISIBLE);
-                    index_btn++;
-                    getNumbers();
-                } else if (index_btn == 2) {
-                    availableTime = 2;
-                    btn_24h.setBackground(getbtn1);
-                    linear_time.setVisibility(View.GONE);
-                    index_btn--;
-                    getNumbers();
+            });
+            btn_24h.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (index_btn == 1) {
+                        availableTime = 1;
+                        btn_24h.setBackground(getbtn2);
+                        linear_time.setVisibility(View.VISIBLE);
+                        index_btn++;
+                        getNumbers();
+                    } else if (index_btn == 2) {
+                        availableTime = 2;
+                        btn_24h.setBackground(getbtn1);
+                        linear_time.setVisibility(View.GONE);
+                        index_btn--;
+                        getNumbers();
+                    }
                 }
-            }
-        });
-    }catch (Exception e){
+            });
+        }catch (Exception e){
 
-    }
+            Toast.makeText(getActivity(), "Error8", Toast.LENGTH_SHORT).show();
+        }
     }
     public void getTime(){
 
         try {
             tv_time_from.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTimePicker();
-                index_time = 1;
-            }
+                @Override
+                public void onClick(View v) {
+                    getTimePicker();
+                    index_time = 1;
+                }
             });
             tv_time_from2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTimePicker();
-                index_time = 1;
-            }
+                @Override
+                public void onClick(View v) {
+                    getTimePicker();
+                    index_time = 1;
+                }
             });
             tv_time_to.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTimePicker();
-                index_time = 2;
-            }
+                @Override
+                public void onClick(View v) {
+                    getTimePicker();
+                    index_time = 2;
+                }
             });
             tv_time_to2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTimePicker();
-                index_time = 2;
-            }
-        });
-    }catch (Exception e){
+                @Override
+                public void onClick(View v) {
+                    getTimePicker();
+                    index_time = 2;
+                }
+            });
+        }catch (Exception e){
 
-    }
+            Toast.makeText(getActivity(), "Error7", Toast.LENGTH_SHORT).show();
+        }
     }
     public void setSpinnerCountry(){
         try {
-        country = getResources().getStringArray(R.array.country);
-        adapter_country = new ArrayAdapter(getActivity(),R.layout.spinner,country);
-        spinner_country.setAdapter(adapter_country);
-        spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                nameOfCountry = country[position];
+            country = getResources().getStringArray(R.array.country);
+            adapter_country = new ArrayAdapter(getActivity(),R.layout.spinner,country);
+            spinner_country.setAdapter(adapter_country);
+            spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    nameOfCountry = country[position];
 
-                if (nameOfCountry == country[0]){
-                    cities = getResources().getStringArray(R.array.Egypt);
-                    setSpinnerCities();
-                    getNumbersForSpinner(nameOfCountry,"Cairo","A+");
-                }else if (nameOfCountry == country[1]){
-                    cities = getResources().getStringArray(R.array.Jordan);
-                    setSpinnerCities();
-                    getNumbersForSpinner(nameOfCountry,"Amman","A+");
-                }else if (nameOfCountry == country[2]){
-                    cities = getResources().getStringArray(R.array.Emirates);
-                    setSpinnerCities();
-                    getNumbersForSpinner(nameOfCountry,"Dubai","A+");
+                    if (nameOfCountry == country[0]){
+                        cities = getResources().getStringArray(R.array.Egypt);
+                        setSpinnerCities();
+                        getNumbersForSpinner(nameOfCountry,"Cairo","A+");
+                    }else if (nameOfCountry == country[1]){
+                        cities = getResources().getStringArray(R.array.Jordan);
+                        setSpinnerCities();
+                        getNumbersForSpinner(nameOfCountry,"Amman","A+");
+                    }else if (nameOfCountry == country[2]){
+                        cities = getResources().getStringArray(R.array.Emirates);
+                        setSpinnerCities();
+                        getNumbersForSpinner(nameOfCountry,"Dubai","A+");
+                    }
                 }
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
-    }catch (Exception e){
+                }
+            });
+        }catch (Exception e){
 
-    }
+            Toast.makeText(getActivity(), "Error6", Toast.LENGTH_SHORT).show();
+        }
     }
     public void setSpinnerCities(){
-    try {
-        adapter_cities = new ArrayAdapter(getActivity(),R.layout.spinner,cities);
-        spinner_cities.setAdapter(adapter_cities);
-        spinner_cities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                nameOfCities = cities[position];
-                getNumbersForSpinner(nameOfCountry,nameOfCities,"A+");
-            }
+        try {
+            adapter_cities = new ArrayAdapter(getActivity(),R.layout.spinner,cities);
+            spinner_cities.setAdapter(adapter_cities);
+            spinner_cities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    nameOfCities = cities[position];
+                    getNumbersForSpinner(nameOfCountry,nameOfCities,"A+");
+                }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
-    }
-    catch (Exception e){
+                }
+            });
+        }
+        catch (Exception e){
 
-    }
+            Toast.makeText(getActivity(), "Error5", Toast.LENGTH_SHORT).show();
+        }
     }
     public void setSpinnerBloodType(){
-    try {
-        bloodType = getResources().getStringArray(R.array.bloodType);
-        adapter_bloodType = new ArrayAdapter(getActivity(),R.layout.spinner,bloodType);
-        spinner_bloodType.setAdapter(adapter_bloodType);
-        spinner_bloodType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                nameOfBloodType = bloodType[position];
-                getNumbersForSpinner(nameOfCountry,nameOfCities,nameOfBloodType);
-            }
+        try {
+            bloodType = getResources().getStringArray(R.array.bloodType);
+            adapter_bloodType = new ArrayAdapter(getActivity(),R.layout.spinner,bloodType);
+            spinner_bloodType.setAdapter(adapter_bloodType);
+            spinner_bloodType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    nameOfBloodType = bloodType[position];
+                    getNumbersForSpinner(nameOfCountry,nameOfCities,nameOfBloodType);
+                }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
-    }catch (Exception e){
+                }
+            });
+        }catch (Exception e){
+            Toast.makeText(getActivity(), "Error4", Toast.LENGTH_SHORT).show();
 
-    }
+        }
     }
     public void sinUpDonor(){
         try {
@@ -470,25 +479,28 @@ public class SinUpFragment extends Fragment {
                 if (!name.equals("") && !phoneNumber.equals("")) {
                     if (chickNumberPhone()) {
                         if (availableTime == 2) {
-                            alertDialog.setMessage(name + "\n" + phoneNumber + "\n" + nameOfCountry + "\n" + nameOfCities + "\n" + nameOfBloodType + "\n" + "all Time");
+
                             Donor donor = new Donor(name, phoneNumber, "all time");
                             myreference.push().setValue(donor);
-                            alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber() + "\n" + donor.getAvailableTime());
 
+                            Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getActivity(),MainActivity.class));
                         } else if (availableTime == 1) {
 
                             String fromTime = tv_time_from.getText().toString();
                             String toTime = tv_time_to.getText().toString();
-                            if (selectsat == "sat " || selectmon == "mon " || selecttue == "tue " || selectwed == "wed " ||
-                                    selectthu == "thu " || selectfri == "fri " || selectsun == "sun ") {
+                            if (selectsat == "sat" || selectmon == "mon" || selecttue == "tue" || selectwed == "wed" ||
+                                    selectthu == "thu" || selectfri == "fri" || selectsun == "sun") {
 
                                 if (fromTime.length() > 5 && toTime.length() > 5) {
 
-                                    DonorAvailableTime donor = new DonorAvailableTime(name, phoneNumber, fromTime, toTime, selectsat, selectmon,
+                                    Donor donor = new Donor("1", name, phoneNumber, fromTime, toTime, selectsat, selectmon,
                                             selecttue, selectwed, selectthu, selectfri, selectsun);
                                     myreference.push().setValue(donor);
-                                    alertDialog.setMessage(donor.getName() + "\n" + donor.getPhoneNumber() + "\n" + donor.getFromTime() + "\n" + donor.getToTime() + "\n" +
-                                            donor.getSat() + donor.getMon() + donor.getTue() + donor.getWed() + donor.getThu() + donor.getFri() + donor.getSun());
+
+
+                                    Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(getActivity(),MainActivity.class));
                                 } else {
 
                                     alertDialog.setMessage("pleas choose time");
@@ -509,11 +521,12 @@ public class SinUpFragment extends Fragment {
 
             alertDialog.show();
         }catch (Exception e){
+            Toast.makeText(getActivity(), "Error2", Toast.LENGTH_SHORT).show();
         }
     }
     public boolean chickNumberPhone(){
         try {
-        getNumbers();
+            getNumbers();
 
             for (String number : numbers) {
                 long num1 = Long.parseLong(number);
@@ -524,34 +537,13 @@ public class SinUpFragment extends Fragment {
 
             }
         }catch (Exception e){
+            Toast.makeText(getActivity(), "Error1", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
     }
     private void  getNumbers(){
-      try {
-          myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-          myreference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    numbers.clear();
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                        number = snapshot.child("phoneNumber").getValue(String.class);
-                        numbers.add(number);
-
-                    }
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-      }catch (Exception e){
-
-      }
-    }
-    private void  getNumbersForSpinner(String nameOfCountry ,String nameOfCities,String nameOfBloodType){
-      try {
+        try {
             myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
             myreference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -568,9 +560,31 @@ public class SinUpFragment extends Fragment {
 
                 }
             });
-      }catch (Exception e){
+        }catch (Exception e){
+            Toast.makeText(getActivity(), "Error3", Toast.LENGTH_SHORT).show();
+        }
+    }
+    private void  getNumbersForSpinner(String nameOfCountry ,String nameOfCities,String nameOfBloodType){
+        try {
+            myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+            myreference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    numbers.clear();
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                        number = snapshot.child("phoneNumber").getValue(String.class);
+                        numbers.add(number);
 
-      }
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }catch (Exception e){
+            Toast.makeText(getActivity(), "Error4", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

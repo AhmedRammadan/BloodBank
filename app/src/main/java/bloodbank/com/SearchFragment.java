@@ -46,6 +46,7 @@ public class SearchFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                al_recSearch.clear();
                 progressBar.setVisibility(View.GONE);
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Donor donor = snapshot.getValue(Donor.class);

@@ -480,7 +480,7 @@ public class SinUpFragment extends Fragment {
                     if (chickNumberPhone()) {
                         if (availableTime == 2) {
 
-                            Donor donor = new Donor(name, phoneNumber, "all time");
+                            Donor donor = new Donor(name, phoneNumber, "anytime");
                             myreference.push().setValue(donor);
 
                             Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();

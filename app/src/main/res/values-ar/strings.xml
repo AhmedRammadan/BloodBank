@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BloodBank</string>
-
+    <string name="nameofDonor">فاعل خير</string>
     <array name="country">
         <item>مصر</item>
         <item>الاردن</item>

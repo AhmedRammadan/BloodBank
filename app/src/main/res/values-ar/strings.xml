@@ -3,6 +3,7 @@
     <string name="app_name">BloodBank</string>
     <string name="nameofDonor">فاعل خير</string>
     <array name="country">
+        <item>اختار الدولة</item>
         <item>مصر</item>
         <item>الاردن</item>
         <item>الامارات</item>
@@ -30,6 +31,7 @@
     </array>
 
     <array name="Egypt">
+        <item>اختار المدينة</item>
         <item>القاهرة</item>
         <item>الجِيزَة</item>
         <item>6 أكتوبر</item>
@@ -285,6 +287,7 @@
         <item>أبو سمبل السياحية</item>
     </array>
     <array name="Jordan">
+        <item>اختار المدينة</item>
         <item>عمان</item>
         <item>الزرقاء</item>
         <item>إربد</item>
@@ -328,6 +331,7 @@
         <item>ساكب</item>
 </array>
     <array name="Emirates">
+        <item>اختار المدينة</item>
         <item>دبي</item>
         <item>أبوظبي</item>
         <item>الشارقة</item>
@@ -339,8 +343,11 @@
         <item>خورفكان</item>
         <item>دبا الحصن</item>
     </array>
-
+    <array name="defaultCity">
+        <item>اختار المدينة</item>
+    </array>
     <array name="bloodType">
+        <item>اختار فصيلة الدم</item>
         <item>A+</item>
         <item>A-</item>
         <item>B+</item>

@@ -58,10 +58,11 @@ public class Adaper_Recy extends RecyclerView.Adapter<ViewHolder> {
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
+                SearchPage.checkPermission(mcontext);
                 if (ContextCompat.checkSelfPermission(mcontext, Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED) {
                     call(items.get(i).getPhoneNumber());
                 }else {
-                    Toast.makeText(mcontext, "Don't Permission", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mcontext, "please do permission for call", Toast.LENGTH_SHORT).show();
                 }
             }
         });

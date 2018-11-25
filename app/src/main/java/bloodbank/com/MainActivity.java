@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     static String nameOfCountry, nameOfCities , nameOfBloodType;
-    boolean connected = false;
     LinearLayout linear1,LinearLayout1;
     TextView textBloodBank;
     Spinner spinner_country,spinner_cities,spinner_bloodType;
@@ -54,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
             spinner_cities = findViewById(R.id.spinner_cities);
             spinner_bloodType = findViewById(R.id.spinner_bloodType);
             linear1 = findViewById(R.id.linear1);
-            spinner_country = findViewById(R.id.spinner_country);
-            spinner_cities = findViewById(R.id.spinner_cities);
-            spinner_bloodType = findViewById(R.id.spinner_bloodType);
             LinearLayout1 = findViewById(R.id.LinearLayout1);
             textBloodBank = findViewById(R.id.textBloodBank);
 
@@ -67,35 +63,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void Search(View view) {
-        if (connected()) {
-            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-            intent.putExtra("key", 0);
-            startActivity(intent);
+        if (spinner_country.getSelectedItemPosition()!=0) {
+            if (spinner_cities.getSelectedItemPosition() != 0) {
+                if (spinner_bloodType.getSelectedItemPosition() != 0) {
+                    startActivity( new Intent(MainActivity.this, SearchPage.class));
+                }else {
+                    Toast.makeText(MainActivity.this, "please choose blood type", Toast.LENGTH_SHORT).show();
+                }
+            }else {
+                Toast.makeText(MainActivity.this, "please choose city", Toast.LENGTH_SHORT).show();
+            }
         }else {
-            Toast.makeText(MainActivity.this, "check your internet connection", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "please choose the country", Toast.LENGTH_SHORT).show();
         }
     }
     public void sinUp(View view) {
-        if (connected()) {
-            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-            intent.putExtra("key", 1);
-            startActivity(intent);
-        }else {
-            Toast.makeText(MainActivity.this, "check your internet connection", Toast.LENGTH_SHORT).show();
-        }
+        startActivity(new Intent(MainActivity.this, SignUp.class));
     }
-    private boolean connected(){
-        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            //we are connected to a network
-            connected = true;
-        }
-        else{
-            connected = false;
-        }
-        return connected;
-    }
+
 
     public void setSpinnerCountry(){
         try {
@@ -106,14 +91,16 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     nameOfCountry = country[position];
-
                     if (nameOfCountry == country[0]){
-                        cities = getResources().getStringArray(R.array.Egypt);
+                        cities = getResources().getStringArray(R.array.defaultCity);
                         setSpinnerCities();
                     }else if (nameOfCountry == country[1]){
-                        cities = getResources().getStringArray(R.array.Jordan);
+                        cities = getResources().getStringArray(R.array.Egypt);
                         setSpinnerCities();
                     }else if (nameOfCountry == country[2]){
+                        cities = getResources().getStringArray(R.array.Jordan);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[3]){
                         cities = getResources().getStringArray(R.array.Emirates);
                         setSpinnerCities();
                     }
@@ -135,7 +122,9 @@ public class MainActivity extends AppCompatActivity {
             spinner_cities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    nameOfCities = cities[position];
+                    if (position!=0) {
+                        nameOfCities = cities[position];
+                    }
                 }
 
                 @Override
@@ -156,7 +145,9 @@ public class MainActivity extends AppCompatActivity {
             spinner_bloodType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    nameOfBloodType = bloodType[position];
+                    if (position!=0) {
+                        nameOfBloodType = bloodType[position];
+                    }
                 }
 
                 @Override

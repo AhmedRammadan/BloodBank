@@ -5,24 +5,24 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_Search_for_a_donor"
             android:icon="@drawable/ic_search"
             android:title="@string/Search_for_a_donor" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_Medical_advices_for_donor"
             android:icon="@drawable/ic_hospital"
             android:title="@string/Medical_advices_for_donor" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_Rating_App"
             android:icon="@drawable/ic_star"
             android:title="@string/Rating_App" />
 
         <item
-            android:id="@+id/nav_share"
+            android:id="@+id/nav_Share_app"
             android:icon="@drawable/ic_menu_share"
             android:title="@string/Share_app" />
         <item
-            android:id="@+id/nav_send"
+            android:id="@+id/nav_Feedback"
             android:icon="@drawable/ic_developer"
             android:title="@string/Feedback" />
     </group>

@@ -71,15 +71,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_Feedback) {
             // Handle the camera action
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_Medical_advices_for_donor) {
+            startActivity(new Intent(MainActivity.this,ForDonor.class));
+        } else if (id == R.id.nav_Rating_App) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_Search_for_a_donor) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_Share_app) {
 
         }
 

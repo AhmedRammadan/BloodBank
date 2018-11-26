@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_search"
             android:title="@string/Search_for_a_donor" />
         <item
+            android:id="@+id/nav_SignUpdonor"
+            android:icon="@drawable/ic_person"
+            android:title="@string/SignUpdonor" />
+        <item
             android:id="@+id/nav_Medical_advices_for_donor"
             android:icon="@drawable/ic_hospital"
             android:title="@string/Medical_advices_for_donor" />

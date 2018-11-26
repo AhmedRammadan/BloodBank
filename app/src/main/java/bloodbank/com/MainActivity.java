@@ -69,22 +69,24 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_Feedback) {
-            // Handle the camera action
-        } else if (id == R.id.nav_Medical_advices_for_donor) {
-            startActivity(new Intent(MainActivity.this,ForDonor.class));
-        } else if (id == R.id.nav_Rating_App) {
-
-        } else if (id == R.id.nav_Search_for_a_donor) {
-
-        } else if (id == R.id.nav_Share_app) {
-
-        }
-
+            switch (item.getItemId()){
+                case R.id.nav_Feedback:
+                    break;
+                case R.id.nav_SignUpdonor:
+                    break;
+                case R.id.nav_Medical_advices_for_donor:
+                    startActivity(new Intent(MainActivity.this,ForDonor.class));
+                    break;
+                case R.id.nav_Rating_App:
+                    break;
+                case R.id.nav_Search_for_a_donor:
+                    break;
+                case R.id.nav_Share_app:
+                    break;
+            }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 

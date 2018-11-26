@@ -6,33 +6,25 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:icon="@drawable/ic_search"
+            android:title="@string/Search_for_a_donor" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+            android:icon="@drawable/ic_hospital"
+            android:title="@string/Medical_advices_for_donor" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_star"
+            android:title="@string/Rating_App" />
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/Share_app" />
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/ic_developer"
+            android:title="@string/Feedback" />
+    </group>
 
 </menu>

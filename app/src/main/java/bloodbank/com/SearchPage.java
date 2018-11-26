@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -51,6 +52,7 @@ public class SearchPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,23 +188,27 @@ public class SearchPage extends AppCompatActivity {
         btn_alertSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (spinner_country.getSelectedItemPosition()!=0) {
-                    if (spinner_cities.getSelectedItemPosition()!=0) {
-                        if (spinner_bloodType.getSelectedItemPosition()!=0) {
-                            progressBar.setVisibility(View.VISIBLE);
-                            getDataBase();
-                            adaper_recy = new Adaper_Recy(SearchPage.this,al_recSearch);
-                            rec_search.setAdapter(adaper_recy);
-                            alertDialog.dismiss();
-                        }else {
-                            Toast.makeText(SearchPage.this, "please choose the blood type", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        Toast.makeText(SearchPage.this, "please choose the city", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(SearchPage.this, "please choose the country", Toast.LENGTH_SHORT).show();
-                }
+               if (connected()) {
+                   if (spinner_country.getSelectedItemPosition() != 0) {
+                       if (spinner_cities.getSelectedItemPosition() != 0) {
+                           if (spinner_bloodType.getSelectedItemPosition() != 0) {
+                               progressBar.setVisibility(View.VISIBLE);
+                               getDataBase();
+                               adaper_recy = new Adaper_Recy(SearchPage.this, al_recSearch);
+                               rec_search.setAdapter(adaper_recy);
+                               alertDialog.dismiss();
+                           } else {
+                               Toast.makeText(SearchPage.this, "please choose the blood type", Toast.LENGTH_SHORT).show();
+                           }
+                       } else {
+                           Toast.makeText(SearchPage.this, "please choose the city", Toast.LENGTH_SHORT).show();
+                       }
+                   } else {
+                       Toast.makeText(SearchPage.this, "please choose the country", Toast.LENGTH_SHORT).show();
+                   }
+               }else {
+                   Toast.makeText(SearchPage.this, "check your internet connection", Toast.LENGTH_SHORT).show();
+               }
             }
         });
         btn_alertCancel.setOnClickListener(new View.OnClickListener() {
@@ -314,5 +320,15 @@ public class SearchPage extends AppCompatActivity {
             // other 'case' lines to check for other
             // permissions this app might request.
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id==android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

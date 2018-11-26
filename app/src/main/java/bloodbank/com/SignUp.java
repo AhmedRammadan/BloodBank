@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -70,8 +71,6 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
         numbers = new ArrayList<>();
         findViewById();
         btn_24();
@@ -80,7 +79,7 @@ public class SignUp extends AppCompatActivity {
         setSpinnerCountry();
         setSpinnerCities();
         setSpinnerBloodType();
-        /*et_nameDonor.setOnTouchListener(new View.OnTouchListener() {
+        et_nameDonor.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 getNumbers();
@@ -98,7 +97,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 getNumbers();
             }
-        });*/
+        });
         btn_sinUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,9 +120,6 @@ public class SignUp extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 
     public void findViewById(){
         try {
@@ -618,13 +614,13 @@ public class SignUp extends AppCompatActivity {
                             }
                         });
                     }else {
-                        Toast.makeText(SignUp.this, "please choose the blood type", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(SignUp.this, "please choose the blood type", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(SignUp.this, "please choose the city", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(SignUp.this, "please choose the city", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(SignUp.this, "please choose the country", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(SignUp.this, "please choose the country", Toast.LENGTH_SHORT).show();
             }
         }catch (Exception e){
             Toast.makeText(SignUp.this, "Error3", Toast.LENGTH_SHORT).show();

@@ -133,9 +133,7 @@ public class MainActivity extends AppCompatActivity
     public void sinUp(View view) {
         startActivity(new Intent(MainActivity.this, SignUp.class));
     }
-
-
-    public void setSpinnerCountry(){
+ public void setSpinnerCountry(){
         try {
             country = getResources().getStringArray(R.array.country);
             adapter_country = new ArrayAdapter(MainActivity.this,R.layout.spinner,country);

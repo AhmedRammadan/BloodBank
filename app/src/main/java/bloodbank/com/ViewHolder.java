@@ -7,13 +7,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    TextView name , data , days;
+    TextView name  , days;
     ImageView call;
     ItemClickListener itemClickListener;
     public ViewHolder(@NonNull View itemView) {
         super(itemView);
         name = itemView.findViewById(R.id.name);
-        data = itemView.findViewById(R.id.data);
         days = itemView.findViewById(R.id.days);
         call = itemView.findViewById(R.id.call);
         call.setOnClickListener(this);

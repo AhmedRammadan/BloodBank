@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity
     Spinner spinner_country,spinner_cities,spinner_bloodType;
     ArrayAdapter adapter_country,adapter_cities,adapter_bloodType;
     String [] country,cities,bloodType;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,18 +70,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
             switch (item.getItemId()){
                 case R.id.nav_Feedback:
-                    break;
+  break;
                 case R.id.nav_SignUpdonor:
-                    break;
+  break;
                 case R.id.nav_Medical_advices_for_donor:
-                    startActivity(new Intent(MainActivity.this,ForDonor.class));
-                    break;
+  startActivity(new Intent(MainActivity.this,ForDonor.class));
+  break;
                 case R.id.nav_Rating_App:
-                    break;
+  break;
                 case R.id.nav_Search_for_a_donor:
-                    break;
+  break;
                 case R.id.nav_Share_app:
-                    break;
+  break;
             }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -99,7 +98,7 @@ public class MainActivity extends AppCompatActivity
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+  this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.addDrawerListener(toggle);
             toggle.syncState();
 
@@ -120,9 +119,9 @@ public class MainActivity extends AppCompatActivity
         if (spinner_country.getSelectedItemPosition()!=0) {
             if (spinner_cities.getSelectedItemPosition() != 0) {
                 if (spinner_bloodType.getSelectedItemPosition() != 0) {
-                    startActivity( new Intent(MainActivity.this, SearchPage.class));
+  startActivity( new Intent(MainActivity.this, SearchPage.class));
                 }else {
-                    Toast.makeText(MainActivity.this, "please choose blood type", Toast.LENGTH_SHORT).show();
+  Toast.makeText(MainActivity.this, "please choose blood type", Toast.LENGTH_SHORT).show();
                 }
             }else {
                 Toast.makeText(MainActivity.this, "please choose city", Toast.LENGTH_SHORT).show();
@@ -144,20 +143,21 @@ public class MainActivity extends AppCompatActivity
             spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    nameOfCountry = country[position];
-                    if (nameOfCountry == country[0]){
-                        cities = getResources().getStringArray(R.array.defaultCity);
-                        setSpinnerCities();
-                    }else if (nameOfCountry == country[1]){
-                        cities = getResources().getStringArray(R.array.Egypt);
-                        setSpinnerCities();
-                    }else if (nameOfCountry == country[2]){
-                        cities = getResources().getStringArray(R.array.Jordan);
-                        setSpinnerCities();
-                    }else if (nameOfCountry == country[3]){
-                        cities = getResources().getStringArray(R.array.Emirates);
-                        setSpinnerCities();
-                    }
+                    nameOfCountry=country[position];
+                    Toast.makeText(MainActivity.this, nameOfCountry, Toast.LENGTH_SHORT).show();
+                      if (nameOfCountry == country[0]){
+                          cities = getResources().getStringArray(R.array.defaultCity);
+                          setSpinnerCities();
+                      }else if (nameOfCountry  ==country[1]){
+                          cities = getResources().getStringArray(R.array.Egypt);
+                          setSpinnerCities();
+                      }else if (nameOfCountry == country[2]){
+                          cities = getResources().getStringArray(R.array.Jordan);
+                          setSpinnerCities();
+                      }else if (nameOfCountry == country[3]){
+                          cities = getResources().getStringArray(R.array.Emirates);
+                          setSpinnerCities();
+                      }
                 }
 
                 @Override
@@ -176,9 +176,10 @@ public class MainActivity extends AppCompatActivity
             spinner_cities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    if (position!=0) {
-                        nameOfCities = cities[position];
-                    }
+                      if (position!=0) {
+                          nameOfCities=cities[position];
+                          Toast.makeText(MainActivity.this, nameOfCities, Toast.LENGTH_SHORT).show();
+                      }
                 }
 
                 @Override
@@ -199,9 +200,10 @@ public class MainActivity extends AppCompatActivity
             spinner_bloodType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    if (position!=0) {
-                        nameOfBloodType = bloodType[position];
-                    }
+                      if (position!=0) {
+                          nameOfBloodType = bloodType[position];
+
+                      }
                 }
 
                 @Override
@@ -213,5 +215,4 @@ public class MainActivity extends AppCompatActivity
 
         }
     }
-
 }

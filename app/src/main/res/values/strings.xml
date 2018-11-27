@@ -1,32 +1,31 @@
 <resources>
     <string name="app_name">BloodBank</string>
-    <string name="nameofDonor">Philanthropist</string>
     <array name="country">
         <item>Choose Country</item>
         <item>Egypt</item>
         <item>Jordan</item>
         <item>Emirates</item>
-        <!--<item>Bahrain</item>
-        <item>Algeria</item>
-        <item>Saudi Arabia</item>
-        <item>Sudan</item>
-        <item>Somalia</item>
-        <item>Iraq</item>
-        <item>Kuwait</item>
-        <item>Morocco</item>
-        <item>Yemen</item>
-        <item>Turkey</item>
-        <item>Tunisia</item>
-        <item>Comoros</item>
-        <item>South Sudan</item>
-        <item>Djibouti</item>
-        <item>Syria</item>
-        <item>Oman</item>
-        <item>Palestine</item>
-        <item>Qatar</item>
-        <item>Lebanon</item>
-        <item>Libya</item>
-        <item>Mauritania</item>-->
+        <!--<item>Bahrain                                                 </item>
+        <item>Algeria                                                 </item>
+        <item>Saudi Arabia                                                 </item>
+        <item>Sudan                                                 </item>
+        <item>Somalia                                                 </item>
+        <item>Iraq                                                 </item>
+        <item>Kuwait                                                 </item>
+        <item>Morocco                                                 </item>
+        <item>Yemen                                                 </item>
+        <item>Turkey                                                 </item>
+        <item>Tunisia                                                 </item>
+        <item>Comoros                                                 </item>
+        <item>South Sudan                                                 </item>
+        <item>Djibouti                                                 </item>
+        <item>Syria                                                 </item>
+        <item>Oman                                                 </item>
+        <item>Palestine                                                 </item>
+        <item>Qatar                                                 </item>
+        <item>Lebanon                                                 </item>
+        <item>Libya                                                 </item>
+        <item>Mauritania                                                 </item>-->
     </array>
 
     <array name="Egypt">
@@ -46,7 +45,7 @@
         <item>Kafr Hakim</item>
         <item>Zat Kom</item>
         <item>Nakla</item>
-        <item>Io Ghaleb</item>
+        <item>abo Ghaleb</item>
         <item>Ezbet Abdul Samad</item>
         <item>Abu Rawash</item>
         <item>Kerdasa</item>
@@ -371,5 +370,8 @@
     <string name="Feedback">Feedback</string>
     <string name="Medical_advices_for_donor">Medical advices for donor</string>
     <string name="SignUpdonor">Sign Up donor</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

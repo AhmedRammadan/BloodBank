@@ -66,6 +66,7 @@ public class SignUp extends AppCompatActivity {
     String [] country,cities,bloodType;
     String selectsat="", selectmon="", selecttue="", selectwed="", selectthu="",selectfri="",selectsun="";
     boolean connected = false;
+    int indexCountry , indexCity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -422,23 +423,20 @@ public class SignUp extends AppCompatActivity {
             spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    nameOfCountry = country[position];
+                    nameOfCountry=country[position];
+                    Toast.makeText(SignUp.this, nameOfCountry, Toast.LENGTH_SHORT).show();
                     if (nameOfCountry == country[0]){
                         cities = getResources().getStringArray(R.array.defaultCity);
                         setSpinnerCities();
-                        getNumbersForSpinner(nameOfCountry,"Cairo","A+");
-                    }else if (nameOfCountry == country[1]){
+                    }else if (nameOfCountry  ==country[1]){
                         cities = getResources().getStringArray(R.array.Egypt);
                         setSpinnerCities();
-                        getNumbersForSpinner(nameOfCountry,"Cairo","A+");
                     }else if (nameOfCountry == country[2]){
                         cities = getResources().getStringArray(R.array.Jordan);
                         setSpinnerCities();
-                        getNumbersForSpinner(nameOfCountry,"Amman","A+");
                     }else if (nameOfCountry == country[3]){
                         cities = getResources().getStringArray(R.array.Emirates);
                         setSpinnerCities();
-                        getNumbersForSpinner(nameOfCountry,"Dubai","A+");
                     }
                 }
 
@@ -449,7 +447,6 @@ public class SignUp extends AppCompatActivity {
             });
         }catch (Exception e){
 
-            Toast.makeText(SignUp.this, "Error6", Toast.LENGTH_SHORT).show();
         }
     }
     public void setSpinnerCities(){
@@ -460,8 +457,8 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if (position!=0) {
-                        nameOfCities = cities[position];
-                        getNumbersForSpinner(nameOfCountry,nameOfCities,"A+");
+                        nameOfCities=cities[position];
+                        Toast.makeText(SignUp.this, nameOfCities, Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -473,7 +470,6 @@ public class SignUp extends AppCompatActivity {
         }
         catch (Exception e){
 
-            Toast.makeText(SignUp.this, "Error5", Toast.LENGTH_SHORT).show();
         }
     }
     public void setSpinnerBloodType(){
@@ -486,7 +482,6 @@ public class SignUp extends AppCompatActivity {
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if (position!=0) {
                         nameOfBloodType = bloodType[position];
-                        getNumbersForSpinner(nameOfCountry,nameOfCities,nameOfBloodType);
                     }
                 }
 
@@ -496,7 +491,6 @@ public class SignUp extends AppCompatActivity {
                 }
             });
         }catch (Exception e){
-            Toast.makeText(SignUp.this, "Error4", Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -661,6 +655,8 @@ public class SignUp extends AppCompatActivity {
         return connected;
 
     }
+
+
 
 }
 

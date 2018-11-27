@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="bloodbank.com">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -39,7 +40,7 @@
             android:name=".SignUp"
             android:label="Sign Up Donor"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -47,6 +47,7 @@ public class SearchPage extends AppCompatActivity {
     String [] country,cities,bloodType;
     FloatingActionButton fab;
     boolean connected = false;
+    int indexCountry , indexCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,11 +100,12 @@ public class SearchPage extends AppCompatActivity {
             spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    nameOfCountry = country[position];
+                    nameOfCountry=country[position];
+                    Toast.makeText(SearchPage.this, nameOfCountry, Toast.LENGTH_SHORT).show();
                     if (nameOfCountry == country[0]){
                         cities = getResources().getStringArray(R.array.defaultCity);
                         setSpinnerCities();
-                    }else if (nameOfCountry == country[1]){
+                    }else if (nameOfCountry  ==country[1]){
                         cities = getResources().getStringArray(R.array.Egypt);
                         setSpinnerCities();
                     }else if (nameOfCountry == country[2]){
@@ -122,7 +124,6 @@ public class SearchPage extends AppCompatActivity {
             });
         }catch (Exception e){
 
-            Toast.makeText(SearchPage.this, "Error66", Toast.LENGTH_SHORT).show();
         }
     }
     public void setSpinnerCities(){
@@ -133,7 +134,8 @@ public class SearchPage extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if (position!=0) {
-                        nameOfCities = cities[position];
+                        nameOfCities=cities[position];
+                        Toast.makeText(SearchPage.this, nameOfCities, Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -145,7 +147,6 @@ public class SearchPage extends AppCompatActivity {
         }
         catch (Exception e){
 
-            Toast.makeText(SearchPage.this, "Error55", Toast.LENGTH_SHORT).show();
         }
     }
     public void setSpinnerBloodType(){
@@ -158,6 +159,7 @@ public class SearchPage extends AppCompatActivity {
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if (position!=0) {
                         nameOfBloodType = bloodType[position];
+
                     }
                 }
 
@@ -167,7 +169,6 @@ public class SearchPage extends AppCompatActivity {
                 }
             });
         }catch (Exception e){
-            Toast.makeText(SearchPage.this, "Error44", Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -331,4 +332,5 @@ public class SearchPage extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

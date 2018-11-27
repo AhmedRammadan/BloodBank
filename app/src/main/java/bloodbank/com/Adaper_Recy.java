@@ -36,7 +36,6 @@ public class Adaper_Recy extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int i) {
         holder.name.setText(items.get(i).getName());
-        holder.data.setText(items.get(i).getPhoneNumber());
         String AvailableTime = items.get(i).getAvailableTime();
         try {
             chick = Integer.parseInt(AvailableTime);

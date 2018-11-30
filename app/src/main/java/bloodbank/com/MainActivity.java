@@ -1,7 +1,16 @@
 package bloodbank.com;
 
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,25 +20,55 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    static String nameOfCountry, nameOfCities , nameOfBloodType;
-    Spinner spinner_country,spinner_cities,spinner_bloodType;
-    ArrayAdapter adapter_country,adapter_cities,adapter_bloodType;
-    String [] country,cities,bloodType;
+    Fragment frag_Main ,frag_SignDonor,frag_posts;
+    FragmentManager manager ;
+    FragmentTransaction transaction;
+    TextView signUp;
+    int BackPressed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById();
-        setSpinnerCountry();
-        setSpinnerCities();
-        setSpinnerBloodType();
+
+
+
+
+
+        signUp = findViewById(R.id.tv_signUp);
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                frag_SignDonor = new SignDonor();
+                setFragment(frag_SignDonor,2);
+                signUp.setVisibility(View.GONE);
+            }
+        });
+        frag_Main = new Main();
+        setFragment(frag_Main,1);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -38,7 +77,20 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            switch (BackPressed){
+                case 1:
+                    finish();
+                    break;
+                case 2:
+                    signUp.setVisibility(View.VISIBLE);
+                    frag_Main = new Main();
+                    setFragment(frag_Main,1);
+                case 3:
+                    signUp.setVisibility(View.VISIBLE);
+                    frag_Main = new Main();
+                    setFragment(frag_Main,1);
+                    break;
+            }
         }
     }
 
@@ -70,18 +122,48 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
             switch (item.getItemId()){
                 case R.id.nav_Feedback:
-  break;
+                    Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                            "mailto","deve.ahmedramadan@gmail.com", null));
+                    intent.putExtra(Intent.EXTRA_SUBJECT, " FeedBack From Blood Bank app");
+                    intent.putExtra(Intent.EXTRA_TEXT, "thank You For this FeedBack.....");
+                    startActivity(Intent.createChooser(intent, "Choose an Email client :"));
+                    break;
                 case R.id.nav_SignUpdonor:
-  break;
-                case R.id.nav_Medical_advices_for_donor:
-  startActivity(new Intent(MainActivity.this,ForDonor.class));
-  break;
+                    signUp.setVisibility(View.GONE);
+                    frag_SignDonor = new SignDonor();
+                    setFragment(frag_SignDonor,2);
+                    break;
+                case R.id.nav_The_Benefits_of_Donating_Blood:
+                    startActivity(new Intent(MainActivity.this,post.class));
+                    break;
                 case R.id.nav_Rating_App:
-  break;
+                    Uri uri = Uri.parse("market://details?id=" + MainActivity.this.getPackageName());
+                    Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                    // To count with Play market backstack, After pressing back button,
+                    // to taken back to our application, we need to add following flags to intent.
+                    goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                            Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                            Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    try {
+                        startActivity(goToMarket);
+                    } catch (ActivityNotFoundException e) {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://play.google.com/store/apps/details?id=" +MainActivity.this.getPackageName())));
+                    }
+                    break;
                 case R.id.nav_Search_for_a_donor:
-  break;
+                    signUp.setVisibility(View.VISIBLE);
+                    frag_Main = new Main();
+                    setFragment(frag_Main,1);
+                    break;
                 case R.id.nav_Share_app:
-  break;
+                    Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                    sharingIntent.setType("text/plain");
+                    String shareBody = "http://play.google.com/store/apps/details?id=" + MainActivity.this.getPackageName();
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareBody);
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                    startActivity(Intent.createChooser(sharingIntent, "Share app"));
+                    break;
             }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -89,128 +171,24 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void findViewById(){
-        try {
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
-
-
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-  this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-            drawer.addDrawerListener(toggle);
-            toggle.syncState();
-
-            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-            navigationView.setNavigationItemSelectedListener(this);
-
-            spinner_country = findViewById(R.id.spinner_country);
-            cities = getResources().getStringArray(R.array.Egypt);
-            spinner_cities = findViewById(R.id.spinner_cities);
-            spinner_bloodType = findViewById(R.id.spinner_bloodType);
-
-        }catch (Exception e){
-
+    private void setFragment(Fragment fragment , int BackPressed){
+        this.BackPressed = BackPressed;
+        manager = getSupportFragmentManager();
+        transaction = manager.beginTransaction();
+        transaction.replace(R.id.frameLayout,fragment);
+        transaction.commit();
+    }
+    public static boolean connected(Context context){
+        ConnectivityManager connectivityManager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            //we are connected to a network
+            return true;
+        }
+        else{
+            return false;
         }
 
     }
-    public void Search(View view) {
-        if (spinner_country.getSelectedItemPosition()!=0) {
-            if (spinner_cities.getSelectedItemPosition() != 0) {
-                if (spinner_bloodType.getSelectedItemPosition() != 0) {
-  startActivity( new Intent(MainActivity.this, SearchPage.class));
-                }else {
-  Toast.makeText(MainActivity.this, "please choose blood type", Toast.LENGTH_SHORT).show();
-                }
-            }else {
-                Toast.makeText(MainActivity.this, "please choose city", Toast.LENGTH_SHORT).show();
-            }
-        }else {
-            Toast.makeText(MainActivity.this, "please choose the country", Toast.LENGTH_SHORT).show();
-        }
-    }
-    public void sinUp(View view) {
-        startActivity(new Intent(MainActivity.this, SignUp.class));
-    }
- public void setSpinnerCountry(){
-        try {
-            country = getResources().getStringArray(R.array.country);
-            adapter_country = new ArrayAdapter(MainActivity.this,R.layout.spinner,country);
-            spinner_country.setAdapter(adapter_country);
-            spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    nameOfCountry=country[position];
-                    Toast.makeText(MainActivity.this, nameOfCountry, Toast.LENGTH_SHORT).show();
-                      if (nameOfCountry == country[0]){
-                          cities = getResources().getStringArray(R.array.defaultCity);
-                          setSpinnerCities();
-                      }else if (nameOfCountry  ==country[1]){
-                          cities = getResources().getStringArray(R.array.Egypt);
-                          setSpinnerCities();
-                      }else if (nameOfCountry == country[2]){
-                          cities = getResources().getStringArray(R.array.Jordan);
-                          setSpinnerCities();
-                      }else if (nameOfCountry == country[3]){
-                          cities = getResources().getStringArray(R.array.Emirates);
-                          setSpinnerCities();
-                      }
-                }
 
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-        }catch (Exception e){
-
-        }
-    }
-    public void setSpinnerCities(){
-        try {
-            adapter_cities = new ArrayAdapter(MainActivity.this,R.layout.spinner,cities);
-            spinner_cities.setAdapter(adapter_cities);
-            spinner_cities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                      if (position!=0) {
-                          nameOfCities=cities[position];
-                          Toast.makeText(MainActivity.this, nameOfCities, Toast.LENGTH_SHORT).show();
-                      }
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-        }
-        catch (Exception e){
-
-        }
-    }
-    public void setSpinnerBloodType(){
-        try {
-            bloodType = getResources().getStringArray(R.array.bloodType);
-            adapter_bloodType = new ArrayAdapter(MainActivity.this,R.layout.spinner,bloodType);
-            spinner_bloodType.setAdapter(adapter_bloodType);
-            spinner_bloodType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                      if (position!=0) {
-                          nameOfBloodType = bloodType[position];
-
-                      }
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-        }catch (Exception e){
-
-        }
-    }
 }

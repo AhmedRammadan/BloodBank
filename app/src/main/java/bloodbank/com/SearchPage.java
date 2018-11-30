@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -34,6 +35,21 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class SearchPage extends AppCompatActivity {
+    Handler handler =new Handler();
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            if (connected()) {
+                getDataBase();
+            }else {
+                tv_tryAgain.setVisibility(View.VISIBLE);
+                rec_search.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);
+                tv_noDonors.setVisibility(View.VISIBLE);
+                tv_noDonors.setText("check your internet connection");
+            }
+        }
+    };
     private static final int   MY_PERMISSIONS_REQUEST = 1;
     String nameOfCountry, nameOfCities , nameOfBloodType;
     DatabaseReference reference;
@@ -46,8 +62,6 @@ public class SearchPage extends AppCompatActivity {
     ArrayAdapter adapter_country,adapter_cities,adapter_bloodType;
     String [] country,cities,bloodType;
     FloatingActionButton fab;
-    boolean connected = false;
-    int indexCountry , indexCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,17 +81,15 @@ public class SearchPage extends AppCompatActivity {
         adaper_recy = new Adaper_Recy(SearchPage.this,al_recSearch);
 
         rec_search.setAdapter(adaper_recy);
+        handler.postDelayed(runnable,4000);
     }
-
-
-
     public void findViewById(){
         try {
             progressBar = findViewById(R.id.progressBar);
             progressBar.setVisibility(View.VISIBLE);
-            nameOfCountry  = MainActivity.nameOfCountry;
-            nameOfCities   = MainActivity.nameOfCities;
-            nameOfBloodType= MainActivity.nameOfBloodType;
+            nameOfCountry  = Main.nameOfCountry;
+            nameOfCities   = Main.nameOfCities;
+            nameOfBloodType= Main.nameOfBloodType;
             rec_search = findViewById(R.id.re_Search);
             tv_noDonors = findViewById(R.id.tv_noDonors);
             tv_tryAgain = findViewById(R.id.tv_tryAgain);
@@ -101,7 +113,6 @@ public class SearchPage extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     nameOfCountry=country[position];
-                    Toast.makeText(SearchPage.this, nameOfCountry, Toast.LENGTH_SHORT).show();
                     if (nameOfCountry == country[0]){
                         cities = getResources().getStringArray(R.array.defaultCity);
                         setSpinnerCities();
@@ -135,7 +146,6 @@ public class SearchPage extends AppCompatActivity {
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if (position!=0) {
                         nameOfCities=cities[position];
-                        Toast.makeText(SearchPage.this, nameOfCities, Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -221,7 +231,7 @@ public class SearchPage extends AppCompatActivity {
 
     }
     private void getDataBase(){
-        if (connected()) {
+        if (connected()){
             tv_noDonors.setVisibility(View.GONE);
             tv_tryAgain.setVisibility(View.GONE);
             reference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
@@ -232,7 +242,6 @@ public class SearchPage extends AppCompatActivity {
                     rec_search.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.GONE);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-
                         Donor donor = snapshot.getValue(Donor.class);
                         al_recSearch.add(donor);
                     }
@@ -241,7 +250,6 @@ public class SearchPage extends AppCompatActivity {
                         tv_noDonors.setVisibility(View.VISIBLE);
                     }
                 }
-
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -260,15 +268,12 @@ public class SearchPage extends AppCompatActivity {
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
             //we are connected to a network
-            connected = true;
+            return true;
         }
         else{
-            connected = false;
+            return false;
         }
-        return connected;
-
     }
-
     public void tryAgain(View view) {
         progressBar.setVisibility(View.VISIBLE);
         getDataBase();

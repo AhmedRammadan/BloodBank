@@ -368,10 +368,121 @@
     <string name="Rating_App">Rating App</string>
     <string name="Share_app">Share app</string>
     <string name="Feedback">Feedback</string>
-    <string name="Medical_advices_for_donor">Medical advices for donor</string>
+    <string name="The_Benefits_of_Donating_Blood">The Benefits of Donating Blood</string>
     <string name="SignUpdonor">Sign Up donor</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alert_text">ahme</string>
+    <string name="snackbar_text">name</string>
+    <string name="action_show">Show</string>
+    <string name="some_text">some_text</string>
+    <string name="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacus nisl, venenatis accumsan fermentum sed, auctor ut magna. Integer ante erat, fermentum id feugiat quis, tristique eu tortor. Cras vel sodales diam, ut imperdiet urna. Proin et nisl vitae ante scelerisque commodo ornare vel tortor. In eget viverra nisl, eu pellentesque nisi. Donec molestie metus sed mauris sagittis, sed vestibulum ante rhoncus. Aenean vel neque id magna pretium viverra. Phasellus pellentesque faucibus urna, lacinia scelerisque sem condimentum ut. Praesent at arcu eu orci fringilla vehicula eu at ante. Nullam congue felis massa, at vehicula mauris efficitur egestas. In feugiat mi at orci ultricies porttitor. Mauris fermentum nunc dui, ut tincidunt libero cursus pretium. Quisque eu vestibulum sapien. Donec non tempus ex. Donec in accumsan elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam facilisis maximus enim eget sagittis. Vestibulum tincidunt dolor sit amet interdum porta. Fusce eu odio sem. Proin non condimentum elit. Curabitur elit turpis, hendrerit eget velit et, sagittis pellentesque felis. Donec in euismod nibh.</string>
 
+
+    <!--//post 1
+    <string name="title1">The Benefits of Donating Blood</string>
+    <string name="desc1">
+There’s no end to the benefits of donating blood for those who need it. According to the American Red Cross, one donation can save as many as three lives, and someone in the world needs blood every two seconds.
+
+It turns out that donating blood doesn’t just benefit recipients. There are health benefits for donors, too, on top of the benefits that come from helping others. Read on to learn the health benefits of donating blood and the reasons behind them.</string>
+
+    <string name="title2">Benefits</string>
+    <string name="desc2">Donating blood has benefits for your emotional and physical health. According to a report by the Mental Health Foundation, helping others can:
+
+-reduce stress
+-improve your emotional well-being
+-benefit your physical health
+-help get rid of negative feelings
+-provide a sense of belonging and reduce isolation
+Research has found further evidence of the health benefits that come specifically from donating blood.</string>
+
+    <string name="title3">Lower risk of heart disease</string>
+    <string name="desc3">Blood donation may lower the risk of heart disease and heart attack. This is because it reduces the blood’s viscosity.
+
+A 2013 study found that regular blood donation significantly lowered the mean total cholesterol and low-density lipoprotein cholesterol, protecting against cardiovascular disease. Researchers note this is consistent with findings in other studies which found that blood donors had a lower risk of heart disease and heart attack.
+
+Donating blood regularly may also lower iron stores. This may reduce the risk of heart attack. High body iron stores are believed to increase the risk of heart attack.
+
+</string>
+
+    <string name="title4">Lower risk of cancer</string>
+    <string name="desc4">A 2008 study found a small decrease in the risk of certain cancers in people who regularly donated blood. These included cancers that are linked to high iron levels, including cancer of the:
+
+-liver
+-colon
+-lung
+-esophagus
+-stomach
+A 2016 study also found that donating blood can lower inflammatory markers and increase antioxidant capacity.</string>
+
+    <string name="title5">Free health checkup</string>
+    <string name="desc5">In order to give blood, you’re required to undergo a health screening. A trained staff member performs this checkup. They’ll check your:
+
+-pulse
+-blood pressure
+-body temperature
+-hemoglobin levels
+This free mini-physical can offer excellent insight into your health. It can effectively detect problems that could indicate an underlying medical condition or risk factors for certain diseases.
+
+Your blood is also tested for several diseases. These include:
+
+-hepatitis B
+-hepatitis C
+-HIV
+-West Nile virus
+-syphilis
+-Trypanosoma cruzi</string>
+
+    <string name="title6">Side effects of donating blood</string>
+    <string name="desc6">Blood donation is safe for healthy adults. There’s no risk of contracting disease. New, sterile equipment is used for each donor.
+
+Some people may feel nauseous, lightheaded, or dizzy after donating blood. If this happens, it should only last a few minutes. You can lie down with your feet up at the until you feel better.
+
+You may also experience some bleeding at the site of the needle. Applying pressure and raising your arm for a couple of minutes will usually stop this. You may develop a bruise at the site.
+
+
+Call the blood donation center if:
+
+-You still feel lightheaded, dizzy, or nauseous after drinking, eating, and resting.
+-You develop a raised bump or continue bleeding at the needle site.
+-You have arm pain, numbness, or tingling.</string>
+
+    <string name="title7">During the donation</string>
+    <string name="desc7">You must register to donate blood. This includes providing identification, your medical history, and undergoing a quick physical examination. You’ll also be given some information about blood donation to read.
+
+Once you’re ready, your blood donation procedure will begin. Whole blood donation is the most common type of donation. This is because it offers the most flexibility. It can be transfused as whole blood or separated into red cells, platelets, and plasma for different recipients.
+
+For a whole blood donation procedure:
+
+1-You’ll be seated in a reclining chair. You can donate blood either sitting or lying down.
+2-A small area of your arm will be cleaned. A sterile needle will then be inserted.
+3-You’ll remain seated or lying down while a pint of your blood is drawn. This takes 8 to 10 minutes.
+4-When a pint of blood has been collected, a staff member will remove the needle and bandage your arm.
+Other types of donation include:
+
+-platelet donation (plateletpheresis)
+-plasma donation (plasmapheresis)
+-double red cell donation
+These types of donations are performed using a process called apheresis. An apheresis machine is connected to both of your arms. It collects a small amount of blood and separates the components before returning the unused components back to you. This cycle is repeated several times over approximately two hours.
+
+Once your donation is complete, you’ll be given a snack and a drink and be able to sit and rest for 10 or 15 minutes before you leave. If you feel faint or nauseous, you’ll be able to lie down until you feel better.</string>
+
+    <string name="title8">What to know before you donate</string>
+    <string name="desc8">Here are some important things to know before you donate:
+
+-You need to be 17 or older to donate whole blood. Some states allow you to donate at 16 with parental consent.
+-You have to weigh at least 110 pounds and be in good health to donate.
+-You need to provide information about medical conditions and any medications you’re taking. These may affect your eligibility to donate blood.
+-You must wait at least eight weeks between whole blood donations and 16 weeks between double red cell donations.
+-Platelet donations can be made every seven days, up to 24 times per year.
+The following are some suggestions to help you prepare for donating blood:
+
+-Drink an extra 16 ounces of water before your appointment.
+-Eat a healthy meal that’s low in fat.
+-Wear a short-sleeved shirt or a shirt with sleeves that are easy to roll up.
+Let the staff know if you have a preferred arm or vein and if you prefer to sit up or lie down. Listening to music, reading, or talking to someone else can help you relax during the donation process.</string>
+
+
+-->
 </resources>

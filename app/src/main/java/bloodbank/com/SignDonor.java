@@ -1,26 +1,20 @@
 package bloodbank.com;
 
-import android.Manifest;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -43,7 +37,11 @@ import java.util.ArrayList;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class SignUp extends AppCompatActivity {
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class SignDonor extends Fragment {
     DatabaseReference myreference ;
     String name;
     String number;
@@ -58,20 +56,18 @@ public class SignUp extends AppCompatActivity {
     TextView tv_24h, tv_time_to,tv_time_to2, tv_time_from,tv_time_from2;
     TextView sat, mon, tue, wed, thu,fri,sun;
     int availableTime = 2 ,Hour, Minute, index_btn = 1,index_time = 1;
-    int index_colorTV1 = 1,index_colorTV2 = 1,index_colorTV3 = 1,index_colorTV4 = 1,index_colorTV5 = 1,index_colorTV6 = 1,index_colorTV7 = 1;
+    int index_colorTV1 = 2,index_colorTV2 = 2,index_colorTV3 = 2,index_colorTV4 = 2,index_colorTV5 = 2,index_colorTV6 = 2,index_colorTV7 = 2;
     String AmPm = "Am";
     LinearLayout linear_time ;
     Spinner spinner_country , spinner_cities , spinner_bloodType;
     ArrayAdapter adapter_country,adapter_cities,adapter_bloodType;
     String [] country,cities,bloodType;
-    String selectsat="", selectmon="", selecttue="", selectwed="", selectthu="",selectfri="",selectsun="";
-    boolean connected = false;
-    int indexCountry , indexCity;
+    String selectsat="sat", selectmon="mon", selecttue="tue", selectwed="wed", selectthu="thu",selectfri="fri",selectsun="sun";
+    View view ;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_sign_donor, container, false);
         numbers = new ArrayList<>();
         findViewById();
         btn_24();
@@ -106,61 +102,48 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-
-
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id==android.R.id.home) {
-            finish();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return view;
     }
 
     public void findViewById(){
         try {
             //SimUp
-            btn_sinUp = findViewById(R.id.btn_sinUp);
-            et_nameDonor = findViewById(R.id.et_nameDonor);
-            inputphoneNumber = findViewById(R.id.inputphoneNumber);
+            btn_sinUp = view.findViewById(R.id.btn_sinUp);
+            et_nameDonor = view.findViewById(R.id.et_nameDonor);
+            inputphoneNumber = view.findViewById(R.id.inputphoneNumber);
             //click for get Time
-            btn_24h = findViewById(R.id.btn_24h);
-            tv_24h = findViewById(R.id.tv__24h);
+            btn_24h = view.findViewById(R.id.btn_24h);
+            tv_24h = view.findViewById(R.id.tv__24h);
             //get Time
-            tv_time_to = findViewById(R.id.time_to);
-            tv_time_to2 = findViewById(R.id.time_to2);
-            tv_time_from = findViewById(R.id.time_from);
-            tv_time_from2 = findViewById(R.id.time_from2);
-            linear_time = findViewById(R.id.linear_time);
+            tv_time_to = view.findViewById(R.id.time_to);
+            tv_time_to2 = view.findViewById(R.id.time_to2);
+            tv_time_from = view.findViewById(R.id.time_from);
+            tv_time_from2 = view.findViewById(R.id.time_from2);
+            linear_time = view.findViewById(R.id.linear_time);
 
             //for Days
-            sat = findViewById(R.id.sat);
-            mon = findViewById(R.id.mon);
-            tue = findViewById(R.id.tue);
-            wed = findViewById(R.id.wed);
-            thu = findViewById(R.id.thu);
-            fri = findViewById(R.id.fri);
-            sun = findViewById(R.id.sun);
+            sat = view.findViewById(R.id.sat);
+            mon = view.findViewById(R.id.mon);
+            tue = view.findViewById(R.id.tue);
+            wed = view.findViewById(R.id.wed);
+            thu = view.findViewById(R.id.thu);
+            fri = view.findViewById(R.id.fri);
+            sun = view.findViewById(R.id.sun);
 
             //Spinner
-            spinner_country = findViewById(R.id.country);
+            spinner_country = view.findViewById(R.id.country);
             cities = getResources().getStringArray(R.array.Egypt);
-            spinner_cities = findViewById(R.id.city);
-            spinner_bloodType = findViewById(R.id.bloodType);
+            spinner_cities = view.findViewById(R.id.city);
+            spinner_bloodType = view.findViewById(R.id.bloodType);
         }catch (Exception e){
 
-            Toast.makeText(SignUp.this, "Error11", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Error11", Toast.LENGTH_SHORT).show();
         }
 
     }
     public void getTimePicker() {
         try {
-            final android.app.AlertDialog builder = new android.app.AlertDialog.Builder(SignUp.this).create();
+            final android.app.AlertDialog builder = new android.app.AlertDialog.Builder(getActivity()).create();
             final View dialogShow = getLayoutInflater().inflate(R.layout.time_picker, null);
             builder.setView(dialogShow);
 
@@ -212,7 +195,7 @@ public class SignUp extends AppCompatActivity {
                         }
                         builder.dismiss();
                     }else {
-                        Toast.makeText(SignUp.this, "please choose time", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "please choose time", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -224,7 +207,7 @@ public class SignUp extends AppCompatActivity {
             });
         }catch (Exception e){
 
-            Toast.makeText(SignUp.this, "Error10", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Error10", Toast.LENGTH_SHORT).show();
         }
     }
     public void changeColorTV() {
@@ -235,7 +218,7 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (index_colorTV1 == 1) {
-                        selectsat="sat ";
+                        selectsat="sat";
                         sat.setTextColor(color);
                         index_colorTV1++;
                     } else if (index_colorTV1 == 2) {
@@ -249,9 +232,10 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (index_colorTV2 == 1) {
-                        selectmon="mon ";
+                        selectmon="mon";
                         mon.setTextColor(color);
                         index_colorTV2++;
+                        Toast.makeText(getActivity(), "mon", Toast.LENGTH_SHORT).show();
                     } else if (index_colorTV2 == 2) {
                         selectmon="";
                         mon.setTextColor(color1);
@@ -263,7 +247,7 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (index_colorTV3 == 1) {
-                        selecttue="tue ";
+                        selecttue="tue";
                         tue.setTextColor(color);
                         index_colorTV3++;
                     } else if (index_colorTV3 == 2) {
@@ -277,7 +261,7 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (index_colorTV4 == 1) {
-                        selectwed="wed ";
+                        selectwed="wed";
                         wed.setTextColor(color);
                         index_colorTV4++;
                     } else if (index_colorTV4 == 2) {
@@ -291,7 +275,7 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (index_colorTV5 == 1) {
-                        selectthu="thu ";
+                        selectthu="thu";
                         thu.setTextColor(color);
                         index_colorTV5++;
                     } else if (index_colorTV5 == 2) {
@@ -305,7 +289,7 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (index_colorTV6 == 1) {
-                        selectfri = "fri ";
+                        selectfri = "fri";
                         fri.setTextColor(color);
                         index_colorTV6++;
                     } else if (index_colorTV6 == 2) {
@@ -319,7 +303,7 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (index_colorTV7 == 1) {
-                        selectsun = "sun ";
+                        selectsun = "sun";
                         sun.setTextColor(color);
                         index_colorTV7++;
                     } else if (index_colorTV7 == 2) {
@@ -331,7 +315,7 @@ public class SignUp extends AppCompatActivity {
             });
         }catch (Exception e){
 
-            Toast.makeText(SignUp.this, "Error9", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Error9", Toast.LENGTH_SHORT).show();
         }
     }
     public void btn_24() {
@@ -376,7 +360,7 @@ public class SignUp extends AppCompatActivity {
             });
         }catch (Exception e){
 
-            Toast.makeText(SignUp.this, "Error8", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Error8", Toast.LENGTH_SHORT).show();
         }
     }
     public void getTime(){
@@ -412,19 +396,18 @@ public class SignUp extends AppCompatActivity {
             });
         }catch (Exception e){
 
-            Toast.makeText(SignUp.this, "Error7", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Error7", Toast.LENGTH_SHORT).show();
         }
     }
     public void setSpinnerCountry(){
         try {
             country = getResources().getStringArray(R.array.country);
-            adapter_country = new ArrayAdapter(SignUp.this,R.layout.spinner,country);
+            adapter_country = new ArrayAdapter(getActivity(),R.layout.spinner,country);
             spinner_country.setAdapter(adapter_country);
             spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     nameOfCountry=country[position];
-                    Toast.makeText(SignUp.this, nameOfCountry, Toast.LENGTH_SHORT).show();
                     if (nameOfCountry == country[0]){
                         cities = getResources().getStringArray(R.array.defaultCity);
                         setSpinnerCities();
@@ -451,14 +434,13 @@ public class SignUp extends AppCompatActivity {
     }
     public void setSpinnerCities(){
         try {
-            adapter_cities = new ArrayAdapter(SignUp.this,R.layout.spinner,cities);
+            adapter_cities = new ArrayAdapter(getActivity(),R.layout.spinner,cities);
             spinner_cities.setAdapter(adapter_cities);
             spinner_cities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if (position!=0) {
                         nameOfCities=cities[position];
-                        Toast.makeText(SignUp.this, nameOfCities, Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -475,7 +457,7 @@ public class SignUp extends AppCompatActivity {
     public void setSpinnerBloodType(){
         try {
             bloodType = getResources().getStringArray(R.array.bloodType);
-            adapter_bloodType = new ArrayAdapter(SignUp.this,R.layout.spinner,bloodType);
+            adapter_bloodType = new ArrayAdapter(getActivity(),R.layout.spinner,bloodType);
             spinner_bloodType.setAdapter(adapter_bloodType);
             spinner_bloodType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -496,47 +478,75 @@ public class SignUp extends AppCompatActivity {
     }
     public void sinUpDonor(){
         try {
-            final android.app.AlertDialog alertDialog = new AlertDialog.Builder(SignUp.this).create();
+            final android.app.AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
             name = et_nameDonor.getText().toString();
-            if (connected()) {
+            if (MainActivity.connected(getActivity())) {
                 if (!name.equals("")) {
                     if (spinner_country.getSelectedItemPosition()!=0) {
                         if (spinner_cities.getSelectedItemPosition()!=0) {
                             if (spinner_bloodType.getSelectedItemPosition()!=0) {
                                 if (inputphoneNumber.isValid()) {
                                     phoneNumber = inputphoneNumber.getNumber();
-                                        if (chickNumberPhone()) {
-                                            if (availableTime == 2) {
-                                            myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-                                            Donor donor = new Donor(name, phoneNumber, "anytime");
-                                            myreference.push().setValue(donor);
+                                    if (chickNumberPhone()) {
+                                        if (selectsat != "" || selectmon != "" || selecttue != "" || selectwed != "" ||
+                                                selectthu != "" || selectfri != "" || selectsun != "") {
 
-                                            Toast.makeText(SignUp.this, "the registration is done", Toast.LENGTH_LONG).show();
-                                            startActivity(new Intent(SignUp.this, MainActivity.class));
-                                        } else if (availableTime == 1) {
-                                            myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-                                            String fromTime = tv_time_from.getText().toString();
-                                            String toTime = tv_time_to.getText().toString();
-                                            if (selectsat == "sat" || selectmon == "mon" || selecttue == "tue" || selectwed == "wed" ||
-                                                    selectthu == "thu" || selectfri == "fri" || selectsun == "sun") {
+                                            if (selectsat != "" && selectmon != "" && selecttue != "" && selectwed != "" &&
+                                                    selectthu != "" && selectfri != "" && selectsun != "") {
 
-                                                if (fromTime.length() > 5 && toTime.length() > 5) {
+                                                if (availableTime == 2) {
 
-                                                    Donor donor = new Donor("1", name, phoneNumber, fromTime, toTime, selectsat, selectmon,
-                                                            selecttue, selectwed, selectthu, selectfri, selectsun);
+                                                    myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+                                                    Donor donor = new Donor(0,0,name, phoneNumber, "anyDay","anyTime");
                                                     myreference.push().setValue(donor);
+                                                    Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                                   // startActivity(new Intent(getActivity(), MainActivity.class));
 
+                                                } else if (availableTime == 1) {
 
-                                                    Toast.makeText(SignUp.this, "the registration is done", Toast.LENGTH_LONG).show();
-                                                    startActivity(new Intent(SignUp.this, MainActivity.class));
-                                                } else {
-                                                    alertDialog.setMessage("pleas choose time");
-                                                    alertDialog.show();
+                                                    myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+                                                    String fromTime = tv_time_from.getText().toString();
+                                                    String toTime = tv_time_to.getText().toString();
+                                                    if (fromTime.length() > 5 && toTime.length() > 5) {
+                                                        Donor donor = new Donor(0,1, name, phoneNumber,"anyDay", fromTime, toTime);
+                                                        myreference.push().setValue(donor);
+                                                        Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                                       // startActivity(new Intent(getActivity(), MainActivity.class));
+                                                        } else {
+                                                            alertDialog.setMessage("pleas choose time");
+                                                            alertDialog.show();
+                                                        }
                                                 }
                                             } else {
-                                                alertDialog.setMessage("pleas choose days");
-                                                alertDialog.show();
+                                                if (availableTime == 2) {
+
+                                                    myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+                                                    Donor donor = new Donor(1,0, name, phoneNumber,"anyTime", selectsat, selectmon,
+                                                            selecttue, selectwed, selectthu, selectfri, selectsun);
+                                                    myreference.push().setValue(donor);
+                                                    Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                                  // startActivity(new Intent(getActivity(), MainActivity.class));
+
+                                                } else if (availableTime == 1) {
+
+                                                    myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
+                                                    String fromTime = tv_time_from.getText().toString();
+                                                    String toTime = tv_time_to.getText().toString();
+                                                    if (fromTime.length() > 5 && toTime.length() > 5) {
+                                                        Donor donor = new Donor(1,1, name, phoneNumber,selectsat, selectmon,
+                                                                selecttue, selectwed, selectthu, selectfri, selectsun,fromTime, toTime);
+                                                        myreference.push().setValue(donor);
+                                                        Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                                       // startActivity(new Intent(getActivity(), MainActivity.class));
+                                                    } else {
+                                                        alertDialog.setMessage("pleas choose time");
+                                                        alertDialog.show();
+                                                    }
+                                                }
                                             }
+                                        } else {
+                                            alertDialog.setMessage("pleas choose days");
+                                            alertDialog.show();
                                         }
                                     } else {
                                         alertDialog.setMessage("This number already exists");
@@ -546,26 +556,27 @@ public class SignUp extends AppCompatActivity {
                                     alertDialog.setMessage("Please check the phone number");
                                     alertDialog.show();
                                 }
-                        } else {
-                            Toast.makeText(SignUp.this, "please choose the blood type", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getActivity(), "please choose the blood type", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(SignUp.this, "please choose the city", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "please choose the city", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(SignUp.this, "please choose the country", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "please choose the country", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     alertDialog.setMessage("Enter Your Name");
                     alertDialog.show();
-                    }
+                }
             } else {
-                Toast.makeText(SignUp.this, "check your internet connection", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "check your internet connection", Toast.LENGTH_SHORT).show();
             }
 
         }catch (Exception e){
             Log.w(TAG, "sinUpDonor: ",e );
-            Toast.makeText(SignUp.this, "Error2", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(getActivity(), "Error2", Toast.LENGTH_SHORT).show();
         }
     }
     public boolean chickNumberPhone(){
@@ -581,7 +592,7 @@ public class SignUp extends AppCompatActivity {
 
             }
         }catch (Exception e){
-            Toast.makeText(SignUp.this, "Error1", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Error1", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -608,16 +619,16 @@ public class SignUp extends AppCompatActivity {
                             }
                         });
                     }else {
-                       // Toast.makeText(SignUp.this, "please choose the blood type", Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(getActivity(), "please choose the blood type", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    //Toast.makeText(SignUp.this, "please choose the city", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "please choose the city", Toast.LENGTH_SHORT).show();
                 }
             } else {
-               // Toast.makeText(SignUp.this, "please choose the country", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getActivity(), "please choose the country", Toast.LENGTH_SHORT).show();
             }
         }catch (Exception e){
-            Toast.makeText(SignUp.this, "Error3", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Error3", Toast.LENGTH_SHORT).show();
         }
     }
     private void  getNumbersForSpinner(String nameOfCountry ,String nameOfCities,String nameOfBloodType){
@@ -639,24 +650,10 @@ public class SignUp extends AppCompatActivity {
                 }
             });
         }catch (Exception e){
-            Toast.makeText(SignUp.this, "Error4", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Error4", Toast.LENGTH_SHORT).show();
         }
-    }
-    private boolean connected(){
-        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            //we are connected to a network
-            connected = true;
-        }
-        else{
-            connected = false;
-        }
-        return connected;
-
     }
 
 
 
 }
-

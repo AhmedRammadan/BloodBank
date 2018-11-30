@@ -7,12 +7,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 class ViewHolderForDonor extends RecyclerView.ViewHolder implements View.OnClickListener {
-    ImageView image_item;
-    TextView title;
+    TextView title,tv_desc;
     ItemClickListener itemClickListener ;
     public ViewHolderForDonor(@NonNull View itemView) {
         super(itemView);
-        image_item = itemView.findViewById(R.id.image_item);
+        tv_desc = itemView.findViewById(R.id.tv_desc);
         title = itemView.findViewById(R.id.tv_title);
         itemView.setOnClickListener(this);
     }

@@ -27,7 +27,7 @@ public class Adapter_Rec_ForDonor extends RecyclerView.Adapter<ViewHolderForDono
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderForDonor viewHolderForDonor, final int i) {
-        viewHolderForDonor.image_item.setImageResource(items.get(i).getImage());
+        viewHolderForDonor.tv_desc.setText(items.get(i).getDescription());
         viewHolderForDonor.title.setText(items.get(i).getTitle());
         viewHolderForDonor.setItemClickListener(new ItemClickListener() {
             @Override

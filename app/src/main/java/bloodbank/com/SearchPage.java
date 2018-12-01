@@ -3,9 +3,11 @@ package bloodbank.com;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -16,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,6 +36,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class SearchPage extends AppCompatActivity {
     Handler handler =new Handler();
@@ -280,7 +284,7 @@ public class SearchPage extends AppCompatActivity {
         adaper_recy = new Adaper_Recy(SearchPage.this,al_recSearch);
         rec_search.setAdapter(adaper_recy);
     }
-    public static void  checkPermission(Context context){
+    public static  void checkPermission(Context context){
         // Here, thisActivity is the current activity
 
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED) {
@@ -332,10 +336,16 @@ public class SearchPage extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id==android.R.id.home) {
+            startActivity(new Intent(SearchPage.this,MainActivity.class));
             finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(SearchPage.this,MainActivity.class));
+        finish();
+    }
 }

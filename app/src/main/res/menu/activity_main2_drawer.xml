@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_person"
             android:title="@string/SignUpdonor" />
         <item
+            android:id="@+id/which_factions_you_can_donate_blood_to"
+            android:icon="@drawable/ic_blood"
+            android:title="@string/which_factions_you_can_donate_blood_to" />
+        <item
             android:id="@+id/nav_The_Benefits_of_Donating_Blood"
             android:icon="@drawable/ic_hospital"
             android:title="@string/The_Benefits_of_Donating_Blood" />

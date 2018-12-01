@@ -2,7 +2,7 @@ package bloodbank.com;
 
 public class Donor {
     private String  name ,
-            phoneNumber , availableDay,fromTime , toTime,sat, mon, tue, wed, thu,fri,sun,availableTime ;
+            phoneNumber , availableDay,fromTime , toTime,sat, mon, tue, wed, thu,fri,sun,availableTime;
     /**
      * @checkDay =0 isEmpty || =1 isNo'tEmpty
      * @checkTime =0 isEmpty || =1 isNo'tEmpty
@@ -21,7 +21,7 @@ public class Donor {
         this.checkTime = checkTime;
     }
     ///
-    public Donor( int checkDay ,int checkTime, String name, String phoneNumber, String fromTime, String toTime
+    public Donor(  int checkDay ,int checkTime, String name, String phoneNumber, String fromTime, String toTime
                   ,String sat, String mon, String tue, String wed, String thu, String fri, String sun) {
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -61,6 +61,8 @@ public class Donor {
         this.checkDay = checkDay;
         this.availableDay = availableDay;
     }
+
+
     public int getCheckDay() {
         return checkDay;
     }

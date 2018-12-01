@@ -370,6 +370,7 @@
     <string name="Feedback">Feedback</string>
     <string name="The_Benefits_of_Donating_Blood">The Benefits of Donating Blood</string>
     <string name="SignUpdonor">Sign Up donor</string>
+    <string name="which_factions_you_can_donate_blood_to">which factions you can donate blood to</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

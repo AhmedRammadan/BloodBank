@@ -136,12 +136,12 @@ public class post extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle("The Benefits of Donating Blood");
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
         if (id==android.R.id.home) {
+            startActivity(new Intent(this,MainActivity.class));
             finish();
             return true;
         }
@@ -151,9 +151,8 @@ public class post extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        startActivity(new Intent(this,MainActivity.class));
         finish();
-    }
-    private void setData(){
 
     }
 }

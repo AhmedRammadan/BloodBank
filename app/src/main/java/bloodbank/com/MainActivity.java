@@ -31,7 +31,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Fragment frag_Main ,frag_SignDonor,frag_posts;
+    Fragment frag_Main ,frag_SignDonor;
     FragmentManager manager ;
     FragmentTransaction transaction;
     TextView signUp;
@@ -81,39 +81,12 @@ public class MainActivity extends AppCompatActivity
                 case 1:
                     finish();
                     break;
-                case 2:
-                    signUp.setVisibility(View.VISIBLE);
-                    frag_Main = new Main();
-                    setFragment(frag_Main,1);
-                case 3:
-                    signUp.setVisibility(View.VISIBLE);
-                    frag_Main = new Main();
-                    setFragment(frag_Main,1);
-                    break;
+                    default:
+                        signUp.setVisibility(View.VISIBLE);
+                        frag_Main = new Main();
+                        setFragment(frag_Main,1);
             }
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main2, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -121,6 +94,9 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
             switch (item.getItemId()){
+                case R.id.which_factions_you_can_donate_blood_to:
+                    startActivity(new Intent(MainActivity.this,ChooseBloodType.class));
+                    break;
                 case R.id.nav_Feedback:
                     Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                             "mailto","deve.ahmedramadan@gmail.com", null));

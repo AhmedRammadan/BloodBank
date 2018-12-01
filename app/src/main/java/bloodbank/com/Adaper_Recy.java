@@ -13,16 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Adaper_Recy extends RecyclerView.Adapter<ViewHolder> {
 
     Context mcontext;
     ArrayList<Donor> items ;
-    String timeNow , timeDonorFrom , timeDonorTo;
+    String  timeDonorFrom , timeDonorTo, phoneNumber;
+    int timefrom,timeto ;
     public Adaper_Recy(Context mcontext, ArrayList<Donor> items) {
         this.mcontext = mcontext;
         this.items = items;
@@ -38,9 +36,9 @@ public class Adaper_Recy extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int i) {
         holder.name.setText(items.get(i).getName());
+        phoneNumber = items.get(i).getPhoneNumber();
         int chickDay = items.get(i).getCheckDay();
         int chickTime = items.get(i).getCheckTime();
-
         if (chickDay == 1 && chickTime == 1){
             String days = items.get(i).getFri()+"-";
             days+=items.get(i).getMon()+"-";
@@ -53,7 +51,6 @@ public class Adaper_Recy extends RecyclerView.Adapter<ViewHolder> {
             timeDonorFrom = items.get(i).getFromTime();
             timeDonorTo   = items.get(i).getToTime();
             holder.time.setText("From   "+items.get(i).getFromTime()+"  To  "+items.get(i).getToTime());
-
         }else if (chickDay == 0 && chickTime == 0){
             holder.days.setText(items.get(i).getAvailableDay());
             holder.time.setText(items.get(i).getAvailableTime());
@@ -76,20 +73,10 @@ public class Adaper_Recy extends RecyclerView.Adapter<ViewHolder> {
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
+
                 SearchPage.checkPermission(mcontext);
-                Calendar now = Calendar.getInstance();
-                if(now.get(Calendar.AM_PM) == Calendar.AM){
-                    // AM
-                    timeNow = ""+now.get(Calendar.HOUR)+":"+now.get(Calendar.MINUTE)+"Am";
-                }else{
-                    // PM
-                    timeNow = ""+now.get(Calendar.HOUR)+":"+now.get(Calendar.MINUTE)+"Pm";
-                }
-                Toast.makeText(mcontext, timeNow +" "+timeDonorFrom, Toast.LENGTH_SHORT).show();
                 if (ContextCompat.checkSelfPermission(mcontext, Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED) {
-                    if (timeNow==timeDonorFrom) {
-                        call(items.get(i).getPhoneNumber());
-                    }
+                    call(phoneNumber);
                 }else {
                     Toast.makeText(mcontext, "please do permission for call", Toast.LENGTH_SHORT).show();
                 }

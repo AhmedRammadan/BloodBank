@@ -5,27 +5,27 @@
         <item>Egypt</item>
         <item>Jordan</item>
         <item>Emirates</item>
-        <!--<item>Bahrain                                                 </item>
-        <item>Algeria                                                 </item>
-        <item>Saudi Arabia                                                 </item>
-        <item>Sudan                                                 </item>
-        <item>Somalia                                                 </item>
-        <item>Iraq                                                 </item>
-        <item>Kuwait                                                 </item>
-        <item>Morocco                                                 </item>
-        <item>Yemen                                                 </item>
-        <item>Turkey                                                 </item>
-        <item>Tunisia                                                 </item>
-        <item>Comoros                                                 </item>
-        <item>South Sudan                                                 </item>
-        <item>Djibouti                                                 </item>
-        <item>Syria                                                 </item>
-        <item>Oman                                                 </item>
-        <item>Palestine                                                 </item>
-        <item>Qatar                                                 </item>
-        <item>Lebanon                                                 </item>
-        <item>Libya                                                 </item>
-        <item>Mauritania                                                 </item>-->
+        <item>Bahrain  </item>
+        <item>Algeria </item>
+        <item>Saudi Arabia</item>
+        <item>Sudan </item>
+        <item>Somalia </item>
+        <item>Iraq  </item>
+        <item>Kuwait </item>
+        <item>Morocco </item>
+        <item>Yemen  </item>
+        <item>Turkey</item>
+        <item>Tunisia </item>
+        <item>Comoros </item>
+        <item>South Sudan </item>
+        <item>Djibouti</item>
+        <item>Syria</item>
+        <item>Oman  </item>
+        <item>Palestine</item>
+        <item>Qatar</item>
+        <item>Lebanon  </item>
+        <item>Libya </item>
+        <item>Mauritania</item>
     </array>
 
     <array name="Egypt">
@@ -359,7 +359,7 @@
         <item>AB-</item>
     </array>
 
-    <string name="splash">save a life give blood</string>
+    <string name="splash">Save lives donate blood</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

@@ -24,14 +24,14 @@ public class ChooseBloodType extends AppCompatActivity {
         rec_ForChoose = findViewById(R.id.re_chooseBloodType);
         rec_ForChoose.setLayoutManager(new LinearLayoutManager(ChooseBloodType.this));
         chooses = new ArrayList<>();
+        chooses.add(new choose(" A+ , AB+ "," A+ , A- , O+ , O- ",R.drawable.ic_a));
+        chooses.add(new choose(" A+ , A- , AB+ , AB- "," O- , A- ",R.drawable.ic_a_));
+        chooses.add(new choose(" AB+ , AB- "," O- , AB- , B- , A- ",R.drawable.ic_ab_));
+        chooses.add(new choose(" AB+ ","All of them",R.drawable.ic_ab));
         chooses.add(new choose(" AB+ , B+ "," O+ , O- , B+ , B- ",R.drawable.ic_b));
         chooses.add(new choose(" B+ , B- , AB+ , AB- "," O- , B- ",R.drawable.ic_b_));
         chooses.add(new choose(" A+ , AB+ , O+ , B+ "," O+ , O- ",R.drawable.ic_o));
         chooses.add(new choose("All of them"," O- ",R.drawable.ic_o_));
-        chooses.add(new choose(" A+ , AB+ "," A+ , A- , O+ , O- ",R.drawable.ic_a));
-        chooses.add(new choose(" A+ , A- , AB+ , AB- "," O- , A- ",R.drawable.ic_a_));
-        chooses.add(new choose(" AB+ ","All of them",R.drawable.ic_ab));
-        chooses.add(new choose(" AB+ , AB- "," O- , AB- , B- , A- ",R.drawable.ic_ab_));
 
         adapter = new Adaper_Rec_Choose(ChooseBloodType.this,chooses);
         rec_ForChoose.setAdapter(adapter);
@@ -48,7 +48,6 @@ public class ChooseBloodType extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id==android.R.id.home) {
-            startActivity(new Intent(ChooseBloodType.this,MainActivity.class));
             finish();
             return true;
         }
@@ -58,7 +57,6 @@ public class ChooseBloodType extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(ChooseBloodType.this,MainActivity.class));
         finish();
     }
 }

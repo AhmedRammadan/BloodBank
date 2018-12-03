@@ -1,12 +1,15 @@
 package bloodbank.com;
 
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -28,33 +31,18 @@ import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Fragment frag_Main ,frag_SignDonor;
     FragmentManager manager ;
     FragmentTransaction transaction;
-    TextView signUp;
-    int BackPressed;
+    static int BackPressed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-
-
-        signUp = findViewById(R.id.tv_signUp);
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                frag_SignDonor = new SignDonor();
-                setFragment(frag_SignDonor,2);
-                signUp.setVisibility(View.GONE);
-            }
-        });
         frag_Main = new Main();
         setFragment(frag_Main,1);
 
@@ -71,6 +59,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -79,14 +68,27 @@ public class MainActivity extends AppCompatActivity
         } else {
             switch (BackPressed){
                 case 1:
-                    finish();
+                    if (doubleBackToExitPressedOnce) {
+                        super.onBackPressed();
+                        finish();
+                    }
+                    this.doubleBackToExitPressedOnce = true;
+                    Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+                    new Handler().postDelayed(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            doubleBackToExitPressedOnce=false;
+                        }
+                    }, 2000);
                     break;
                     default:
-                        signUp.setVisibility(View.VISIBLE);
                         frag_Main = new Main();
                         setFragment(frag_Main,1);
             }
         }
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity
             switch (item.getItemId()){
                 case R.id.which_factions_you_can_donate_blood_to:
                     startActivity(new Intent(MainActivity.this,ChooseBloodType.class));
+                    this.BackPressed = 1;
                     break;
                 case R.id.nav_Feedback:
                     Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
@@ -105,12 +108,12 @@ public class MainActivity extends AppCompatActivity
                     startActivity(Intent.createChooser(intent, "Choose an Email client :"));
                     break;
                 case R.id.nav_SignUpdonor:
-                    signUp.setVisibility(View.GONE);
                     frag_SignDonor = new SignDonor();
                     setFragment(frag_SignDonor,2);
                     break;
                 case R.id.nav_The_Benefits_of_Donating_Blood:
                     startActivity(new Intent(MainActivity.this,post.class));
+                    this.BackPressed = 1;
                     break;
                 case R.id.nav_Rating_App:
                     Uri uri = Uri.parse("market://details?id=" + MainActivity.this.getPackageName());
@@ -128,7 +131,6 @@ public class MainActivity extends AppCompatActivity
                     }
                     break;
                 case R.id.nav_Search_for_a_donor:
-                    signUp.setVisibility(View.VISIBLE);
                     frag_Main = new Main();
                     setFragment(frag_Main,1);
                     break;
@@ -166,5 +168,6 @@ public class MainActivity extends AppCompatActivity
         }
 
     }
+
 
 }

@@ -3,6 +3,7 @@ package bloodbank.com;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -56,6 +57,7 @@ public class SearchPage extends AppCompatActivity {
     };
     private static final int   MY_PERMISSIONS_REQUEST = 1;
     String nameOfCountry, nameOfCities , nameOfBloodType;
+    String nameOfCountryAlertDialog, nameOfCitiesAlertDialog , nameOfBloodTypeAlertDialog;
     DatabaseReference reference;
     RecyclerView rec_search;
     Adaper_Recy  adaper_recy;
@@ -83,7 +85,6 @@ public class SearchPage extends AppCompatActivity {
         rec_search.setLayoutManager(new LinearLayoutManager(SearchPage.this));
         al_recSearch = new ArrayList<>();
         adaper_recy = new Adaper_Recy(SearchPage.this,al_recSearch);
-
         rec_search.setAdapter(adaper_recy);
         handler.postDelayed(runnable,4000);
     }
@@ -116,17 +117,17 @@ public class SearchPage extends AppCompatActivity {
             spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    nameOfCountry=country[position];
-                    if (nameOfCountry == country[0]){
+                    nameOfCountryAlertDialog=country[position];
+                    if (nameOfCountryAlertDialog == country[0]){
                         cities = getResources().getStringArray(R.array.defaultCity);
                         setSpinnerCities();
-                    }else if (nameOfCountry  ==country[1]){
+                    }else if (nameOfCountryAlertDialog  ==country[1]){
                         cities = getResources().getStringArray(R.array.Egypt);
                         setSpinnerCities();
-                    }else if (nameOfCountry == country[2]){
+                    }else if (nameOfCountryAlertDialog == country[2]){
                         cities = getResources().getStringArray(R.array.Jordan);
                         setSpinnerCities();
-                    }else if (nameOfCountry == country[3]){
+                    }else if (nameOfCountryAlertDialog == country[3]){
                         cities = getResources().getStringArray(R.array.Emirates);
                         setSpinnerCities();
                     }
@@ -149,7 +150,7 @@ public class SearchPage extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if (position!=0) {
-                        nameOfCities=cities[position];
+                        nameOfCitiesAlertDialog=cities[position];
                     }
                 }
 
@@ -172,7 +173,7 @@ public class SearchPage extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     if (position!=0) {
-                        nameOfBloodType = bloodType[position];
+                        nameOfBloodTypeAlertDialog = bloodType[position];
 
                     }
                 }
@@ -187,19 +188,18 @@ public class SearchPage extends AppCompatActivity {
         }
     }
     private void AlertDialog(){
-        final AlertDialog alertDialog = new AlertDialog.Builder(SearchPage.this).create();
+        final AlertDialog alertDialog = new AlertDialog.Builder(SearchPage.this,R.style.CustomDialog).create();
         View alertShow = getLayoutInflater().inflate(R.layout.alert_dialog,null);
         alertDialog.setView(alertShow);
         alertDialog.show();
         spinner_country = alertShow.findViewById(R.id.spinner_searchCountry);
         spinner_cities = alertShow.findViewById(R.id.spinner_searchCity);
         spinner_bloodType = alertShow.findViewById(R.id.spinner_searchBloodType);
-        Button btn_alertSearch = alertShow.findViewById(R.id.btn_alertSearch);
-        Button btn_alertCancel = alertShow.findViewById(R.id.btn_alertCancel);
+        TextView btn_alertSearch = alertShow.findViewById(R.id.btn_alertSearch);
+        TextView btn_alertCancel = alertShow.findViewById(R.id.btn_alertCancel);
         setSpinnerCountry();
         setSpinnerCities();
         setSpinnerBloodType();
-        alertDialog.setCancelable(false);
         btn_alertSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -208,7 +208,7 @@ public class SearchPage extends AppCompatActivity {
                        if (spinner_cities.getSelectedItemPosition() != 0) {
                            if (spinner_bloodType.getSelectedItemPosition() != 0) {
                                progressBar.setVisibility(View.VISIBLE);
-                               getDataBase();
+                               getDataBaseAlertDialog();
                                adaper_recy = new Adaper_Recy(SearchPage.this, al_recSearch);
                                rec_search.setAdapter(adaper_recy);
                                alertDialog.dismiss();
@@ -247,7 +247,40 @@ public class SearchPage extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Donor donor = snapshot.getValue(Donor.class);
-                        al_recSearch.add(donor);
+                        al_recSearch.add(0,donor);
+                    }
+                    if (al_recSearch.size() == 0) {
+                        tv_noDonors.setText("Sorry there are no donors");
+                        tv_noDonors.setVisibility(View.VISIBLE);
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }else {
+            tv_tryAgain.setVisibility(View.VISIBLE);
+            rec_search.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);
+            tv_noDonors.setVisibility(View.VISIBLE);
+            tv_noDonors.setText("check your internet connection");
+        }
+    }
+    private void getDataBaseAlertDialog(){
+        if (connected()){
+            tv_noDonors.setVisibility(View.GONE);
+            tv_tryAgain.setVisibility(View.GONE);
+            reference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountryAlertDialog).child(nameOfCitiesAlertDialog).child(nameOfBloodTypeAlertDialog);
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    al_recSearch.clear();
+                    rec_search.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        Donor donor = snapshot.getValue(Donor.class);
+                        al_recSearch.add(0,donor);
                     }
                     if (al_recSearch.size() == 0) {
                         tv_noDonors.setText("Sorry there are no donors");
@@ -336,7 +369,6 @@ public class SearchPage extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id==android.R.id.home) {
-            startActivity(new Intent(SearchPage.this,MainActivity.class));
             finish();
             return true;
         }
@@ -345,7 +377,7 @@ public class SearchPage extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(SearchPage.this,MainActivity.class));
         finish();
     }
+
 }

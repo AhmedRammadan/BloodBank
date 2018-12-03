@@ -31,6 +31,7 @@ public class Main extends Fragment {
     ArrayAdapter adapter_country,adapter_cities,adapter_bloodType;
     String [] country,cities,bloodType;
     Button btn_search;
+    TextView tv_signUpp;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,11 +42,18 @@ public class Main extends Fragment {
         setSpinnerCities();
         setSpinnerBloodType();
         Search();
+        tv_signUpp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setFragment();
+            }
+        });
         return view;
     }
     public void findViewById(){
         try {
            spinner_country = view.findViewById(R.id.spinner_country);
+            tv_signUpp = view.findViewById(R.id.tv_signUpp);
             cities = getResources().getStringArray(R.array.Egypt);
             spinner_cities = view.findViewById(R.id.spinner_cities);
             spinner_bloodType = view.findViewById(R.id.spinner_bloodType);
@@ -153,6 +161,15 @@ public class Main extends Fragment {
         }catch (Exception e){
 
         }
+    }
+
+    private void setFragment(){
+        MainActivity.BackPressed = 2;
+        Fragment fragment = new SignDonor();
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.frameLayout,fragment);
+        transaction.commit();
     }
 
 }

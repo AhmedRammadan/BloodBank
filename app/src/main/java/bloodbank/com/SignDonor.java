@@ -9,12 +9,15 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -55,7 +58,7 @@ public class SignDonor extends Fragment {
     Button btn_sinUp, btn_24h;
     TextView tv_24h, tv_time_to,tv_time_to2, tv_time_from,tv_time_from2;
     TextView sat, mon, tue, wed, thu,fri,sun;
-    int availableTime = 2 ,Hour, Minute, index_btn = 1,index_time = 1;
+    int availableTime = 2 ,Hour, index_btn = 1,index_time = 1;
     int index_colorTV1 = 2,index_colorTV2 = 2,index_colorTV3 = 2,index_colorTV4 = 2,index_colorTV5 = 2,index_colorTV6 = 2,index_colorTV7 = 2;
     String AmPm = "Am";
     LinearLayout linear_time ;
@@ -64,6 +67,8 @@ public class SignDonor extends Fragment {
     String [] country,cities,bloodType;
     String selectsat="sat", selectmon="mon", selecttue="tue", selectwed="wed", selectthu="thu",selectfri="fri",selectsun="sun";
     View view ;
+    String from , to;
+    String  Minute;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -109,7 +114,7 @@ public class SignDonor extends Fragment {
         try {
             //SimUp
             btn_sinUp = view.findViewById(R.id.btn_sinUp);
-            et_nameDonor = view.findViewById(R.id.et_nameDonor);
+            et_nameDonor = view.findViewById(R.id.et_name);
             inputphoneNumber = view.findViewById(R.id.inputphoneNumber);
             //click for get Time
             btn_24h = view.findViewById(R.id.btn_24h);
@@ -162,7 +167,17 @@ public class SignDonor extends Fragment {
                         AmPm = "Am";
                     }
                     Hour = hourOfDay;
-                    Minute = minute;
+                    try {
+                        if (minute==0){
+                            Minute="00";
+                            Toast.makeText(getActivity(), ""+Minute, Toast.LENGTH_SHORT).show();
+                        }else {
+                            Minute=String.valueOf(minute);
+                            Toast.makeText(getActivity(), ""+Minute, Toast.LENGTH_SHORT).show();
+                        }
+                    }catch (Exception e){
+                        Toast.makeText(getActivity() , "Error 00", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
             btn_ok.setOnClickListener(new View.OnClickListener() {
@@ -172,25 +187,31 @@ public class SignDonor extends Fragment {
                         if (index_time == 1){
                             if (AmPm == "Pm"){
                                 if (Hour != 12) {
-                                    Hour -= 12;
+                                   // Hour -= 12;
                                     tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
+                                    from = Hour+""+Minute;
                                 }
                                 tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
+                                from = Hour+""+Minute;
                             }
                             else {
                                 tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
+                                from = Hour+""+Minute;
                             }
 
                         }else  if (index_time == 2) {
                             if (AmPm == "Pm"){
                                 if (Hour !=12){
-                                    Hour -=12;
+                                   // Hour -=12;
                                     tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
+                                    to =Hour+""+Minute;
                                 }
                                 tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
+                                to =Hour+""+Minute;
                             }
                             else {
                                 tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
+                                to =Hour+""+Minute;
                             }
                         }
                         builder.dismiss();
@@ -507,13 +528,13 @@ public class SignDonor extends Fragment {
                                                     myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
                                                     String fromTime = tv_time_from.getText().toString();
                                                     String toTime = tv_time_to.getText().toString();
-                                                    if (fromTime.length() > 5 && toTime.length() > 5) {
-                                                        Donor donor = new Donor(0,1, name, phoneNumber,"anyDay", fromTime, toTime);
+                                                    if (!fromTime.isEmpty() && !toTime.isEmpty() ) {
+                                                        Donor donor = new Donor(from,to,0,1, name, phoneNumber,"anyDay", fromTime, toTime);
                                                         myreference.push().setValue(donor);
                                                         Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
                                                        // startActivity(new Intent(getActivity(), MainActivity.class));
                                                         } else {
-                                                            alertDialog.setMessage("pleas choose time");
+                                                            alertDialog.setMessage("please choose time");
                                                             alertDialog.show();
                                                         }
                                                 }
@@ -533,7 +554,7 @@ public class SignDonor extends Fragment {
                                                     String fromTime = tv_time_from.getText().toString();
                                                     String toTime = tv_time_to.getText().toString();
                                                     if (fromTime.length() > 5 && toTime.length() > 5) {
-                                                        Donor donor = new Donor(1,1, name, phoneNumber,selectsat, selectmon,
+                                                        Donor donor = new Donor(from,to,1,1, name, phoneNumber,selectsat, selectmon,
                                                                 selecttue, selectwed, selectthu, selectfri, selectsun,fromTime, toTime);
                                                         myreference.push().setValue(donor);
                                                         Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
@@ -629,28 +650,6 @@ public class SignDonor extends Fragment {
             }
         }catch (Exception e){
             Toast.makeText(getActivity(), "Error3", Toast.LENGTH_SHORT).show();
-        }
-    }
-    private void  getNumbersForSpinner(String nameOfCountry ,String nameOfCities,String nameOfBloodType){
-        try {
-            myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-            myreference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    numbers.clear();
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                        number = snapshot.child("phoneNumber").getValue(String.class);
-                        numbers.add(number);
-
-                    }
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-        }catch (Exception e){
-            Toast.makeText(getActivity(), "Error4", Toast.LENGTH_SHORT).show();
         }
     }
 

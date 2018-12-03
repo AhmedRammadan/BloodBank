@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -24,7 +25,6 @@
             android:id="@+id/nav_Rating_App"
             android:icon="@drawable/ic_star"
             android:title="@string/Rating_App" />
-
         <item
             android:id="@+id/nav_Share_app"
             android:icon="@drawable/ic_menu_share"
@@ -33,6 +33,13 @@
             android:id="@+id/nav_Feedback"
             android:icon="@drawable/ic_developer"
             android:title="@string/Feedback" />
+        <item
+            android:id="@+id/media_route_menu_item"
+            android:title="Cast"
+            app:actionProviderClass="android.support.v7.app.MediaRouteActionProvider"
+            tools:icon="@drawable/ic_developer" />
+
+
     </group>
 
 </menu>

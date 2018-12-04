@@ -1,7 +1,7 @@
 package bloodbank.com;
 
 public class Donor {
-    private String from ,to ,name ,
+    private String name ,
             phoneNumber , availableDay,fromTime , toTime,sat, mon, tue, wed, thu,fri,sun,availableTime;
     /**
      * @checkDay =0 isEmpty || =1 isNo'tEmpty
@@ -21,7 +21,7 @@ public class Donor {
         this.checkTime = checkTime;
     }
     ///
-    public Donor(String from,String to ,int checkDay ,int checkTime, String name, String phoneNumber, String fromTime, String toTime
+    public Donor(int checkDay ,int checkTime, String name, String phoneNumber, String fromTime, String toTime
                   ,String sat, String mon, String tue, String wed, String thu, String fri, String sun) {
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -36,8 +36,6 @@ public class Donor {
         this.sun = sun;
         this.checkDay = checkDay;
         this.checkTime = checkTime;
-        this.from = from;
-        this.to = to;
     }
     public Donor( int checkDay ,int checkTime, String name, String phoneNumber,String availableTime, String sat, String mon, String tue, String wed, String thu, String fri, String sun) {
         this.name = name;
@@ -54,7 +52,7 @@ public class Donor {
         this.checkTime = checkTime;
     }
     ///
-    public Donor(String from,String to ,int checkDay ,int checkTime, String name, String phoneNumber,String availableDay, String fromTime,String toTime) {
+    public Donor(int checkDay ,int checkTime, String name, String phoneNumber,String availableDay, String fromTime,String toTime) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.fromTime = fromTime;
@@ -62,17 +60,8 @@ public class Donor {
         this.checkTime = checkTime;
         this.checkDay = checkDay;
         this.availableDay = availableDay;
-        this.from = from;
-        this.to = to;
     }
 
-    public String getFrom() {
-        return from;
-    }
-
-    public String getTo() {
-        return to;
-    }
 
     public int getCheckDay() {
         return checkDay;

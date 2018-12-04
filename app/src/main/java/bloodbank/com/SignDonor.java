@@ -22,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -106,7 +107,6 @@ public class SignDonor extends Fragment {
                 sinUpDonor();
             }
         });
-
         return view;
     }
 
@@ -142,7 +142,6 @@ public class SignDonor extends Fragment {
             spinner_bloodType = view.findViewById(R.id.bloodType);
         }catch (Exception e){
 
-            Toast.makeText(getActivity(), "Error11", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -170,13 +169,10 @@ public class SignDonor extends Fragment {
                     try {
                         if (minute==0){
                             Minute="00";
-                            Toast.makeText(getActivity(), ""+Minute, Toast.LENGTH_SHORT).show();
                         }else {
                             Minute=String.valueOf(minute);
-                            Toast.makeText(getActivity(), ""+Minute, Toast.LENGTH_SHORT).show();
                         }
                     }catch (Exception e){
-                        Toast.makeText(getActivity() , "Error 00", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -189,10 +185,8 @@ public class SignDonor extends Fragment {
                                 if (Hour != 12) {
                                    // Hour -= 12;
                                     tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
-                                    from = Hour+""+Minute;
                                 }
                                 tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
-                                from = Hour+""+Minute;
                             }
                             else {
                                 tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
@@ -204,14 +198,11 @@ public class SignDonor extends Fragment {
                                 if (Hour !=12){
                                    // Hour -=12;
                                     tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
-                                    to =Hour+""+Minute;
                                 }
                                 tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
-                                to =Hour+""+Minute;
                             }
                             else {
                                 tv_time_to.setText(Hour + ":" + Minute + "" + AmPm);
-                                to =Hour+""+Minute;
                             }
                         }
                         builder.dismiss();
@@ -336,7 +327,6 @@ public class SignDonor extends Fragment {
             });
         }catch (Exception e){
 
-            Toast.makeText(getActivity(), "Error9", Toast.LENGTH_SHORT).show();
         }
     }
     public void btn_24() {
@@ -381,7 +371,6 @@ public class SignDonor extends Fragment {
             });
         }catch (Exception e){
 
-            Toast.makeText(getActivity(), "Error8", Toast.LENGTH_SHORT).show();
         }
     }
     public void getTime(){
@@ -417,7 +406,6 @@ public class SignDonor extends Fragment {
             });
         }catch (Exception e){
 
-            Toast.makeText(getActivity(), "Error7", Toast.LENGTH_SHORT).show();
         }
     }
     public void setSpinnerCountry(){
@@ -520,8 +508,8 @@ public class SignDonor extends Fragment {
                                                     myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
                                                     Donor donor = new Donor(0,0,name, phoneNumber, "anyDay","anyTime");
                                                     myreference.push().setValue(donor);
+                                                    //AlertDialog();
                                                     Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
-                                                   // startActivity(new Intent(getActivity(), MainActivity.class));
 
                                                 } else if (availableTime == 1) {
 
@@ -529,10 +517,10 @@ public class SignDonor extends Fragment {
                                                     String fromTime = tv_time_from.getText().toString();
                                                     String toTime = tv_time_to.getText().toString();
                                                     if (!fromTime.isEmpty() && !toTime.isEmpty() ) {
-                                                        Donor donor = new Donor(from,to,0,1, name, phoneNumber,"anyDay", fromTime, toTime);
+                                                        Donor donor = new Donor(0,1, name, phoneNumber,"anyDay", fromTime, toTime);
                                                         myreference.push().setValue(donor);
+                                                        //AlertDialog();
                                                         Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
-                                                       // startActivity(new Intent(getActivity(), MainActivity.class));
                                                         } else {
                                                             alertDialog.setMessage("please choose time");
                                                             alertDialog.show();
@@ -545,8 +533,8 @@ public class SignDonor extends Fragment {
                                                     Donor donor = new Donor(1,0, name, phoneNumber,"anyTime", selectsat, selectmon,
                                                             selecttue, selectwed, selectthu, selectfri, selectsun);
                                                     myreference.push().setValue(donor);
+                                                   // AlertDialog();
                                                     Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
-                                                  // startActivity(new Intent(getActivity(), MainActivity.class));
 
                                                 } else if (availableTime == 1) {
 
@@ -554,11 +542,11 @@ public class SignDonor extends Fragment {
                                                     String fromTime = tv_time_from.getText().toString();
                                                     String toTime = tv_time_to.getText().toString();
                                                     if (fromTime.length() > 5 && toTime.length() > 5) {
-                                                        Donor donor = new Donor(from,to,1,1, name, phoneNumber,selectsat, selectmon,
+                                                        Donor donor = new Donor(1,1, name, phoneNumber,selectsat, selectmon,
                                                                 selecttue, selectwed, selectthu, selectfri, selectsun,fromTime, toTime);
                                                         myreference.push().setValue(donor);
-                                                        Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
-                                                       // startActivity(new Intent(getActivity(), MainActivity.class));
+                                                        //AlertDialog();
+                                                         Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
                                                     } else {
                                                         alertDialog.setMessage("pleas choose time");
                                                         alertDialog.show();
@@ -597,7 +585,6 @@ public class SignDonor extends Fragment {
         }catch (Exception e){
             Log.w(TAG, "sinUpDonor: ",e );
 
-            Toast.makeText(getActivity(), "Error2", Toast.LENGTH_SHORT).show();
         }
     }
     public boolean chickNumberPhone(){
@@ -613,7 +600,6 @@ public class SignDonor extends Fragment {
 
             }
         }catch (Exception e){
-            Toast.makeText(getActivity(), "Error1", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -640,18 +626,53 @@ public class SignDonor extends Fragment {
                             }
                         });
                     }else {
-                        // Toast.makeText(getActivity(), "please choose the blood type", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    //Toast.makeText(getActivity(), "please choose the city", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                // Toast.makeText(getActivity(), "please choose the country", Toast.LENGTH_SHORT).show();
             }
         }catch (Exception e){
-            Toast.makeText(getActivity(), "Error3", Toast.LENGTH_SHORT).show();
         }
     }
 
-
+    private void AlertDialog(){
+        AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+        View v = getLayoutInflater().inflate(R.layout.alertdilog_after_signup,null);
+        alertDialog.setView(v);
+        alertDialog.show();
+        TextView tv_1 ,tv_2 ;
+        ImageView img_1 ,img_2;
+        tv_1 = v.findViewById(R.id.tv_1);
+        tv_2 = v.findViewById(R.id.tv_2);
+        img_1 = v.findViewById(R.id.img_1);
+        img_2 = v.findViewById(R.id.img_1);
+        tv_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),post.class));
+                getActivity().finish();
+            }
+        });
+        img_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),post.class));
+                getActivity().finish();
+            }
+        });
+        tv_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),ChooseBloodType.class));
+                getActivity().finish();
+            }
+        });
+        img_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),ChooseBloodType.class));
+                getActivity().finish();
+            }
+        });
+    }
 }

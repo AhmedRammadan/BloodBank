@@ -141,6 +141,7 @@ public class post extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id==android.R.id.home) {
+            startActivity(new Intent(post.this,MainActivity.class));
             finish();
             return true;
         }
@@ -150,6 +151,7 @@ public class post extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        startActivity(new Intent(post.this,MainActivity.class));
         finish();
 
     }

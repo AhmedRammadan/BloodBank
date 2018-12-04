@@ -48,6 +48,7 @@ public class ChooseBloodType extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id==android.R.id.home) {
+            startActivity(new Intent(ChooseBloodType.this,MainActivity.class));
             finish();
             return true;
         }
@@ -57,6 +58,7 @@ public class ChooseBloodType extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        startActivity(new Intent(ChooseBloodType.this,MainActivity.class));
         finish();
     }
 }

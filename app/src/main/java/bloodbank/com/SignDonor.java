@@ -68,7 +68,6 @@ public class SignDonor extends Fragment {
     String [] country,cities,bloodType;
     String selectsat="sat", selectmon="mon", selecttue="tue", selectwed="wed", selectthu="thu",selectfri="fri",selectsun="sun";
     View view ;
-    String from , to;
     String  Minute;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -190,7 +189,6 @@ public class SignDonor extends Fragment {
                             }
                             else {
                                 tv_time_from.setText(Hour + ":" + Minute + "" + AmPm);
-                                from = Hour+""+Minute;
                             }
 
                         }else  if (index_time == 2) {
@@ -429,6 +427,69 @@ public class SignDonor extends Fragment {
                     }else if (nameOfCountry == country[3]){
                         cities = getResources().getStringArray(R.array.Emirates);
                         setSpinnerCities();
+                    }else if (nameOfCountry == country[4]){
+                        cities = getResources().getStringArray(R.array.Bahrain);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[5]){
+                        cities = getResources().getStringArray(R.array.Algeria);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[6]){
+                        cities = getResources().getStringArray(R.array.SaudiArabia);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[7]){
+                        cities = getResources().getStringArray(R.array.Sudan);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[8]){
+                        cities = getResources().getStringArray(R.array.Somalia);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[9]){
+                        cities = getResources().getStringArray(R.array.Iraq);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[10]){
+                        cities = getResources().getStringArray(R.array.Kuwait);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[11]){
+                        cities = getResources().getStringArray(R.array.Morocco);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[12]){
+                        cities = getResources().getStringArray(R.array.Yemen);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[13]){
+                        cities = getResources().getStringArray(R.array.Turkey);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[14]){
+                        cities = getResources().getStringArray(R.array.Tunisia);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[15]){
+                        cities = getResources().getStringArray(R.array.islands_of_the_moon);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[16]){
+                        cities = getResources().getStringArray(R.array.Comoros);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[17]){
+                        cities = getResources().getStringArray(R.array.Djibouti);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[18]){
+                        cities = getResources().getStringArray(R.array.Syria);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[19]){
+                        cities = getResources().getStringArray(R.array.Oman);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[20]){
+                        cities = getResources().getStringArray(R.array.Palestine);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[21]){
+                        cities = getResources().getStringArray(R.array.Qatar);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[22]){
+                        cities = getResources().getStringArray(R.array.Lebanon);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[23]){
+                        cities = getResources().getStringArray(R.array.Libya);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[24]) {
+                        cities = getResources().getStringArray(R.array.Mauritania);
+                        setSpinnerCities();
                     }
                 }
 
@@ -508,8 +569,8 @@ public class SignDonor extends Fragment {
                                                     myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
                                                     Donor donor = new Donor(0,0,name, phoneNumber, "anyDay","anyTime");
                                                     myreference.push().setValue(donor);
-                                                    //AlertDialog();
-                                                    Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                                    AlertDialog();
+                                                    //Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
 
                                                 } else if (availableTime == 1) {
 
@@ -519,8 +580,8 @@ public class SignDonor extends Fragment {
                                                     if (!fromTime.isEmpty() && !toTime.isEmpty() ) {
                                                         Donor donor = new Donor(0,1, name, phoneNumber,"anyDay", fromTime, toTime);
                                                         myreference.push().setValue(donor);
-                                                        //AlertDialog();
-                                                        Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                                        AlertDialog();
+                                                       // Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
                                                         } else {
                                                             alertDialog.setMessage("please choose time");
                                                             alertDialog.show();
@@ -533,8 +594,8 @@ public class SignDonor extends Fragment {
                                                     Donor donor = new Donor(1,0, name, phoneNumber,"anyTime", selectsat, selectmon,
                                                             selecttue, selectwed, selectthu, selectfri, selectsun);
                                                     myreference.push().setValue(donor);
-                                                   // AlertDialog();
-                                                    Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                                    AlertDialog();
+                                                    //Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
 
                                                 } else if (availableTime == 1) {
 
@@ -545,8 +606,8 @@ public class SignDonor extends Fragment {
                                                         Donor donor = new Donor(1,1, name, phoneNumber,selectsat, selectmon,
                                                                 selecttue, selectwed, selectthu, selectfri, selectsun,fromTime, toTime);
                                                         myreference.push().setValue(donor);
-                                                        //AlertDialog();
-                                                         Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
+                                                        AlertDialog();
+                                                        // Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
                                                     } else {
                                                         alertDialog.setMessage("pleas choose time");
                                                         alertDialog.show();
@@ -583,14 +644,13 @@ public class SignDonor extends Fragment {
             }
 
         }catch (Exception e){
-            Log.w(TAG, "sinUpDonor: ",e );
 
         }
     }
+
     public boolean chickNumberPhone(){
         try {
             getNumbers();
-
             for (String number : numbers) {
                 long num1 = Long.parseLong(number);
                 long num2 = Long.parseLong(phoneNumber);
@@ -617,7 +677,6 @@ public class SignDonor extends Fragment {
                                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                                     number = snapshot.child("phoneNumber").getValue(String.class);
                                     numbers.add(number);
-
                                 }
                             }
                             @Override
@@ -632,6 +691,7 @@ public class SignDonor extends Fragment {
             } else {
             }
         }catch (Exception e){
+            Log.e(TAG, "getNumbers: ",e );
         }
     }
 

@@ -16,8 +16,8 @@
         <item>Yemen  </item>
         <item>Turkey</item>
         <item>Tunisia </item>
+        <item>islands of the moon </item>
         <item>Comoros </item>
-        <item>South Sudan </item>
         <item>Djibouti</item>
         <item>Syria</item>
         <item>Oman  </item>
@@ -28,6 +28,1806 @@
         <item>Mauritania</item>
     </array>
 
+
+
+    <array name="a">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </array>
+
+    <array name="Mauritania">
+        <item>Choose City</item>
+        <item>Nouakchott  	</item>
+        <item>Nouadhibou	</item>
+        <item>Rosso	        </item>
+        <item>Adel Bagrou    </item>
+        <item>Boghé         	</item>
+        <item>Kiffa          </item>
+        <item>Zouérat        </item>
+        <item>Kaédi          </item>
+        <item>Boû Gâdoûm     </item>
+        <item>Boutilimit     </item>
+        <item>Atar           </item>
+        <item>Bareina        </item>
+        <item>Ghabou         </item>
+        <item>Hamoud         </item>
+        <item>Mâl            </item>
+        <item>Nbeika         </item>
+        <item>Gouraye        </item>
+        <item>Timbedra       </item>
+        <item>Magta-Lahjar   </item>
+        <item>Guerou         </item>
+        <item>Soudoud        </item>
+        <item>Sélibaby       </item>
+        <item>Voum Legleite  </item>
+        <item>Legceïba       </item>
+        <item>Bousteila      </item>
+        <item>Sangrave       </item>
+        <item>Tintane        </item>
+        <item>Néma           </item>
+        <item>Aleg           </item>
+        <item>Tidjikdja      </item>
+        <item>Oualata        </item>
+        <item>Ayoûn el-Atroûs</item>
+        <item>Bababé         </item>
+        <item>Akjoujt        </item>
+        <item>Chagar</item>
+    </array>
+    <array name="Libya">
+        <item>Choose City</item>
+        <item>Tripoli</item>
+        <item>Benghazi</item>
+        <item>Misrata</item>
+        <item>Bayda</item>
+        <item>Zawiya</item>
+        <item>Zliten</item>
+        <item>Ajdabiya</item>
+        <item>Tobruk</item>
+        <item>Sabha</item>
+        <item>Khoms</item>
+        <item>Derna</item>
+        <item>Sabratha</item>
+        <item>Zuwara</item>
+        <item>Kufra</item>
+        <item>Marj</item>
+        <item>Tajura</item>
+        <item>Tarhuna</item>
+        <item>Sirte</item>
+        <item>Gharyan</item>
+        <item>Msallata</item>
+        <item>Bani Walid</item>
+        <item>Jumayl</item>
+        <item>Sorman</item>
+        <item>Al Gseibat</item>
+        <item>Shahhat</item>
+        <item>Ubari</item>
+        <item>Asbi a</item>
+        <item>Jadid</item>
+        <item>Waddan</item>
+        <item>El Agheila</item>
+        <item>Abyar</item>
+        <item>Nofaliya</item>
+        <item>Regdalin</item>
+        <item>Gasr Akhyar</item>
+        <item>Al Qubah</item>
+        <item>Tawergha</item>
+        <item>Al Maya</item>
+        <item>Murzuk</item>
+        <item>Brega</item>
+        <item>Teghsat</item>
+        <item>Hun</item>
+        <item>Jalu</item>
+        <item>Al Ujeilat</item>
+        <item>Nalut</item>
+        <item>Suluq</item>
+        <item>Shuhada  al Buerat</item>
+        <item>Zaltan</item>
+        <item>Mizda</item>
+        <item>Ra s Lanuf</item>
+        <item>Teji</item>
+        <item>Qaminis</item>
+        <item>Qatrun</item>
+        <item>Benina</item>
+        <item>Kikla</item>
+        <item>Al Rheibat</item>
+        <item>Sokna</item>
+        <item>Massa</item>
+        <item>Bin Jawad</item>
+        <item>Umm al Aranib</item>
+        <item>Jadu</item>
+        <item>Ghadames</item>
+        <item>Ar Rabta</item>
+        <item>Ghat</item>
+        <item>Al Abraq</item>
+        <item>Sidi as Said</item>
+        <item>Ar Rajban</item>
+        <item>Awjila</item>
+        <item>Ras al Hamam</item>
+        <item>Tolmeita</item>
+        <item>Zella</item>
+        <item>Wadi Utba</item>
+        <item>Al Barkat</item>
+        <item>Martuba</item>
+        <item>Traghan</item>
+        <item>Al Hashan</item>
+        <item>El Bayyada</item>
+        <item>Qayqab</item>
+        <item>Mashashita</item>
+        <item>Bu-Fakhra</item>
+        <item>Musaid</item>
+        <item>Tacnis</item>
+        <item>Susa</item>
+        <item>Wadi Zem-Zem</item>
+        <item>Batta</item>
+        <item>Tazirbu</item>
+        <item>Jadid</item>
+        <item>Farzougha</item>
+        <item>Qaryat  Umar al Mukhtar</item>
+        <item>Bi r al Ashhab</item>
+    </array>
+   <array name="Lebanon">
+       <item>Choose City</item>
+        <item>Abey - Ain Drafil</item>
+        <item>Aghmid</item>
+        <item>Ain trez</item>
+        <item>Ain Dara</item>
+        <item>Ain el Remmaneh</item>
+        <item>Ain el Saydeh</item>
+        <item>Ain Jedideh</item>
+        <item>Ain Ksour</item>
+        <item>Ain Onoub</item>
+        <item>Ainab</item>
+        <item>Aley</item>
+        <item>Aramoun el Ghareb</item>
+        <item>Baawerta</item>
+        <item>Badghan</item>
+        <item>Baissour</item>
+        <item>Bassatine</item>
+        <item>Bchamoun</item>
+        <item>Bdadoun</item>
+        <item>Bemkine</item>
+        <item>Bennieh</item>
+        <item>Bhamdoun el Balda</item>
+        <item>Bhamdoun el Mhatta</item>
+        <item>Bkhechtey</item>
+        <item>Bleibel</item>
+        <item>Bmahray</item>
+        <item>Bserrine</item>
+        <item>Bsouss</item>
+        <item>Btalloun</item>
+        <item>Btater</item>
+        <item>Chanay</item>
+        <item>Charoun</item>
+        <item>Chartoun</item>
+        <item>Chemlan</item>
+        <item>Choueifat</item>
+        <item>Deir Koubel</item>
+        <item>Dfoun</item>
+        <item>Eitat</item>
+        <item>Houmal</item>
+        <item>Kehaleh</item>
+        <item>Keyfoun</item>
+        <item>Kfaraamey</item>
+        <item>Kfar Matta</item>
+        <item>Kommatyeh</item>
+        <item>Majdelbaana</item>
+        <item>Mansourieh - Ain el Marej</item>
+        <item>Mecherfeh</item>
+        <item>Mejdlaya</item>
+        <item>Rajmeh</item>
+        <item>Ramlieh</item>
+        <item>Ras el Jabal</item>
+        <item>Rechmaya</item>
+        <item>Remhala</item>
+        <item>Rouaysset el Neeman</item>
+        <item>Saoufar</item>
+        <item>Souk el Ghareb</item>
+        <item>Taazanieh</item>
+        <item>See also: Keserwan District</item>
+        <item>Achqout</item>
+        <item>Adonis</item>
+        <item>Ain el Rihaneh</item>
+        <item>Aintoura</item>
+        <item>Ajaltoun</item>
+        <item>Akaybeh</item>
+        <item>Aramoun</item>
+        <item>Azra  Ozor</item>
+        <item>Ballouneh</item>
+        <item>Batha</item>
+        <item>Bekaatat Achkout</item>
+        <item>Bouar</item>
+        <item>Bezhel  Mradyeh</item>
+        <item>Bqaatouta (Bkaatouta)</item>
+        <item>Chahtoul  Jouret Mehad</item>
+        <item>Chnaniir</item>
+        <item>Daraya</item>
+        <item>Daraoun - Harissa</item>
+        <item>Dlebta</item>
+        <item>Faitroun</item>
+        <item>Faraya</item>
+        <item>Fatqa</item>
+        <item>Ghazir</item>
+        <item>Ghbaleh</item>
+        <item>Ghedrass</item>
+        <item>Ghosta</item>
+        <item>Ghyneh</item>
+        <item>Hiyata</item>
+        <item>Hosein</item>
+        <item>Hrajel</item>
+        <item>Jdeideh - Harharaya - Kattine</item>
+        <item>Jeita</item>
+        <item>Jounieh</item>
+        <item>Jouret Termos</item>
+        <item>Kfardebian</item>
+        <item>Kfour</item>
+        <item>Kleiat</item>
+        <item>Maaysra</item>
+        <item>Mayrouba</item>
+        <item>Raachine</item>
+        <item>Rayfoun</item>
+        <item>Batha</item>
+        <item>Sehayleh</item>
+        <item>Tabarja - Adma - Dafne - Kfaryassine</item>
+        <item>Wata el Jawz</item>
+        <item>Yahchouch</item>
+        <item>Zaaytre</item>
+        <item>Zeytoun</item>
+        <item>Zouk Mikael</item>
+        <item>Zouk Mosbeh</item>
+        <item>Sarba</item>
+        <item>daher sarba</item>
+        <item>ain-bzil</item>
+    </array>
+    <array name="Qatar">
+        <item>Choose City</item>
+        <item>Al Khor</item>
+        <item>Doha</item>
+        <item>Shahaniya</item>
+        <item>Al Wakra</item>
+        <item>smoke</item>
+        <item>Ras Laffan</item>
+        <item>Civil North</item>
+        <item>Mesaieed</item>
+    </array>
+    <array name="Palestine">
+        <item>Choose City</item>
+        <item>Abasan al-Kabira</item>
+        <item>Abu Dis</item>
+        <item>Bani Na im</item>
+        <item>Bani Suheila</item>
+        <item>Beit Hanoun</item>
+        <item>Beit Jala</item>
+        <item>Beit Lahia</item>
+        <item>Beit Sahour</item>
+        <item>Beit Ummar</item>
+        <item>Beitunia</item>
+        <item>Bethlehem (Beit Lahm)</item>
+        <item>al-Bireh</item>
+        <item>Deir al-Balah</item>
+        <item>ad-Dhahiriya</item>
+        <item>Dura</item>
+        <item>Gaza City (Ghazzah)</item>
+        <item>Halhul</item>
+        <item>Hebron (al-Khalil)</item>
+        <item>Idhna</item>
+        <item>Jabalia</item>
+        <item>Jenin</item>
+        <item>Jericho (Ariha)</item>
+        <item>Khan Yunis</item>
+        <item>Nablus</item>
+        <item>Qabatiya</item>
+        <item>Qalqilya</item>
+        <item>Rafah</item>
+        <item>Ramallah	</item>
+        <item>Sa ir</item>
+        <item>as-Samu</item>
+        <item>Surif</item>
+        <item>Tubas</item>
+        <item>Tulkarm</item>
+        <item>Ya bad</item>
+        <item>al-Yamun</item>
+        <item>Yatta</item>
+        <item>az-Zawayda</item>
+</array>
+    <array name="Oman">
+        <item>Choose City</item>
+        <item>Adam</item>
+        <item>As Sib</item>
+        <item>Al Ashkharah</item>
+        <item>Al Buraimi</item>
+        <item>Al Hamra</item>
+        <item>Al Jazer</item>
+        <item>Al Madina A Zarqa, formerly known as Blue City</item>
+        <item>Al Suwaiq</item>
+        <item>Bahla</item>
+        <item>Barka</item>
+        <item>Bidbid</item>
+        <item>Bidiya</item>
+        <item>Duqm</item>
+        <item>Haima</item>
+        <item>Ibra</item>
+        <item>Ibri</item>
+        <item>Izki</item>
+        <item>Jabrin</item>
+        <item>Jalan Bani Bu Hassan</item>
+        <item>Khasab</item>
+        <item>Mahooth</item>
+        <item>Manah</item>
+        <item>Masirah</item>
+        <item>Matrah</item>
+        <item>Mudhaybi</item>
+        <item>Mudhaireb</item>
+        <item>Muscat</item>
+        <item>Nizwa</item>
+        <item>Quriyat</item>
+        <item>Raysut</item>
+        <item>Rustaq</item>
+        <item>Ruwi</item>
+        <item>Saham</item>
+        <item>Shinas</item>
+        <item>Saiq</item>
+        <item>Salalah</item>
+        <item>Samail</item>
+        <item>Sohar</item>
+        <item>Sur</item>
+        <item>Tan am</item>
+        <item>Thumrait</item>
+    </array>
+    <array name="Syria">
+        <item>Choose City</item>
+        <item>Sayyidah Zaynab</item>
+        <item>Al-Hajar al-Aswad</item>
+        <item>Binnish</item>
+        <item>Bosra</item>
+        <item>Dayr  Atiyah</item>
+        <item>Harasta</item>
+        <item>Jaramana</item>
+        <item>Kafr Nabl</item>
+        <item>Khan Shaykhun</item>
+        <item>Ma arrat Misrin</item>
+        <item>Nawa</item>
+        <item>Salqin</item>
+        <item>Saraqib</item>
+        <item>Talbiseh</item>
+    </array>
+    <array name="Djibouti">
+        <item>Choose City</item>
+        <item> As Ela </item>
+        <item> Assamo </item>
+        <item> Balho </item>
+        <item> Chebelle </item>
+        <item> Daimoli </item>
+        <item> Daoudaouya </item>
+        <item> Dorale </item>
+        <item> Doumera</item>
+        <item> Godoria</item>
+        <item> Khor Angar</item>
+        <item> Randa</item>
+        <item> Ras Siyyan</item>
+        <item> Sagallou </item>
+        <item> Yoboki </item>
+    </array>
+    <array name="Comoros">
+        <item>Choose City</item>
+        <item>Adda-Douéni</item>
+        <item>Bambao</item>
+        <item>Bazimini</item>
+        <item>Domoni</item>
+        <item>Jimilimé</item>
+        <item>Koni-Djodjo</item>
+        <item>Mirontsi</item>
+        <item>Moya</item>
+        <item>Mramani</item>
+        <item>Mutsamudu </item>
+        <item>Ongoujou</item>
+        <item>Ouani</item>
+        <item>Pomoni</item>
+        <item>Sima</item>
+        <item>Tsimbeo</item>
+        <item>Chezani</item>
+        <item>Dembéni</item>
+        <item>Foumbouni</item>
+        <item>Hahaia</item>
+        <item>Iconi</item>
+        <item>Itsikoudi</item>
+        <item>Koimbani</item>
+        <item>Mbéni</item>
+        <item>Mitsamiouli</item>
+        <item>Mitsoudjé</item>
+        <item>Mohoro</item>
+        <item>Moroni </item>
+        <item>Mvouni</item>
+        <item>N Tsaoueni</item>
+        <item>N Tsoudjini</item>
+        <item>Nkourani</item>
+        <item>Pidjani</item>
+        <item>Séléa</item>
+        <item>Tsidjé</item>
+        <item>Bandaressalam</item>
+        <item>Djoiezi</item>
+        <item>Fomboni </item>
+        <item>Hoani</item>
+        <item>Kangani</item>
+        <item>Mbatsé</item>
+        <item>Miringoni</item>
+        <item>Mtakoudja</item>
+        <item>Ndrondroni</item>
+        <item>Nioumachoua</item>
+        <item>Ouallah</item>
+        <item>Sambia</item>
+        <item>Wanani</item>
+        <item>Ziroudani</item>
+    </array>
+    <array name="islands_of_the_moon">
+        <item>Choose City</item>
+        <item>Demonie</item>
+        <item>Motsamudu</item>
+        <item>Moroni</item>
+    </array>
+    <array name="Tunisia">
+        <item>Choose City</item>
+        <item>Ariana</item>
+        <item>Béja</item>
+        <item>Ben Arous</item>
+        <item>Bizerte</item>
+        <item>Gabès</item>
+        <item>Gafsa</item>
+        <item>Jendouba</item>
+        <item>Kairouan</item>
+        <item>Kasserine</item>
+        <item>Kebili</item>
+        <item>Kef</item>
+        <item>Mahdia</item>
+        <item>Manouba</item>
+        <item>Medenine</item>
+        <item>Monastir</item>
+        <item>Nabeul</item>
+        <item>Sfax</item>
+        <item>Sidi Bou Zid</item>
+        <item>Siliana</item>
+        <item>Sousse</item>
+        <item>Tataouine</item>
+        <item>Tozeur</item>
+        <item>Tunis</item>
+        <item>Zaghouan</item>
+    </array>
+    <array name="Turkey">
+        <item>Choose City</item>
+        <item>Istanbul</item>
+        <item>Ankara</item>
+        <item>İzmir</item>
+        <item>Bursa</item>
+        <item>Adana</item>
+        <item>Gaziantep</item>
+        <item>Konya</item>
+        <item>Antalya</item>
+        <item>Kayseri</item>
+        <item>Mersin</item>
+        <item>Eskişehir</item>
+        <item>Diyarbakır</item>
+        <item>Samsun</item>
+        <item>Denizli</item>
+        <item>Şanlıurfa</item>
+        <item>Adapazarı</item>
+        <item>Malatya</item>
+        <item>Kahramanmaraş</item>
+        <item>Erzurum</item>
+        <item>Van</item>
+        <item>Batman</item>
+        <item>Elâzığ</item>
+        <item>İzmit</item>
+        <item>Manisa</item>
+        <item>Sivas</item>
+        <item>Gebze</item>
+        <item>Balıkesir</item>
+        <item>Tarsus</item>
+        <item>Kütahya</item>
+        <item>Trabzon</item>
+        <item>Çorum</item>
+        <item>Çorlu</item>
+        <item>Adıyaman</item>
+        <item>Osmaniye</item>
+        <item>Kırıkkale</item>
+        <item>Antakya</item>
+        <item>Aydın</item>
+        <item>İskenderun</item>
+        <item>Uşak</item>
+        <item>Aksaray</item>
+        <item>Afyon</item>
+        <item>Isparta</item>
+        <item>İnegöl</item>
+        <item>Tekirdağ</item>
+        <item>Edirne</item>
+        <item>Darıca</item>
+        <item>Ordu</item>
+        <item>Karaman</item>
+        <item>Gölcük</item>
+        <item>Siirt</item>
+        <item>Körfez</item>
+        <item>Kızıltepe</item>
+        <item>Düzce</item>
+        <item>Tokat</item>
+        <item>Bolu</item>
+        <item>Derince</item>
+        <item>Turgutlu</item>
+        <item>Bandırma</item>
+        <item>Nazilli</item>
+        <item>Kırşehir</item>
+        <item>Niğde</item>
+        <item>Zonguldak</item>
+        <item>Ceyhan</item>
+        <item>Karabük</item>
+        <item>Siverek</item>
+        <item>Akhisar</item>
+        <item>Lüleburgaz</item>
+        <item>Karadeniz Ereğli</item>
+        <item>Ağrı</item>
+        <item>Polatlı</item>
+        <item>Rize</item>
+        <item>Salihli</item>
+        <item>Ereğli</item>
+        <item>Cizre</item>
+        <item>Nizip</item>
+        <item>Çanakkale</item>
+        <item>Yalova</item>
+        <item>Alanya</item>
+        <item>Giresun</item>
+        <item>Viranşehir</item>
+        <item>Bingöl</item>
+        <item>Amasya</item>
+        <item>Kastamonu</item>
+        <item>Elbistan</item>
+        <item>Erzincan</item>
+        <item>Nevşehir</item>
+        <item>Nusaybin</item>
+        <item>Kartepe</item>
+        <item>Çayırova</item>
+        <item>Mardin</item>
+        <item>Manavgat</item>
+        <item>Bafra</item>
+        <item>Kilis</item>
+        <item>Kadirli</item>
+        <item>Kars</item>
+        <item>Iğdır</item>
+        <item>Ünye</item>
+        <item>Kozan</item>
+        <item>Soma</item>
+        <item>Silopi</item>
+        <item>Ödemiş</item>
+        <item>Muş</item>
+        <item>Burdur</item>
+        <item>Yozgat</item>
+        <item>Fethiye</item>
+        <item>Erciş</item>
+        <item>Çerkezköy</item>
+        <item>Dörtyol</item>
+        <item>Çankırı</item>
+        <item>Kırıkhan</item>
+        <item>Söke</item>
+        <item>Kırklareli</item>
+        <item>Hakkâri</item>
+        <item>Şırnak</item>
+        <item>Doğubayazıt</item>
+        <item>Başiskele</item>
+        <item>Kuşadası</item>
+        <item>Ergani</item>
+        <item>Tavşanlı</item>
+        <item>Muğla</item>
+        <item>Turhal</item>
+        <item>Yüksekova</item>
+        <item>Tatvan</item>
+        <item>Reyhanlı</item>
+        <item>Kahta</item>
+        <item>Akşehir</item>
+        <item>Bergama</item>
+        <item>Erbaa</item>
+        <item>Bozüyük</item>
+        <item>Çarşamba</item>
+        <item>Mustafakemalpaşa</item>
+        <item>Patnos</item>
+        <item>Orhangazi</item>
+        <item>Bismil</item>
+        <item>Sorgun</item>
+        <item>Keşan</item>
+        <item>Midyat</item>
+        <item>Merzifon</item>
+        <item>Bartın</item>
+        <item>Kapaklı</item>
+        <item>Milas</item>
+        <item>Karacabey</item>
+        <item>Suruç</item>
+        <item>Edremit</item>
+        <item>Tire</item>
+        <item>Fatsa</item>
+        <item>Silifke</item>
+        <item>Alaşehir</item>
+        <item>Didim</item>
+        <item>Serik</item>
+        <item>Bilecik</item>
+        <item>Karamürsel</item>
+        <item>Bitlis</item>
+        <item>Birecik</item>
+        <item>Karaköprü</item>
+        <item>Samandağ</item>
+        <item>Erdemli</item>
+        <item>Ceylanpınar</item>
+        <item>Gönen</item>
+        <item>Dilovası</item>
+        <item>Düziçi</item>
+        <item>Uzunköprü</item>
+        <item>Biga</item>
+        <item>Seydişehir</item>
+        <item>Silvan</item>
+        <item>Afşin</item>
+        <item>Burhaniye</item>
+        <item>Suluova</item>
+        <item>Bucak</item>
+        <item>Sinop</item>
+        <item>Develi</item>
+        <item>Bulancak</item>
+        <item>Bor</item>
+        <item>Safranbolu</item>
+        <item>Akçaabat</item>
+        <item>Ayvalık</item>
+        <item>Marmaris</item>
+        <item>Payas</item>
+        <item>Sungurlu</item>
+        <item>Beypazarı</item>
+        <item>Zile</item>
+        <item>Kozlu</item>
+        <item>Sandıklı</item>
+        <item>Bodrum</item>
+        <item>Bayburt</item>
+        <item>Anamur</item>
+        <item>Karapınar</item>
+        <item>Niksar</item>
+        <item>Terme</item>
+        <item>Ilgın</item>
+        <item>İslahiye</item>
+        <item>Beyşehir</item>
+        <item>Erzin</item>
+        <item>Bolvadin</item>
+        <item>Tunceli</item>
+        <item>Yenişehir</item>
+        <item>Yerköy</item>
+        <item>Çumra</item>
+        <item>Karasu</item>
+        <item>Babaeski</item>
+        <item>Malkara</item>
+        <item>Çan</item>
+        <item>Kumluca</item>
+        <item>Kurtalan</item>
+        <item>Ortaca</item>
+        <item>Şereflikoçhisar</item>
+        <item>Pazarcık</item>
+        <item>Mut</item>
+        <item>Gölbaşı</item>
+        <item>Tosya</item>
+        <item>Vezirköprü</item>
+        <item>Boyabat</item>
+        <item>Osmancık</item>
+        <item>Besni</item>
+        <item>Sarıkamış</item>
+        <item>Simav</item>
+        <item>Dinar</item>
+        <item>Artvin</item>
+        <item>Gümüşhane</item>
+        <item>Susurluk</item>
+        <item>Akçakale</item>
+        <item>Kilimli</item>
+        <item>Harbiye</item>
+        <item>İdil</item>
+        <item>Ardeşen</item>
+        <item>Dalaman</item>
+        <item>Gelibolu</item>
+        <item>Erdek</item>
+        <item>Gazipaşa</item>
+        <item>Akçakoca</item>
+        <item>Çaycuma</item>
+        <item>Çeşme</item>
+        <item>Kemer</item>
+        <item>Belen</item>
+        <item>Saray</item>
+        <item>İznik</item>
+        <item>Alaca</item>
+        <item>Gerede</item>
+        <item>Devrek</item>
+        <item>Akdağmadeni</item>
+        <item>Kaman</item>
+        <item>Serinyol</item>
+        <item>Kozluk</item>
+        <item>Bulanık</item>
+        <item>Sarıkaya</item>
+        <item>Kulu</item>
+        <item>Şarkışla</item>
+        <item>Korkuteli</item>
+        <item>Oltu</item>
+        <item>Geyve</item>
+        <item>İmamoğlu</item>
+        <item>Çine</item>
+        <item>Çivril</item>
+        <item>Göksun</item>
+        <item>Derik</item>
+        <item>Hilvan</item>
+        <item>Çayeli</item>
+        <item>İskilip</item>
+        <item>Havza</item>
+        <item>Yahyalı</item>
+        <item>Hayrabolu</item>
+        <item>İncirliova</item>
+        <item>Kovancılar</item>
+        <item>Güroymak</item>
+        <item>Muratlı</item>
+        <item>Malazgirt</item>
+        <item>Diyadin</item>
+        <item>Emirdağ</item>
+        <item>Alaplı</item>
+        <item>Bostaniçi</item>
+        <item>Gediz</item>
+        <item>Sarayköy</item>
+        <item>Yalvaç</item>
+        <item>Mahmutlar</item>
+        <item>Demirci</item>
+        <item>Ortaköy</item>
+        <item>Turgutreis</item>
+        <item>Karaağaç</item>
+        <item>Yatağan</item>
+        <item>Nurdağı</item>
+        <item>Çiftlikköy</item>
+        <item>Battalgazi</item>
+        <item>Çermik</item>
+        <item>Dargeçit</item>
+        <item>Genç</item>
+        <item>Dursunbey</item>
+        <item>Horasan</item>
+        <item>Gümüşhacıköy</item>
+        <item>Kızılcahamam</item>
+        <item>Pamukova</item>
+        <item>Eğirdir</item>
+        <item>Şarköy</item>
+        <item>Boğazlıyan</item>
+        <item>Hopa</item>
+        <item>Yeşilli</item>
+        <item>Dikili</item>
+        <item>Ahlat</item>
+        <item>Ardahan</item>
+        <item>Ürgüp</item>
+        <item>Çekmece</item>
+        <item>Taşköprü</item>
+        <item>Zeytinli</item>
+        <item>Eskil</item>
+        <item>Muradiye</item>
+        <item>Espiye</item>
+        <item>Bozyazı</item>
+        <item>Bigadiç</item>
+        <item>Kırkağaç</item>
+        <item>Saruhanlı</item>
+        <item>Demre</item>
+        <item>Kızılpınar</item>
+        <item>Pazar</item>
+        <item>Cihanbeyli</item>
+        <item>Marmaraereğlisi</item>
+        <item>Altınoluk</item>
+        <item>Banaz</item>
+        <item>Görele</item>
+        <item>Buldan</item>
+        <item>Elmalı</item>
+        <item>Araklı</item>
+        <item>Of</item>
+        <item>Çaldıran</item>
+        <item>Şemdinli</item>
+        <item>Denizciler</item>
+        <item>Arhavi</item>
+        <item>Side</item>
+        <item>Armutalan</item>
+        <item>Vakfıkebir</item>
+        <item>Aybastı</item>
+        <item>Karakoçan</item>
+        <item>Obaköy</item>
+        <item>Narlıca</item>
+        <item>Türkoğlu</item>
+        <item>Solhan</item>
+        <item>Çay</item>
+        <item>Osmaneli</item>
+        <item>Kadınhanı</item>
+        <item>Pelitli</item>
+        <item>Sürmene</item>
+        <item>Kelkit</item>
+        <item>Pasinler</item>
+        <item>Kağızman</item>
+        <item>Suşehri</item>
+        <item>Ilıca</item>
+        <item>Sarıgöl</item>
+        <item>Tirebolu</item>
+        <item>Başkale</item>
+        <item>Bayramiç</item>
+        <item>Karaçulha</item>
+        <item>Korgan</item>
+        <item>Eşme</item>
+        <item>Gölhisar</item>
+        <item>Sındırgı</item>
+        <item>Arsin</item>
+        <item>Ortaklar</item>
+        <item>Bahçe</item>
+        <item>Edremit</item>
+        <item>Uludere</item>
+        <item>Konaklı</item>
+        <item>Kocaali</item>
+        <item>Çağlayancerit</item>
+        <item>Germencik</item>
+        <item>Kadıkendi</item>
+        <item>Şarkikaraağaç</item>
+        <item>Çelebibağı</item>
+        <item>Bünyan</item>
+        <item>Çınarcık</item>
+        <item>Şuhut</item>
+        <item>Tavas</item>
+        <item>Mucur</item>
+        <item>Beşikdüzü</item>
+        <item>Kumru</item>
+        <item>Nallıhan</item>
+        <item>Acıpayam</item>
+        <item>Kınık</item>
+        <item>Sason</item>
+        <item>Vize</item>
+        <item>Hasköy</item>
+        <item>Finike</item>
+        <item>Doğanşehir</item>
+        <item>İscehisar</item>
+        <item>Özalp</item>
+        <item>Çifteler</item>
+        <item>Kuzuculu</item>
+        <item>Tömük</item>
+        <item>Küçükköy</item>
+        <item>Ezine</item>
+        <item>Taşova</item>
+        <item>Pınarhisar</item>
+        <item>Kargıpınarı</item>
+        <item>Avanos</item>
+        <item>Yeniceköy</item>
+        <item>Gördes</item>
+        <item>Gölköy</item>
+        <item>Zara</item>
+        <item>Umurlu</item>
+        <item>Gerze</item>
+        <item>Ondokuzmayıs</item>
+        <item>Datça</item>
+        <item>Pınarbaşı</item>
+        <item>Çınar</item>
+        <item>Ayancık</item>
+        <item>Lice</item>
+        <item>Alaçam</item>
+        <item>Serinhisar</item>
+        <item>Yalıkavak</item>
+        <item>Yomra</item>
+        <item>Yeşilköy</item>
+        <item>Havran</item>
+        <item>Çukurca</item>
+        <item>Bozova</item>
+        <item>Lapseki</item>
+        <item>Altınova</item>
+        <item>Emet</item>
+        <item>Akçay</item>
+        <item>Divriği</item>
+        <item>Davutlar</item>
+        <item>Karaağaç</item>
+        <item>Derinkuyu</item>
+        <item>Çekerek</item>
+        <item>Ermenek</item>
+        <item>Borçka</item>
+        <item>Mazıdağı</item>
+        <item>Alaçatı</item>
+        <item>Keskin</item>
+        <item>Kandıra</item>
+        <item>Ahmetli</item>
+        <item>Şefaatli</item>
+        <item>Çamaş</item>
+        <item>Haymana</item>
+        <item>Bayat</item>
+        <item>Büyükyoncalı</item>
+        <item>Tomarza</item>
+        <item>Sultanhanı</item>
+        <item>Kepez</item>
+        <item>Tunçbilek</item>
+        <item>Adilcevaz</item>
+        <item>Bozdoğan</item>
+        <item>Gevaş</item>
+        <item>Gelinkaya</item>
+        <item>Aşkale</item>
+        <item>Kangal</item>
+        <item>Turgutalp</item>
+        <item>Köşk</item>
+        <item>Yahşihan</item>
+        <item>Cikcilli</item>
+        <item>Acarlar</item>
+        <item>Pozantı</item>
+        <item>Yenice</item>
+        <item>Sivrihisar</item>
+        <item>Eruh</item>
+        <item>Gölmarmara</item>
+        <item>Kulp</item>
+        <item>Söğüt</item>
+        <item>Taşucu</item>
+        <item>Odabaşı</item>
+        <item>Fındıklı</item>
+        <item>Perşembe</item>
+        <item>Gölyaka</item>
+        <item>Şebinkarahisar</item>
+        <item>Araban</item>
+        <item>Hassa</item>
+        <item>Akçadağ</item>
+        <item>Savaştepe</item>
+        <item>Kaynaşlı</item>
+        <item>Karayılan</item>
+        <item>Reşadiye</item>
+        <item>Hizan</item>
+        <item>Sarayönü</item>
+        <item>Hani</item>
+        <item>Palu</item>
+        <item>İnebolu</item>
+        <item>Honaz</item>
+        <item>Gürün</item>
+        <item>Beşiri</item>
+        <item>Yunak</item>
+        <item>Yeşilhisar</item>
+        <item>Avsallar</item>
+        <item>Yıldızeli</item>
+        <item>Varto</item>
+        <item>Mavikent</item>
+        <item>Halfeti</item>
+        <item>Pertek</item>
+        <item>Küçükdaly</item>
+        <item>Çerkeş</item>
+        <item>Yazıkonak</item>
+        <item>Akbez</item>
+        <item>Tekebaşı</item>
+        <item>Karaçoban</item>
+        <item>Karataş</item>
+        <item>Konacık</item>
+        <item>Hınıs</item>
+        <item>İpsala</item>
+        <item>Çobanlar</item>
+        <item>Havsa</item>
+        <item>Çatalağzı</item>
+        <item>Yakınca</item>
+        <item>Beyoğlu</item>
+        <item>Çayırhan</item>
+        <item>Sahilkent</item>
+        <item>Gülşehir</item>
+        <item>Darende</item>
+        <item>Ladik</item>
+        <item>Koru</item>
+        <item>Kestel</item>
+        <item>Eleşkirt</item>
+        <item>Sultanköy</item>
+        <item>Dilek</item>
+        <item>Yeniçiftlik</item>
+        <item>Turunçova</item>
+        <item>Gözcüler</item>
+        <item>Köyceğiz</item>
+        <item>Sarılar</item>
+        <item>Eynesil</item>
+        <item>Ladik</item>
+        <item>Aydıncık</item>
+        <item>Tuzluca</item>
+        <item>Çelikhan</item>
+        <item>Söğütlü</item>
+        <item>Yenice</item>
+        <item>Kiraz</item>
+        <item>Kabala</item>
+        <item>Dicle</item>
+        <item>Toprakkale</item>
+        <item>Yeşilyurt</item>
+        <item>Yurtbaşı</item>
+        <item>Bostanbaşı</item>
+        <item>Yeniceoba</item>
+        <item>Savur</item>
+        <item>Kale</item>
+        <item>Savuca</item>
+        <item>Andırın</item>
+        <item>Keşap</item>
+        <item>Hekimhan</item>
+        <item>İsmil</item>
+        <item>Narlı</item>
+        <item>Kuyucak</item>
+        <item>Gürgentepe</item>
+        <item>Çilimli</item>
+        <item>Orhaneli</item>
+        <item>Beldibi</item>
+        <item>Göle</item>
+        <item>Aktepe</item>
+        <item>Ayvacık</item>
+        <item>Çayıralan</item>
+        <item>Bozkır</item>
+        <item>Saraykent</item>
+        <item>Tonya</item>
+        <item>Kavak</item>
+        <item>Keçiborlu</item>
+        <item>Ovaeymir</item>
+        <item>Çolaklı</item>
+        <item>İçeriçumra</item>
+        <item>Maçka</item>
+        <item>Bitez</item>
+        <item>Yağlıdere</item>
+        <item>Çarşıbaşı</item>
+        <item>Durağan</item>
+        <item>Kozaklı</item>
+        <item>Piraziz</item>
+        <item>Bekbele</item>
+        <item>Şekeroba</item>
+        <item>Arıtaş</item>
+        <item>Atça</item>
+        <item>Gökçebey</item>
+        <item>Ulukışla</item>
+        <item>Gülüç</item>
+        <item>Altınova</item>
+        <item>Sakçagöze</item>
+        <item>Atayurt</item>
+        <item>Işıklar</item>
+        <item>Uluborlu</item>
+        <item>Göynük</item>
+        <item>Ilgaz</item>
+        <item>Atakent</item>
+        <item>Çiçekdağı</item>
+        <item>Gökçe</item>
+        <item>Buharkent</item>
+        <item>Velimeşe</item>
+        <item>Şiran</item>
+        <item>Yenice</item>
+    </array>
+    <array name="Yemen">
+        <item>Choose City</item>
+        <item>Sana a         </item>
+        <item>Ta izz         </item>
+        <item>Al Hudaydah    </item>
+        <item>Aden           </item>
+        <item>Ibb            </item>
+        <item>Dhamar         </item>
+        <item>Mukalla        </item>
+        <item>Seiyun         </item>
+        <item>Zinjibar       </item>
+        <item>Sayyan         </item>
+        <item>Ash Shihr      </item>
+        <item>Sahar          </item>
+        <item>Zabid          </item>
+        <item>Hajjah         </item>
+        <item>Bajil District </item>
+        <item>Dhi as-Sufal   </item>
+        <item>Rada a         </item>
+        <item>Socotra	      </item>
+        <item>Bait al-Faqih  </item>
+        <item>al-Marawi a    </item>
+        <item>Yarim          </item>
+        <item>Al Bayda       </item>
+        <item>Amran          </item>
+        <item>Lahij          </item>
+        <item>Abs            </item>
+        <item>Harad          </item>
+        <item>Dimnat Chadir  </item>
+        <item>Ataq           </item>
+        <item>al-Mahabischa  </item>
+        <item>Baihan         </item>
+        <item>Marib          </item>
+        <item>Thula          </item>
+        <item>as-Saidiyya    </item>
+        <item>Mudiyah        </item>
+        <item>Chamr          </item>
+        <item>Hais           </item>
+        <item>ad-Dahi        </item>
+        <item>Mocha          </item>
+        <item>Al Ghaydah     </item>
+        <item>Al Mahwit</item>
+    </array>
+    <array name="Morocco">
+        <item>Choose City</item>
+        <item>Casablanca</item>
+        <item>Fez</item>
+        <item>Tangier</item>
+        <item>Marrakesh</item>
+        <item>Salé</item>
+        <item>Meknes</item>
+        <item>Rabat</item>
+        <item>Oujda</item>
+        <item>Kenitra</item>
+        <item>Agadir</item>
+        <item>Tetouan</item>
+        <item>Temara</item>
+        <item>Safi</item>
+        <item>Mohammedia</item>
+        <item>Khouribga</item>
+        <item>El Jadida</item>
+        <item>Beni Mellal</item>
+        <item>Aït Melloul</item>
+        <item>Nador</item>
+        <item>Dar Bouazza</item>
+        <item>Taza</item>
+        <item>Settat</item>
+        <item>Berrechid</item>
+        <item>Khemisset</item>
+        <item>Inezgane</item>
+        <item>Ksar El Kebir</item>
+        <item>Larache</item>
+        <item>Guelmim</item>
+        <item>Khenifra</item>
+        <item>Berkane</item>
+        <item>Taourirt</item>
+        <item>Bouskoura</item>
+        <item>Fquih Ben Salah</item>
+        <item>Dcheira El Jihadia</item>
+        <item>Oued Zem</item>
+        <item>El Kelaa Des Sraghna</item>
+        <item>Sidi Slimane</item>
+        <item>Errachidia</item>
+        <item>Guercif</item>
+        <item>Oulad Teima</item>
+        <item>Ben Guerir</item>
+        <item>Tifelt</item>
+        <item>Lqliaa</item>
+        <item>Taroudant</item>
+        <item>Sefrou</item>
+        <item>Essaouira</item>
+        <item>Fnideq</item>
+        <item>Sidi Kacem</item>
+        <item>Tiznit</item>
+        <item>Tan-Tan</item>
+        <item>Ouarzazate</item>
+        <item>Souk El Arbaa</item>
+        <item>Youssoufia</item>
+        <item>Lahraouyine</item>
+        <item>Martil</item>
+        <item>Ain Harrouda</item>
+        <item>Suq as-Sabt Awlad an-Na</item>
+        <item>Skhirat</item>
+        <item>Ouazzane</item>
+        <item>Benslimane</item>
+        <item>Al Hoceima</item>
+        <item>Beni Ansar</item>
+        <item>M diq</item>
+        <item>Sidi Bennour</item>
+        <item>Midelt</item>
+        <item>Azrou</item>
+        <item>Drargua</item>
+        <item>Chefchaouen</item>
+        <item>Bouarfa</item>
+    </array>
+    <array name="Kuwait">
+        <item>Choose City</item>
+        <item>Capital</item>
+        <item>around me</item>
+        <item>Ahmadi Governorate</item>
+        <item>Jahra Governorate</item>
+        <item>Farwaniya Governorate</item>
+        <item>Mubarak Al - Kabeer Governorate</item>
+        <item>Kuwait city</item>
+    </array>
+    <array name="Iraq">
+        <item>Choose City</item>
+        <item>Erbil</item>
+        <item>Anbar</item>
+        <item>Basra</item>
+        <item>Sulaymaniyah</item>
+        <item>Qadisiyah</item>
+        <item>Muthanna</item>
+        <item>Najaf</item>
+        <item>Pile</item>
+        <item>Baghdad</item>
+        <item>Dohuk</item>
+        <item>Diyala</item>
+        <item>Dhi Qar</item>
+        <item>Salahaddin</item>
+        <item>Karila</item>
+        <item>Kirkuk</item>
+        <item>Maysan</item>
+        <item>Nineveh</item>
+        <item>Wasit</item>
+    </array>
+    <array name="Somalia">
+        <item>Choose City</item>
+        <item>Aadan Yabaa</item>
+        <item>Aasha ado</item>
+        <item>Abaareey</item>
+        <item>Abudwak</item>
+        <item>Adado</item>
+        <item>Afgooye</item>
+        <item>Afmadow</item>
+        <item>Arabsiyo</item>
+        <item>Abaarso</item>
+        <item>Badhan</item>
+        <item>Baidoa</item>
+        <item>Balcad</item>
+        <item>Ballidagaruen</item>
+        <item>Balli Dhiddin</item>
+        <item>Bandar Beyla</item>
+        <item>Bandiiradley</item>
+        <item>Barawa</item>
+        <item>Bardera</item>
+        <item>Beeli Wacatay</item>
+        <item>Beledhawo</item>
+        <item>Beledweyne</item>
+        <item>Buqdaaqable</item>
+        <item>Buraan</item>
+        <item>Berbera</item>
+        <item>Beyra</item>
+        <item>Boon</item>
+        <item>Boorama</item>
+        <item>Boocame</item>
+        <item>Bosaso</item>
+        <item>Bu aale</item>
+        <item>Bur Saalax</item>
+        <item>Buulo burte</item>
+        <item>Burane</item>
+        <item>Burco</item>
+        <item>Burgaban</item>
+        <item>Burtinle</item>
+        <item>Buurdhuubo</item>
+        <item>Buurhakaba</item>
+        <item>Ceeldheer</item>
+        <item>Cadale</item>
+        <item>Ceel-Baraf</item>
+        <item>Caadley</item>
+        <item>Cadaley</item>
+        <item>Ceel-Aweyn</item>
+        <item>Ceelaayo</item>
+        <item>Ceel Huur</item>
+        <item>Ceelbuur</item>
+        <item>Ceel Cali</item>
+        <item>Ceelmakoile</item>
+        <item>Ceerigaabo</item>
+        <item>Colgula</item>
+        <item>Daharro</item>
+        <item>Dalweyn</item>
+        <item>Damala Xagare</item>
+        <item>Dhahar</item>
+        <item>Dhamasa</item>
+        <item>Dharoor</item>
+        <item>Dhuusamarreeb</item>
+        <item>Diinsoor</item>
+        <item>Dilla</item>
+        <item>Docol</item>
+        <item>Doolow</item>
+        <item>Duulin Maaxato</item>
+        <item>Eyl</item>
+        <item>Faraweyne</item>
+        <item>Gabiley</item>
+        <item>Galcad</item>
+        <item>Galinsoor</item>
+        <item>Galkayo</item>
+        <item>Garbahaarreey</item>
+        <item>Garoowe</item>
+        <item>Geerisa Awdal</item>
+        <item>Godaalo</item>
+        <item>Goldogob</item>
+        <item>Goroyo-Cawl</item>
+        <item>Gosoweyna</item>
+        <item>Guriel</item>
+        <item>Guud Cad</item>
+        <item>Habo</item>
+        <item>Hadaaftimo</item>
+        <item>Hafun</item>
+        <item>Harardhere</item>
+        <item>Hargeisa</item>
+        <item>Harirad</item>
+        <item>Hingalol</item>
+        <item>Hobyo</item>
+        <item>Hudur</item>
+        <item>Jalalaqsi</item>
+        <item>Jamaame</item>
+        <item>Jariban</item>
+        <item>Jilib</item>
+        <item>Jidali</item>
+        <item>Jowhar</item>
+        <item>Jiifyarey</item>
+        <item>Jilyaale</item>
+        <item>Karin</item>
+        <item>Kulanxagay</item>
+        <item>Kismayo</item>
+        <item>Laag</item>
+        <item>Lanwaley</item>
+        <item>Las Anod</item>
+        <item>Laasqoray</item>
+        <item>Laas Dawaco</item>
+        <item>Lawyacado</item>
+        <item>Lughaya</item>
+        <item>Luuq</item>
+        <item>Leego</item>
+        <item>Mahadaay Weyn</item>
+        <item>Masagawaa</item>
+        <item>Mareeg</item>
+        <item>Merca</item>
+        <item>Mogadishu</item>
+        <item>Qandala</item>
+        <item>Qardho</item>
+        <item>Oog</item>
+        <item>Qaan Dhoole</item>
+        <item>Qansahdhere</item>
+        <item>Qarhis</item>
+        <item>Qeedi Haan</item>
+        <item>Qoryale</item>
+        <item>Qoryoley</item>
+        <item>Qori lugud</item>
+        <item>Quljeed</item>
+        <item>Rako Raaxo</item>
+        <item>Ras Kamboni</item>
+        <item>Rigomane</item>
+        <item>Roox</item>
+        <item>Ruun Nirgood</item>
+        <item>Sarcade</item>
+        <item>Sarmanyo</item>
+        <item>Saylac</item>
+        <item>Sheekh</item>
+        <item>Sheerbi</item>
+        <item>Taleex</item>
+        <item>Tile</item>
+        <item>Turdho</item>
+        <item>Ufeyn</item>
+        <item>Waiye</item>
+        <item>Wajaale</item>
+        <item>Wajid</item>
+        <item>Warsheikh</item>
+        <item>Weeraar</item>
+        <item>Wisil</item>
+        <item>Wobxo</item>
+        <item>Xamure</item>
+        <item>Xiddo</item>
+        <item>Yake</item>
+        <item>Yubbe</item>
+        <item>Zeila</item>
+    </array>
+    <array name="Sudan">
+        <item>Choose City</item>
+        <item>Abekr</item>
+        <item>Abyei</item>
+        <item>Al Fashir</item>
+        <item>Al Managil</item>
+        <item>Al Qadarif</item>
+        <item>Al-Ubayyid</item>
+        <item>Atbara</item>
+        <item>Babanusa</item>
+        <item>Berber</item>
+        <item>Buwaidhaa</item>
+        <item>Delgo</item>
+        <item>Dongola</item>
+        <item>Ad-Damazin</item>
+        <item>Ed Dueim</item>
+        <item>El Ait</item>
+        <item>El Gebir</item>
+        <item>En Nahud</item>
+        <item>Er Rahad</item>
+        <item>Geneina</item>
+        <item>Hala ib</item>
+        <item>`Iyāl Bakhīt</item>
+        <item>Kaduqli</item>
+        <item>Kassala</item>
+        <item>Khartoum - Capital</item>
+        <item>Khartoum North or Bahri</item>
+        <item>Kusti or Kosti</item>
+        <item>Merowe</item>
+        <item>Muglad</item>
+        <item>Nebelat el Hagana</item>
+        <item>New Halfa or Halfa Aljadeda</item>
+        <item>Nyala</item>
+        <item>Omdurman</item>
+        <item>Port Sudan or Bur Sudan</item>
+        <item>Rabak</item>
+        <item>Ruaba or Umm Rawaba</item>
+        <item>Sennar or Sannar</item>
+        <item>Shendi or Shandi</item>
+        <item>Sindscha</item>
+        <item>Singa</item>
+        <item>Suakin</item>
+        <item>Tabat or Al Shaikh Abdulmahmood</item>
+        <item>Taiyara</item>
+        <item>Tonj</item>
+        <item>Wad Banda</item>
+        <item>Wad Madani or Wad Medani</item>
+        <item>Wadi Halfa</item>
+        <item>Umm Badr</item>
+        <item>Umm Bel</item>
+        <item>Umm Dam</item>
+        <item>Umm Debbi</item>
+        <item>Umm Gafala</item>
+        <item>Umm Keddada</item>
+        <item>Umm Qantur</item>
+        <item>Um Rawaba</item>
+        <item>Umm Saiyala</item>
+        <item>Umm Shanqa</item>
+    </array>
+    <array name="SaudiArabia">
+        <item>Choose City</item>
+        <item>Abha</item>
+        <item>Ad-Dilam</item>
+        <item>Al-Abwa</item>
+        <item>Al Artaweeiyah</item>
+        <item>Al Bukayriyah</item>
+        <item>Badr</item>
+        <item>Baljurashi</item>
+        <item>Bisha</item>
+        <item>Bareg</item>
+        <item>Buraydah</item>
+        <item>Al Bahah</item>
+        <item>Buq a</item>
+        <item>Dammam</item>
+        <item>Dhahran</item>
+        <item>Dhurma</item>
+        <item>Dahaban</item>
+        <item>Diriyah</item>
+        <item>Duba</item>
+        <item>Dumat Al-Jandal</item>
+        <item>Dawadmi</item>
+        <item>Farasan city</item>
+        <item>Gatgat</item>
+        <item>Gerrha</item>
+        <item>Gurayat</item>
+        <item>Al-Gwei iyyah</item>
+        <item>Hautat Sudair		</item>
+        <item>Habala</item>
+        <item>Hajrah</item>
+        <item>Haql</item>
+        <item>Al-Hareeq</item>
+        <item>Harmah</item>
+        <item>Ha il		</item>
+        <item>Hotat Bani Tamim</item>
+        <item>Hofuf</item>
+        <item>Huraymila</item>
+        <item>Hafr Al-Batin</item>
+        <item>Jabal Umm al Ru us</item>
+        <item>Jalajil</item>
+        <item>Al Jawf</item>
+        <item>Jeddah</item>
+        <item>Jizan</item>
+        <item>Jizan Economic City</item>
+        <item>Jubail</item>
+        <item>Al Jafr</item>
+        <item>Khafji</item>
+        <item>Khaybar</item>
+        <item>King Abdullah Economic City</item>
+        <item>Khamis Mushayt</item>
+        <item>Al-Saih</item>
+        <item>Knowledge Economic City, Medina</item>
+        <item>Khobar</item>
+        <item>Al-Khutt</item>
+        <item>Layla</item>
+        <item>Lihyan</item>
+        <item>Al Lith</item>
+        <item>Al Majma ah</item>
+        <item>Mastoorah</item>
+        <item>Al Mikhwah</item>
+        <item>Al-Mubarraz</item>
+        <item>Al Mawain</item>
+        <item>Mecca</item>
+        <item>Medina</item>
+        <item>Muzahmiyya</item>
+        <item>Najran</item>
+        <item>Al-Namas</item>
+        <item>Omloj</item>
+        <item>Al-Omran</item>
+        <item>Al-Oyoon</item>
+        <item>Qadeimah</item>
+        <item>Qatif</item>
+        <item>Qaisumah</item>
+        <item>Al Qunfudhah</item>
+        <item>Rabigh</item>
+        <item>Rafha</item>
+        <item>Ar Rass</item>
+        <item>Ras Tanura</item>
+        <item>Riyadh</item>
+        <item>Riyadh Al-Khabra</item>
+        <item>Rumailah</item>
+        <item>Sabt Al Alaya</item>
+        <item>Sarat Abidah</item>
+        <item>Saihat</item>
+        <item>Safwa city</item>
+        <item>Sakakah</item>
+        <item>Sharurah</item>
+        <item>Shaqraa</item>
+        <item>Shaybah</item>
+        <item>As Sulayyil</item>
+        <item>Taif</item>
+        <item>Tabuk</item>
+        <item>Tanomah</item>
+        <item>Tarout</item>
+        <item>Tayma</item>
+        <item>Thadiq</item>
+        <item>Thuwal</item>
+        <item>Thuqbah</item>
+        <item>Turaif</item>
+        <item>Tabarjal</item>
+        <item>Udhailiyah</item>
+        <item>Al Ula</item>
+        <item>Um Al-Sahek</item>
+        <item>Unaizah</item>
+        <item>Uqair</item>
+        <item>Uyayna</item>
+        <item>Uyun AlJiwa</item>
+        <item>Wadi Al-Dawasir</item>
+        <item>Al Wajh</item>
+        <item>Yanbu</item>
+        <item>Az Zaimah</item>
+        <item>Zulfi</item>
+    </array>
+    <array name="Algeria">
+        <item>Choose City</item>
+        <item>Algiers</item>
+        <item>Oran</item>
+        <item>Constantine</item>
+        <item>Annaba</item>
+        <item>Blida</item>
+        <item>Batna</item>
+        <item>Djelfa</item>
+        <item>Sétif</item>
+        <item>Sidi Bel Abbès</item>
+        <item>Biskra</item>
+        <item>Tébessa	</item>
+        <item>El Oued</item>
+        <item>Skikda</item>
+        <item>Tiaret</item>
+        <item>Béjaïa</item>
+        <item>Tlemcen</item>
+        <item>Ouargla	</item>
+        <item>Béchar</item>
+        <item>Mostaganem</item>
+        <item>Bordj Bou Arréridj</item>
+        <item>Chlef</item>
+        <item>Souk Ahras</item>
+        <item>Médéa</item>
+        <item>El Eulma</item>
+        <item>Touggourt</item>
+        <item>Ghardaïa</item>
+        <item>Saïda</item>
+        <item>Laghouat</item>
+        <item>M Sila</item>
+        <item>Jijel</item>
+        <item>Relizane</item>
+        <item>Guelma</item>
+        <item>Aïn Béïda</item>
+        <item>Khenchela</item>
+        <item>Bousaada</item>
+        <item>Mascara</item>
+        <item>Tindouf</item>
+        <item>Tizi Ouzou</item>
+    </array>
+    <array name="Bahrain">
+        <item>Choose City</item>
+        <item>Manama</item>
+        <item>Riffa</item>
+        <item>Muharraq</item>
+        <item>Hamad Town</item>
+        <item>A ali</item>
+        <item>Isa Town</item>
+        <item>Sitra</item>
+        <item>Budaiya</item>
+        <item>Jidhafs</item>
+        <item>Al-Malikiyah</item>
+        <item>Jid Ali</item>
+        <item>Adliya</item>
+        <item>Sanabis</item>
+        <item>Tubli</item>
+        <item>AlSeef</item>
+        <item>Saar</item>
+        <item>Mahooz</item>
+        <item>Al Dur</item>
+        <item>Hoora</item>
+        <item>Qudaibiya</item>
+        <item>Salmabad</item>
+        <item>Jurdab</item>
+        <item>Diyar AlMuharraq</item>
+        <item>Amwaj Island</item>
+        <item>Hidd</item>
+        <item>Arad</item>
+        <item>Busaiteen</item>
+    </array>
     <array name="Egypt">
         <item>Choose City</item>
         <item>Cairo</item>
@@ -487,3 +2287,584 @@ Let the staff know if you have a preferred arm or vein and if you prefer to sit 
 
 -->
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

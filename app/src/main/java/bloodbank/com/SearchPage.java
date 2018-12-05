@@ -130,6 +130,69 @@ public class SearchPage extends AppCompatActivity {
                     }else if (nameOfCountryAlertDialog == country[3]){
                         cities = getResources().getStringArray(R.array.Emirates);
                         setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[4]){
+                        cities = getResources().getStringArray(R.array.Bahrain);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[5]){
+                        cities = getResources().getStringArray(R.array.Algeria);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[6]){
+                        cities = getResources().getStringArray(R.array.SaudiArabia);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[7]){
+                        cities = getResources().getStringArray(R.array.Sudan);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[8]){
+                        cities = getResources().getStringArray(R.array.Somalia);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[9]){
+                        cities = getResources().getStringArray(R.array.Iraq);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[10]){
+                        cities = getResources().getStringArray(R.array.Kuwait);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[11]){
+                        cities = getResources().getStringArray(R.array.Morocco);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[12]){
+                        cities = getResources().getStringArray(R.array.Yemen);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[13]){
+                        cities = getResources().getStringArray(R.array.Turkey);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[14]){
+                        cities = getResources().getStringArray(R.array.Tunisia);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[15]){
+                        cities = getResources().getStringArray(R.array.islands_of_the_moon);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[16]){
+                        cities = getResources().getStringArray(R.array.Comoros);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[17]){
+                        cities = getResources().getStringArray(R.array.Djibouti);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[18]){
+                        cities = getResources().getStringArray(R.array.Syria);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[19]){
+                        cities = getResources().getStringArray(R.array.Oman);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[20]){
+                        cities = getResources().getStringArray(R.array.Palestine);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[21]){
+                        cities = getResources().getStringArray(R.array.Qatar);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[22]){
+                        cities = getResources().getStringArray(R.array.Lebanon);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[23]){
+                        cities = getResources().getStringArray(R.array.Libya);
+                        setSpinnerCities();
+                    }else if (nameOfCountryAlertDialog == country[24]) {
+                        cities = getResources().getStringArray(R.array.Mauritania);
+                        setSpinnerCities();
                     }
                 }
 

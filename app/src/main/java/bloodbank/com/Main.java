@@ -105,6 +105,69 @@ public class Main extends Fragment {
                     }else if (nameOfCountry == country[3]){
                         cities = getResources().getStringArray(R.array.Emirates);
                         setSpinnerCities();
+                    }else if (nameOfCountry == country[4]){
+                        cities = getResources().getStringArray(R.array.Bahrain);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[5]){
+                        cities = getResources().getStringArray(R.array.Algeria);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[6]){
+                        cities = getResources().getStringArray(R.array.SaudiArabia);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[7]){
+                        cities = getResources().getStringArray(R.array.Sudan);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[8]){
+                        cities = getResources().getStringArray(R.array.Somalia);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[9]){
+                        cities = getResources().getStringArray(R.array.Iraq);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[10]){
+                        cities = getResources().getStringArray(R.array.Kuwait);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[11]){
+                        cities = getResources().getStringArray(R.array.Morocco);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[12]){
+                        cities = getResources().getStringArray(R.array.Yemen);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[13]){
+                        cities = getResources().getStringArray(R.array.Turkey);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[14]){
+                        cities = getResources().getStringArray(R.array.Tunisia);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[15]){
+                        cities = getResources().getStringArray(R.array.islands_of_the_moon);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[16]){
+                        cities = getResources().getStringArray(R.array.Comoros);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[17]){
+                        cities = getResources().getStringArray(R.array.Djibouti);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[18]){
+                        cities = getResources().getStringArray(R.array.Syria);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[19]){
+                        cities = getResources().getStringArray(R.array.Oman);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[20]){
+                        cities = getResources().getStringArray(R.array.Palestine);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[21]){
+                        cities = getResources().getStringArray(R.array.Qatar);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[22]){
+                        cities = getResources().getStringArray(R.array.Lebanon);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[23]){
+                        cities = getResources().getStringArray(R.array.Libya);
+                        setSpinnerCities();
+                    }else if (nameOfCountry == country[24]) {
+                        cities = getResources().getStringArray(R.array.Mauritania);
+                        setSpinnerCities();
                     }
                 }
 

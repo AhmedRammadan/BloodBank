@@ -1,17 +1,20 @@
-package bloodbank.com;
+package bloodbank.com.ViewsHolder;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    TextView name  , days, time;
+import bloodbank.com.R;
+
+public class ViewHolder_Donors extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public TextView name;
+    public TextView days;
+    public TextView time;
     ImageView call;
     ItemClickListener itemClickListener;
-    public ViewHolder(@NonNull View itemView) {
+    public ViewHolder_Donors(@NonNull View itemView) {
         super(itemView);
         name = itemView.findViewById(R.id.name);
         call = itemView.findViewById(R.id.call);

@@ -1,14 +1,11 @@
-package bloodbank.com;
+package bloodbank.com.pages;
 
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -19,12 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -37,7 +32,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+
+import bloodbank.com.Adapters.Adapter_Recy_Donors;
+import bloodbank.com.items.SignUpDonor;
+import bloodbank.com.fragments.Search;
+import bloodbank.com.R;
 
 public class SearchPage extends AppCompatActivity {
     Handler handler =new Handler();
@@ -60,8 +59,8 @@ public class SearchPage extends AppCompatActivity {
     String nameOfCountryAlertDialog, nameOfCitiesAlertDialog , nameOfBloodTypeAlertDialog;
     DatabaseReference reference;
     RecyclerView rec_search;
-    Adaper_Recy  adaper_recy;
-    ArrayList<Donor> al_recSearch ;
+    Adapter_Recy_Donors _recyDonors;
+    ArrayList<SignUpDonor> al_recSearch ;
     ProgressBar progressBar;
     TextView tv_noDonors,tv_tryAgain;
     Spinner spinner_country,spinner_cities,spinner_bloodType;
@@ -84,17 +83,17 @@ public class SearchPage extends AppCompatActivity {
         getDataBase();
         rec_search.setLayoutManager(new LinearLayoutManager(SearchPage.this));
         al_recSearch = new ArrayList<>();
-        adaper_recy = new Adaper_Recy(SearchPage.this,al_recSearch);
-        rec_search.setAdapter(adaper_recy);
+        _recyDonors = new Adapter_Recy_Donors(SearchPage.this,al_recSearch);
+        rec_search.setAdapter(_recyDonors);
         handler.postDelayed(runnable,4000);
     }
     public void findViewById(){
         try {
             progressBar = findViewById(R.id.progressBar);
             progressBar.setVisibility(View.VISIBLE);
-            nameOfCountry  = Main.nameOfCountry;
-            nameOfCities   = Main.nameOfCities;
-            nameOfBloodType= Main.nameOfBloodType;
+            nameOfCountry  = Search.nameOfCountry;
+            nameOfCities   = Search.nameOfCities;
+            nameOfBloodType= Search.nameOfBloodType;
             rec_search = findViewById(R.id.re_Search);
             tv_noDonors = findViewById(R.id.tv_noDonors);
             tv_tryAgain = findViewById(R.id.tv_tryAgain);
@@ -272,8 +271,8 @@ public class SearchPage extends AppCompatActivity {
                            if (spinner_bloodType.getSelectedItemPosition() != 0) {
                                progressBar.setVisibility(View.VISIBLE);
                                getDataBaseAlertDialog();
-                               adaper_recy = new Adaper_Recy(SearchPage.this, al_recSearch);
-                               rec_search.setAdapter(adaper_recy);
+                               _recyDonors = new Adapter_Recy_Donors(SearchPage.this, al_recSearch);
+                               rec_search.setAdapter(_recyDonors);
                                alertDialog.dismiss();
                            } else {
                                Toast.makeText(SearchPage.this, "please choose the blood type", Toast.LENGTH_SHORT).show();
@@ -309,8 +308,8 @@ public class SearchPage extends AppCompatActivity {
                     rec_search.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.GONE);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        Donor donor = snapshot.getValue(Donor.class);
-                        al_recSearch.add(0,donor);
+                        SignUpDonor signUpDonor = snapshot.getValue(SignUpDonor.class);
+                        al_recSearch.add(0, signUpDonor);
                     }
                     if (al_recSearch.size() == 0) {
                         tv_noDonors.setText("Sorry there are no donors");
@@ -342,8 +341,8 @@ public class SearchPage extends AppCompatActivity {
                     rec_search.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.GONE);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        Donor donor = snapshot.getValue(Donor.class);
-                        al_recSearch.add(0,donor);
+                        SignUpDonor signUpDonor = snapshot.getValue(SignUpDonor.class);
+                        al_recSearch.add(0, signUpDonor);
                     }
                     if (al_recSearch.size() == 0) {
                         tv_noDonors.setText("Sorry there are no donors");
@@ -377,8 +376,8 @@ public class SearchPage extends AppCompatActivity {
     public void tryAgain(View view) {
         progressBar.setVisibility(View.VISIBLE);
         getDataBase();
-        adaper_recy = new Adaper_Recy(SearchPage.this,al_recSearch);
-        rec_search.setAdapter(adaper_recy);
+        _recyDonors = new Adapter_Recy_Donors(SearchPage.this,al_recSearch);
+        rec_search.setAdapter(_recyDonors);
     }
     public static  void checkPermission(Context context){
         // Here, thisActivity is the current activity

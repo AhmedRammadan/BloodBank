@@ -1,4 +1,4 @@
-package bloodbank.com;
+package bloodbank.com.ViewsHolder;
 
 import android.view.View;
 

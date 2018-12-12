@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main">
+    tools:context=".fragments.Search">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -113,7 +113,7 @@
                         android:layout_marginBottom="30dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
-                        android:text="Search for a donor"
+                        android:text="Search for a signUpDonor"
                         />
                     <TextView
                         android:id="@+id/tv_signUpp"

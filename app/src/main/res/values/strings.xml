@@ -2144,7 +2144,7 @@
 
     <array name="defaultCity">
         <item>Choose City</item>>
-        <item>please choose country first</item>
+        <item>please card_WhichYouCanDonate country first</item>
     </array>
 
     <array name="bloodType">
@@ -2164,12 +2164,12 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
-    <string name="Search_for_a_donor">Search for a donor</string>
+    <string name="Search_for_a_donor">Search for a signUpDonor</string>
     <string name="Rating_App">Rating App</string>
     <string name="Share_app">Share app</string>
     <string name="Feedback">Feedback</string>
     <string name="The_Benefits_of_Donating_Blood">The Benefits of Donating Blood</string>
-    <string name="SignUpdonor">Sign Up donor</string>
+    <string name="SignUpdonor">Sign Up signUpDonor</string>
     <string name="which_factions_you_can_donate_blood_to">which factions you can donate blood to</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -2181,7 +2181,7 @@
     <string name="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacus nisl, venenatis accumsan fermentum sed, auctor ut magna. Integer ante erat, fermentum id feugiat quis, tristique eu tortor. Cras vel sodales diam, ut imperdiet urna. Proin et nisl vitae ante scelerisque commodo ornare vel tortor. In eget viverra nisl, eu pellentesque nisi. Donec molestie metus sed mauris sagittis, sed vestibulum ante rhoncus. Aenean vel neque id magna pretium viverra. Phasellus pellentesque faucibus urna, lacinia scelerisque sem condimentum ut. Praesent at arcu eu orci fringilla vehicula eu at ante. Nullam congue felis massa, at vehicula mauris efficitur egestas. In feugiat mi at orci ultricies porttitor. Mauris fermentum nunc dui, ut tincidunt libero cursus pretium. Quisque eu vestibulum sapien. Donec non tempus ex. Donec in accumsan elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam facilisis maximus enim eget sagittis. Vestibulum tincidunt dolor sit amet interdum porta. Fusce eu odio sem. Proin non condimentum elit. Curabitur elit turpis, hendrerit eget velit et, sagittis pellentesque felis. Donec in euismod nibh.</string>
 
 
-    <!--//post 1
+    <!--//forDonor 1
     <string name="title1">The Benefits of Donating Blood</string>
     <string name="desc1">
 There’s no end to the benefits of donating blood for those who need it. According to the American Red Cross, one donation can save as many as three lives, and someone in the world needs blood every two seconds.
@@ -2236,7 +2236,7 @@ Your blood is also tested for several diseases. These include:
 -Trypanosoma cruzi</string>
 
     <string name="title6">Side effects of donating blood</string>
-    <string name="desc6">Blood donation is safe for healthy adults. There’s no risk of contracting disease. New, sterile equipment is used for each donor.
+    <string name="desc6">Blood donation is safe for healthy adults. There’s no risk of contracting disease. New, sterile equipment is used for each signUpDonor.
 
 Some people may feel nauseous, lightheaded, or dizzy after donating blood. If this happens, it should only last a few minutes. You can lie down with your feet up at the until you feel better.
 

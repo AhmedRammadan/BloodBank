@@ -1,12 +1,12 @@
-package bloodbank.com;
+package bloodbank.com.items;
 
-public class item_forDonor {
+public class card__forDonor {
     private String title , description;
 
-    public item_forDonor() {
+    public card__forDonor() {
     }
 
-    public item_forDonor( String title, String description) {
+    public card__forDonor(String title, String description) {
         this.title = title;
         this.description = description;
     }

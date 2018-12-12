@@ -1,23 +1,17 @@
-package bloodbank.com;
+package bloodbank.com.fragments;
 
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -39,13 +33,19 @@ import net.rimoto.intlphoneinput.IntlPhoneInput;
 
 import java.util.ArrayList;
 
+import bloodbank.com.R;
+import bloodbank.com.items.SignUpDonor;
+import bloodbank.com.pages.WhichYouCanDonate;
+import bloodbank.com.pages.ShowFragment;
+import bloodbank.com.pages.forDonor;
+
 import static android.support.constraint.Constraints.TAG;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SignDonor extends Fragment {
+public class SignUp extends Fragment {
     DatabaseReference myreference ;
     String name;
     String number;
@@ -72,7 +72,7 @@ public class SignDonor extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_sign_donor, container, false);
+        view = inflater.inflate(R.layout.fragment_sign_up, container, false);
         numbers = new ArrayList<>();
         findViewById();
         btn_24();
@@ -550,7 +550,7 @@ public class SignDonor extends Fragment {
         try {
             final android.app.AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
             name = et_nameDonor.getText().toString();
-            if (MainActivity.connected(getActivity())) {
+            if (ShowFragment.connected(getActivity())) {
                 if (!name.equals("")) {
                     if (spinner_country.getSelectedItemPosition()!=0) {
                         if (spinner_cities.getSelectedItemPosition()!=0) {
@@ -567,8 +567,8 @@ public class SignDonor extends Fragment {
                                                 if (availableTime == 2) {
 
                                                     myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-                                                    Donor donor = new Donor(0,0,name, phoneNumber, "anyDay","anyTime");
-                                                    myreference.push().setValue(donor);
+                                                    SignUpDonor signUpDonor = new SignUpDonor(0,0,name, phoneNumber, "anyDay","anyTime");
+                                                    myreference.push().setValue(signUpDonor);
                                                     AlertDialog();
                                                     //Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
 
@@ -578,8 +578,8 @@ public class SignDonor extends Fragment {
                                                     String fromTime = tv_time_from.getText().toString();
                                                     String toTime = tv_time_to.getText().toString();
                                                     if (!fromTime.isEmpty() && !toTime.isEmpty() ) {
-                                                        Donor donor = new Donor(0,1, name, phoneNumber,"anyDay", fromTime, toTime);
-                                                        myreference.push().setValue(donor);
+                                                        SignUpDonor signUpDonor = new SignUpDonor(0,1, name, phoneNumber,"anyDay", fromTime, toTime);
+                                                        myreference.push().setValue(signUpDonor);
                                                         AlertDialog();
                                                        // Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
                                                         } else {
@@ -591,9 +591,9 @@ public class SignDonor extends Fragment {
                                                 if (availableTime == 2) {
 
                                                     myreference = FirebaseDatabase.getInstance().getReference("blood-bank").child(nameOfCountry).child(nameOfCities).child(nameOfBloodType);
-                                                    Donor donor = new Donor(1,0, name, phoneNumber,"anyTime", selectsat, selectmon,
+                                                    SignUpDonor signUpDonor = new SignUpDonor(1,0, name, phoneNumber,"anyTime", selectsat, selectmon,
                                                             selecttue, selectwed, selectthu, selectfri, selectsun);
-                                                    myreference.push().setValue(donor);
+                                                    myreference.push().setValue(signUpDonor);
                                                     AlertDialog();
                                                     //Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
 
@@ -603,9 +603,9 @@ public class SignDonor extends Fragment {
                                                     String fromTime = tv_time_from.getText().toString();
                                                     String toTime = tv_time_to.getText().toString();
                                                     if (fromTime.length() > 5 && toTime.length() > 5) {
-                                                        Donor donor = new Donor(1,1, name, phoneNumber,selectsat, selectmon,
+                                                        SignUpDonor signUpDonor = new SignUpDonor(1,1, name, phoneNumber,selectsat, selectmon,
                                                                 selecttue, selectwed, selectthu, selectfri, selectsun,fromTime, toTime);
-                                                        myreference.push().setValue(donor);
+                                                        myreference.push().setValue(signUpDonor);
                                                         AlertDialog();
                                                         // Toast.makeText(getActivity(), "the registration is done", Toast.LENGTH_LONG).show();
                                                     } else {
@@ -709,28 +709,28 @@ public class SignDonor extends Fragment {
         tv_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(),post.class));
+                startActivity(new Intent(getContext(), forDonor.class));
                 getActivity().finish();
             }
         });
         img_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(),post.class));
+                startActivity(new Intent(getContext(), forDonor.class));
                 getActivity().finish();
             }
         });
         tv_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(),ChooseBloodType.class));
+                startActivity(new Intent(getContext(), WhichYouCanDonate.class));
                 getActivity().finish();
             }
         });
         img_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(),ChooseBloodType.class));
+                startActivity(new Intent(getContext(), WhichYouCanDonate.class));
                 getActivity().finish();
             }
         });

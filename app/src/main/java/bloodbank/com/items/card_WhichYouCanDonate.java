@@ -1,13 +1,13 @@
-package bloodbank.com;
+package bloodbank.com.items;
 
-public class choose {
+public class card_WhichYouCanDonate {
     private String to , from ;
     private int image;
 
-    public choose() {
+    public card_WhichYouCanDonate() {
     }
 
-    public choose(String to, String from, int image) {
+    public card_WhichYouCanDonate(String to, String from, int image) {
         this.to = to;
         this.from = from;
         this.image = image;

@@ -1,9 +1,8 @@
-package bloodbank.com;
+package bloodbank.com.pages;
 
 import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,7 +13,11 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-public class post extends AppCompatActivity {
+import bloodbank.com.Adapters.Adapter_Rec_ForDonor;
+import bloodbank.com.R;
+import bloodbank.com.items.card__forDonor;
+
+public class forDonor extends AppCompatActivity {
     String title1 = "The Benefits of Donating Blood",
             desc1="There’s no end to the benefits of donating blood for those who need it. According to the American Red Cross, one donation can save as many as three lives, and someone in the world needs blood every two seconds.\n" +
                     "\n" +
@@ -97,7 +100,7 @@ public class post extends AppCompatActivity {
                     "Let the staff know if you have a preferred arm or vein and if you prefer to sit up or lie down. Listening to music, reading, or talking to someone else can help you relax during the donation process.";
     RecyclerView rec_ForDonor;
     Adapter_Rec_ForDonor adapter;
-    ArrayList<item_forDonor> items;
+    ArrayList<card__forDonor> items;
     FloatingActionButton btn_fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,16 +121,16 @@ public class post extends AppCompatActivity {
         });
         rec_ForDonor = findViewById(R.id.re_forDonor);
         items = new ArrayList<>();
-        items.add(new item_forDonor(title1, desc1));
-        items.add(new item_forDonor(title2, desc2));
-        items.add(new item_forDonor(title3, desc3));
-        items.add(new item_forDonor(title4, desc4));
-        items.add(new item_forDonor(title5, desc5));
-        items.add(new item_forDonor(title6, desc6));
-        items.add(new item_forDonor(title7, desc7));
-        items.add(new item_forDonor(title8, desc8));
-        adapter = new Adapter_Rec_ForDonor(post.this,items);
-        rec_ForDonor.setLayoutManager(new LinearLayoutManager(post.this));
+        items.add(new card__forDonor(title1, desc1));
+        items.add(new card__forDonor(title2, desc2));
+        items.add(new card__forDonor(title3, desc3));
+        items.add(new card__forDonor(title4, desc4));
+        items.add(new card__forDonor(title5, desc5));
+        items.add(new card__forDonor(title6, desc6));
+        items.add(new card__forDonor(title7, desc7));
+        items.add(new card__forDonor(title8, desc8));
+        adapter = new Adapter_Rec_ForDonor(forDonor.this,items);
+        rec_ForDonor.setLayoutManager(new LinearLayoutManager(forDonor.this));
         rec_ForDonor.setAdapter(adapter);
         setupToolbar();
     }
@@ -141,7 +144,7 @@ public class post extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id==android.R.id.home) {
-            startActivity(new Intent(post.this,MainActivity.class));
+            startActivity(new Intent(forDonor.this, ShowFragment.class));
             finish();
             return true;
         }
@@ -151,7 +154,7 @@ public class post extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(post.this,MainActivity.class));
+        startActivity(new Intent(forDonor.this, ShowFragment.class));
         finish();
 
     }

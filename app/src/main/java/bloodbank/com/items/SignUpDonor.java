@@ -1,6 +1,6 @@
-package bloodbank.com;
+package bloodbank.com.items;
 
-public class Donor {
+public class SignUpDonor {
     private String name ,
             phoneNumber , availableDay,fromTime , toTime,sat, mon, tue, wed, thu,fri,sun,availableTime;
     /**
@@ -9,10 +9,10 @@ public class Donor {
      */
     private int checkDay ,checkTime  ;
 
-    public Donor() {
+    public SignUpDonor() {
     }
 
-    public Donor(int checkDay ,int checkTime,String name, String phoneNumber,String availableDay, String availableTime) {
+    public SignUpDonor(int checkDay , int checkTime, String name, String phoneNumber, String availableDay, String availableTime) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.availableTime = availableTime;
@@ -21,8 +21,8 @@ public class Donor {
         this.checkTime = checkTime;
     }
     ///
-    public Donor(int checkDay ,int checkTime, String name, String phoneNumber, String fromTime, String toTime
-                  ,String sat, String mon, String tue, String wed, String thu, String fri, String sun) {
+    public SignUpDonor(int checkDay , int checkTime, String name, String phoneNumber, String fromTime, String toTime
+                  , String sat, String mon, String tue, String wed, String thu, String fri, String sun) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.fromTime = fromTime;
@@ -37,7 +37,7 @@ public class Donor {
         this.checkDay = checkDay;
         this.checkTime = checkTime;
     }
-    public Donor( int checkDay ,int checkTime, String name, String phoneNumber,String availableTime, String sat, String mon, String tue, String wed, String thu, String fri, String sun) {
+    public SignUpDonor(int checkDay , int checkTime, String name, String phoneNumber, String availableTime, String sat, String mon, String tue, String wed, String thu, String fri, String sun) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.availableTime = availableTime;
@@ -52,7 +52,7 @@ public class Donor {
         this.checkTime = checkTime;
     }
     ///
-    public Donor(int checkDay ,int checkTime, String name, String phoneNumber,String availableDay, String fromTime,String toTime) {
+    public SignUpDonor(int checkDay , int checkTime, String name, String phoneNumber, String availableDay, String fromTime, String toTime) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.fromTime = fromTime;

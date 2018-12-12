@@ -1,15 +1,11 @@
-package bloodbank.com;
+package bloodbank.com.fragments;
 
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +16,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import bloodbank.com.R;
+import bloodbank.com.pages.ShowFragment;
+import bloodbank.com.pages.SearchPage;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Main extends Fragment {
+public class Search extends Fragment {
     View view ;
-    static String nameOfCountry, nameOfCities , nameOfBloodType;
+    public static String nameOfCountry;
+    public static String nameOfCities;
+    public static String nameOfBloodType;
     Spinner spinner_country,spinner_cities,spinner_bloodType;
     ArrayAdapter adapter_country,adapter_cities,adapter_bloodType;
     String [] country,cities,bloodType;
@@ -35,7 +37,7 @@ public class Main extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_main, container, false);
+        view = inflater.inflate(R.layout.fragment_search, container, false);
 
         findViewById();
         setSpinnerCountry();
@@ -227,8 +229,8 @@ public class Main extends Fragment {
     }
 
     private void setFragment(){
-        MainActivity.BackPressed = 2;
-        Fragment fragment = new SignDonor();
+        ShowFragment.BackPressed = 2;
+        Fragment fragment = new SignUp();
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.frameLayout,fragment);

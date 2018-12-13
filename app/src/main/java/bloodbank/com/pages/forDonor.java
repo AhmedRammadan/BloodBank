@@ -105,7 +105,7 @@ public class forDonor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post);
+        setContentView(R.layout.activity_fro_donor);
         btn_fab = findViewById(R.id.btn_fab);
         btn_fab.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -81,8 +81,7 @@ public class Adapter_Recy_Donors extends RecyclerView.Adapter<ViewHolder_Donors>
                 if (ContextCompat.checkSelfPermission(mcontext, Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED) {
                     call(phoneNumber);
                 }else {
-                    SearchPage.checkPermission(mcontext);
-                    Toast.makeText(mcontext, "please do permission for call", Toast.LENGTH_SHORT).show();
+                    SearchPage.requestStoragePermission(mcontext);
                 }
             }
         });

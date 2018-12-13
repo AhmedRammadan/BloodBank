@@ -21,7 +21,7 @@ public class WhichYouCanDonate extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_blood_type);
+        setContentView(R.layout.activity_which_you_can_donate);
         rec_ForChoose = findViewById(R.id.re_chooseBloodType);
         rec_ForChoose.setLayoutManager(new LinearLayoutManager(WhichYouCanDonate.this));
         card_WhichYouCanDonates = new ArrayList<>();

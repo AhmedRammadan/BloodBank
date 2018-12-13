@@ -3,6 +3,7 @@ package bloodbank.com.pages;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -379,53 +380,46 @@ public class SearchPage extends AppCompatActivity {
         _recyDonors = new Adapter_Recy_Donors(SearchPage.this,al_recSearch);
         rec_search.setAdapter(_recyDonors);
     }
-    public static  void checkPermission(Context context){
-        // Here, thisActivity is the current activity
+    public static void requestStoragePermission(final Context context) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context,
+                Manifest.permission.CALL_PHONE)) {
 
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED) {
+            new AlertDialog.Builder(context)
+                    .setTitle("Permission needed")
+                    .setMessage("This permission is needed because of this and that")
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions((Activity)context,
+                                    new String[] {Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .create().show();
 
-            // Permission is not granted
-            // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context,Manifest.permission.CALL_PHONE)) {
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-                // ActivityCompat.requestPermissions((Activity) context,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
-            } else {
-                // No explanation needed; request the permission
-                ActivityCompat.requestPermissions((Activity) context,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
-
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
-            }
         } else {
-            // Permission has already been granted
-            return;
+            ActivityCompat.requestPermissions((Activity)context,
+                    new String[] {Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
         }
-
     }
+
     @Override
-    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-                    return;
-                } else {
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-                    checkPermission(SearchPage.this);
-                }
-                return;
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == MY_PERMISSIONS_REQUEST)  {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Permission GRANTED", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
             }
-
-            // other 'case' lines to check for other
-            // permissions this app might request.
         }
     }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

@@ -10,9 +10,9 @@
     android:background="@color/background">
     <ImageView
         android:id="@+id/ic_splash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/splash"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_app_512"
         android:layout_marginBottom="10dp"/>
     <TextView
         android:id="@+id/textBloodBank"
